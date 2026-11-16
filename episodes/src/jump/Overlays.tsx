@@ -3,7 +3,7 @@
 import React from "react";
 import { AbsoluteFill, Easing, interpolate, Sequence, useCurrentFrame, useVideoConfig } from "remotion";
 import { SpringScaleIn } from "@/components/remocn/spring-scale-in";
-import { MangaSymbol } from "../mathrace/components/MangaSymbol";
+import { MangaSymbol } from "../components/MangaSymbol";
 import { CHAMBER, chamberX, project, type CamState } from "../sets/lab/layout";
 import { camAt } from "./camera";
 import { airtime, fmt2, heightAt, peakHeight, PLANETS, ranked, V0_LABEL } from "./physics";
