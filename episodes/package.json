@@ -39,8 +39,12 @@
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
     "report:jump": "node --no-warnings scripts/jump-report.ts",
-    "render:jump": "remotion render SameJump out/.same-jump-raw.mp4 --gl=angle-egl --concurrency=2 && scripts/master-jump.sh out/.same-jump-raw.mp4 out/.same-jump-raw.mp4 out/same-jump-different-planets.mp4",
-    "sync-mascots": "node scripts/sync-mascots.mjs"
+    "render:jump": "npm run render:jump:video && npm run render:jump:full && npm run render:jump:nomusic",
+    "sync-mascots": "node scripts/sync-mascots.mjs",
+    "render:jump:video": "remotion render SameJump out/.same-jump-video.mp4 --gl=angle-egl --concurrency=2 --muted",
+    "render:jump:full": "remotion render SameJumpAudio out/.same-jump-full.wav --codec=wav && scripts/master-jump.sh out/.same-jump-video.mp4 out/.same-jump-full.wav out/same-jump-different-planets.mp4",
+    "render:jump:nomusic": "remotion render SameJumpAudio out/.same-jump-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master-jump.sh out/.same-jump-video.mp4 out/.same-jump-nomusic.wav out/same-jump-different-planets_nomusic.mp4",
+    "sync-audio": "node scripts/sync-audio.mjs"
   },
   "allowScripts": {
     "esbuild": false

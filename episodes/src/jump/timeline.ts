@@ -49,6 +49,18 @@ export const worldTime = (f: number) => {
 export const worldSince = (f: number, a: number) => worldTime(f) - worldTime(a);
 
 
+/** Frame on which Miyu (Moon) touches down: the end of the waiting gag. */
+export const MOON_DOWN = Math.round(landFrame("moon"));
+/** The twist lands here: everyone else is down and Miyu is still floating. */
+export const TWIST_AT = Math.round(landFrame("mars")) + 6;
+/** Miyu dozes off at the top of her jump, where she is barely moving. */
+export const MIYU_SLEEP_AT = Math.round(peakFrame("moon")) + 2;
+/** She lands still asleep; Anna gets her "Haa?!" in before Miyu finally wakes. */
+export const MIYU_WAKE = MOON_DOWN + 40;
+/** Lumi raises her finger a beat before the glint, the reveal card follows. */
+export const LUMI_POINT_AT = BEAT.reveal + 4;
+export const REVEAL_CARD = { at: BEAT.reveal + 30, lands: BEAT.reveal + 40 };
+
 /** Feet height (m) of a planet's mascot at screen frame f, straight from the physics. */
 export const jumpHeightAt = (id: PlanetId, f: number) => heightAt(planet(id).g, simTime(f));
 
@@ -106,7 +118,7 @@ type Ctx = { x: number };
 const zuzu = (f: number, { x }: Ctx): ActorState => {
   const land = landFrame("jupiter");
   const base: ActorState = { clip: "idle", time: 0, expression: "neutral", pos: [x, TUBE_FLOOR_Y, 0], yaw: 0, squash: [1, 1], symbols: [] };
-  if (f < BEAT.takeoff) return { ...base, ...preJump(f, 3.1), expression: f > BEAT.countdown + 20 ? "squint" : "neutral" };
+  if (f < BEAT.takeoff) return { ...base, ...preJump(f, 3.1), expression: f > BEAT.countdown + 14 ? "squint" : "neutral" };
   const y = TUBE_FLOOR_Y + jumpHeightAt("jupiter", f);
   const symbols: ActorState["symbols"] = [{ kind: "sweat", from: Math.round(land + 4) }];
   if (f < land) return { ...base, clip: "jump_air", time: worldSince(f, BEAT.takeoff), pos: [x, y, 0], squash: squashStretch(f, land, 1.6), expression: "shocked" };
@@ -138,16 +150,18 @@ const anna = (f: number, { x }: Ctx): ActorState => {
   if (f < tapAt) return { ...base, clip: "jump_land", time: worldSince(f, land), squash: squashStretch(f, land), expression: "smug", symbols: [sparkle] };
   if (f >= BEAT.cta + 10)
     return { ...base, clip: "cheer", time: worldSince(f, BEAT.cta + 10), from: { clip: "foot_tap", time: worldSince(f, tapAt), weight: fadeOut(f, BEAT.cta + 10, 10) }, expression: "happy" };
-  // waiting gag: taps her foot, alternating smug and annoyed glances while Miyu is still up
-  const moonDown = landFrame("moon");
-  const annoyed = f < moonDown && Math.floor((f - tapAt) / 40) % 2 === 1;
+  // waiting gag: taps her foot, smug at first, then annoyed while Miyu is still up
+  const moonDown = MOON_DOWN;
+  // one long annoyed glance at the floating Miyu, then a real double-take when she finally lands (still asleep)
+  const annoyed = f >= tapAt + 60 && f < tapAt + 100;
+  const shocked = f >= moonDown + 2 && f < moonDown + 40;
   return {
     ...base,
     clip: f < BEAT.results ? "foot_tap" : "idle",
     time: f < BEAT.results ? worldSince(f, tapAt) : worldTime(f) + 7.4,
     from: f < tapAt + 8 ? { clip: "jump_land", time: 0.43, weight: fadeOut(f, tapAt, 8) } : f >= BEAT.results && f < BEAT.results + 10 ? { clip: "foot_tap", time: worldSince(f, tapAt), weight: fadeOut(f, BEAT.results, 10) } : undefined,
-    expression: annoyed ? "squint" : "smug",
-    symbols: f < moonDown ? [] : f < moonDown + 40 ? [{ kind: "exclaim", from: Math.round(moonDown + 2) }] : [],
+    expression: shocked ? "shocked" : annoyed ? "squint" : "smug",
+    symbols: f < moonDown ? [] : f < moonDown + 40 ? [{ kind: "exclaim", from: moonDown + 2 }] : [],
   };
 };
 
@@ -184,18 +198,19 @@ const lumi = (f: number, { x }: Ctx): ActorState => {
   const y = TUBE_FLOOR_Y + jumpHeightAt("earth", f);
   if (f < land) return { ...base, clip: "jump_air", time: worldSince(f, BEAT.takeoff), pos: [x, y, 0], squash: squashStretch(f, land), expression: "neutral" };
   const happy = land + 6;
-  if (f < BEAT.reveal + 12)
+  if (f < LUMI_POINT_AT)
     return {
       ...base,
       clip: f < land + 30 ? "jump_land" : "idle",
       time: f < land + 30 ? worldSince(f, land) : worldTime(f),
       from: f >= land + 30 && f < land + 38 ? { clip: "jump_land", time: 0.43, weight: fadeOut(f, land + 30, 8) } : undefined,
       squash: squashStretch(f, land),
-      expression: f < happy ? "neutral" : "happy",
+      // eyes closed, thinking it over ("Uun...") right before she explains
+      expression: f < happy ? "neutral" : f >= BEAT.reveal - 28 ? "squint" : "happy",
     };
   // reveal: knowing point + glint; CTA: cheer
   if (f < BEAT.cta + 4)
-    return { ...base, clip: "point", time: worldSince(f, BEAT.reveal + 12), from: f < BEAT.reveal + 20 ? { ...idleAt(f, 0), weight: fadeOut(f, BEAT.reveal + 12, 8) } : undefined, expression: f > BEAT.reveal + 22 ? "glint" : "happy" };
+    return { ...base, clip: "point", time: worldSince(f, LUMI_POINT_AT), from: f < LUMI_POINT_AT + 8 ? { ...idleAt(f, 0), weight: fadeOut(f, LUMI_POINT_AT, 8) } : undefined, expression: f > BEAT.reveal + 22 ? "glint" : "happy" };
   return { ...base, clip: "cheer", time: worldSince(f, BEAT.cta + 4), from: f < BEAT.cta + 14 ? { clip: "point", time: 4.6, weight: fadeOut(f, BEAT.cta + 4, 10) } : undefined, expression: "happy" };
 };
 
@@ -243,7 +258,7 @@ const miyu = (f: number, { x }: Ctx): ActorState => {
   const base: ActorState = { clip: "idle", time: 0, expression: "neutral", pos: [x, TUBE_FLOOR_Y, 0], yaw: 0, squash: [1, 1], symbols: [] };
   if (f < BEAT.takeoff) return { ...base, ...preJump(f, 11.2), expression: f > BEAT.countdown ? "happy" : "neutral" };
   const y = TUBE_FLOOR_Y + jumpHeightAt("moon", f);
-  const sleepAt = BEAT.takeoff + 48; // drifting up slowly → dozes off
+  const sleepAt = MIYU_SLEEP_AT; // drifts up, runs out of speed at the top → dozes off
   const zzz = { kind: "zzz" as const, from: sleepAt + 10 };
   if (f < land) {
     if (f < sleepAt) return { ...base, clip: "jump_air", time: worldSince(f, BEAT.takeoff), pos: [x, y, 0], squash: squashStretch(f, land), expression: "happy" };
@@ -257,15 +272,15 @@ const miyu = (f: number, { x }: Ctx): ActorState => {
       symbols: [zzz],
     };
   }
-  // soft landing, a beat of sleep, then wakes up shocked
-  const wake = Math.round(land + 10);
+  // soft landing, still asleep on her feet, then wakes up shocked
+  const wake = MIYU_WAKE;
   if (f < BEAT.cta + 2) {
     const after = f >= BEAT.results;
     return {
       ...base,
       clip: after ? "idle" : "jump_land",
       time: after ? worldTime(f) + 11.2 : worldSince(f, land),
-      from: f < land + 6 ? { clip: "float_sleep", time: worldSince(f, BEAT.takeoff + 48), weight: fadeOut(f, land, 6) } : after && f < BEAT.results + 10 ? { clip: "jump_land", time: 0.43, weight: fadeOut(f, BEAT.results, 10) } : undefined,
+      from: f < land + 6 ? { clip: "float_sleep", time: worldSince(f, sleepAt), weight: fadeOut(f, land, 6) } : after && f < BEAT.results + 10 ? { clip: "jump_land", time: 0.43, weight: fadeOut(f, BEAT.results, 10) } : undefined,
       squash: squashStretch(f, land, 0.5),
       expression: f < wake ? "squint" : f < BEAT.results + 20 ? "shocked" : "happy",
       symbols: f < wake ? [zzz] : f < wake + 50 ? [{ kind: "exclaim", from: wake }] : [],
@@ -285,9 +300,9 @@ export const CAPTIONS: Caption[] = [
   { from: BEAT.setup, to: 176, text: "Step 1: lock the jump speed" },
   { from: 176, to: BEAT.countdown, text: "Lumi is the control group." },
   { from: BEAT.countdown, to: BEAT.takeoff, text: "Same crouch. Same push." },
-  { from: BEAT.takeoff, to: Math.round(landFrame("mars")) + 6, text: "GO!" },
-  { from: Math.round(landFrame("mars")) + 6, to: Math.round(landFrame("moon")), text: "Miyu is… still floating?" },
-  { from: Math.round(landFrame("moon")), to: BEAT.results, text: "Touchdown. Finally." },
+  { from: BEAT.takeoff, to: TWIST_AT, text: "GO!" },
+  { from: TWIST_AT, to: MOON_DOWN, text: "Miyu is… still floating?" },
+  { from: MOON_DOWN, to: BEAT.results, text: "Touchdown. Finally." },
   { from: BEAT.results, to: BEAT.reveal, text: "Results: same push, 4 heights" },
   { from: BEAT.reveal, to: BEAT.cta, text: "The secret is gravity" },
   { from: BEAT.cta, to: BEAT.end, text: "Same jump, different planets" },

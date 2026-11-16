@@ -9,7 +9,7 @@ import { PLANETS } from "./physics";
 import { Scene3D, type Cast } from "./Scene3D";
 import { Soundtrack } from "./Soundtrack";
 import { FONT, fredoka } from "./theme";
-import { BEAT } from "./timeline";
+import { BEAT, REVEAL_CARD } from "./timeline";
 
 const chars = manifest.characters as unknown as Record<string, { signature_color: string; actor: ActorMeta }>;
 
@@ -34,7 +34,7 @@ const metaOf = (name: string) => chars[name].actor;
 // stable meta objects (useActor's effect depends on identity)
 const META = { miyu: metaOf("miyu"), anna: metaOf("anna"), lumi: metaOf("lumi"), zuzu: metaOf("zuzu") };
 
-export const SameJump: React.FC = () => {
+export const SameJump: React.FC<{ music?: boolean }> = ({ music = true }) => {
   // actors are loaded OUTSIDE the canvas so their delayRender is registered before capture
   const miyu = useActor(META.miyu);
   const anna = useActor(META.anna);
@@ -47,7 +47,7 @@ export const SameJump: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#f6efe6" }}>
-      <Soundtrack />
+      <Soundtrack music={music} />
       {fontReady ? <Scene3D cast={cast} font={FONT} /> : null}
       <ChartPanel colors={colors} />
       <HeightReadouts colors={colors} />
@@ -56,7 +56,7 @@ export const SameJump: React.FC = () => {
       <Countdown />
       <SlowMoBadge />
       <Captions />
-      <Sequence name="Reveal card" from={BEAT.reveal + 30} durationInFrames={BEAT.cta - (BEAT.reveal + 30)} layout="none">
+      <Sequence name="Reveal card" from={REVEAL_CARD.at} durationInFrames={BEAT.cta - REVEAL_CARD.at} layout="none">
         <RevealCard />
       </Sequence>
       <Sequence name="CTA" from={BEAT.cta + 10} durationInFrames={BEAT.end - BEAT.cta - 10} layout="none">

@@ -15,10 +15,12 @@ Episode prompts that say "Follow SERIES_RULES.md" mean the **Series rules** sect
 | `mascots/_shared/scripts/` | Rebuild pipeline (`rebuild.sh`), see its README. Needs Blender 5.2 |
 | `audio/final/` | Approved audio library: `voices/<name>/<name>_<reaction>.mp3`, `sfx/{ui,body,lab,objects}/<name>.mp3`, `music/<name>.mp3` |
 | `audio/audio_manifest.json` | Every final audio file: type, character, reaction, text, duration, loop flag, LUFS |
-| `audio/_takes/` | Unused takes. Never reference from episodes |
+| `audio/_takes/` | Unused takes (and `unused/placeholders_jump/`, the old EP01 placeholder audio). Never reference from episodes |
 | `episodes/` | Remotion project (React + TypeScript, `@remotion/three`) |
 | `episodes/src/jump/` | EP01 "Same Jump, Different Planets" (`SameJump` composition) |
 | `episodes/src/sets/lab/` | Reusable 3D lab set: room, props, control panel, gravity chambers |
+| `episodes/src/audio/` | Audio for all episodes: `library.ts` (typed `voice()`, `sfx()`, `music()` from the manifest), `voiceCues.ts` (voices from the acting), `mix.ts` (cue model, ducking, headroom) |
+| `episodes/public/audio/lib/` | Mirror of `audio/final/` made by `npm run sync-audio`. Never edit by hand |
 | `episodes/src/actors/` | `Actor` component (GLB + clip + expression) and actor test compositions |
 | `episodes/src/components/` | Shared 2D pieces: `MangaSymbol`, remocn components in `remocn/` (edited locally, see file headers) |
 
@@ -27,8 +29,11 @@ Episode prompts that say "Follow SERIES_RULES.md" mean the **Series rules** sect
 ```bash
 npm run dev            # Remotion Studio
 npm run sync-mascots   # copy mascots/manifest.json + GLBs/textures into public/mascots
-npm run report:jump    # EP01 physics table + checks (same code as the video)
-npm run render:jump    # EP01 render + mastering → out/same-jump-different-planets.mp4
+npm run sync-audio     # copy audio/final + manifest into public/audio/lib, regenerate src/audio/library.generated.ts
+npm run report:jump    # EP01 physics table, cue sheet, checks, loudness of the rendered files
+npm run render:jump    # EP01 picture + both masters → out/same-jump-different-planets{,_nomusic}.mp4
+npm run render:jump:full     # re-mix + re-master the full version only (reuses the rendered picture)
+npm run render:jump:nomusic  # same for the no-music version (SFX + voices)
 npm run lint           # eslint + tsc
 ```
 
@@ -92,5 +97,5 @@ owned by others.
 
 - Never delete assets; move old or unused files to an `_archive/` or `_takes/` folder.
 - Do not modify `mascots/<name>/model/<name>.blend`; rebuild actors with the scripts.
-- After changing mascots, run `npm run sync-mascots`. After changing audio, re-sync it into `episodes/public/`.
+- After changing mascots, run `npm run sync-mascots`. After changing audio, run `npm run sync-audio`.
 - Show a plan before large renames or moves. Keep renders out of git (`episodes/out/` is ignored).
