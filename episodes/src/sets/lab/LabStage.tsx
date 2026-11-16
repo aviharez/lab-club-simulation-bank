@@ -97,11 +97,7 @@ export type LabStageProps = {
   cam: CamState;
   children: React.ReactNode;
   background?: string;
-  /**
-   * Post-processing (AO, bloom, grade, vignette). Gated so it is applied on every captured frame.
-   * EP01 passes `false`: before the gate existed the composer lost a race in most browser sessions, and the
-   * shipped EP01 render has no post at all, so `false` keeps EP01 identical to what was published.
-   */
+  /** Post-processing (AO, bloom, grade, vignette), gated so every captured frame has it. Default on. */
   post?: boolean;
 };
 
