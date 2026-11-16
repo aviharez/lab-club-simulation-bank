@@ -1,0 +1,15 @@
+{
+ "camera": "Cam_Front",
+ "ortho_scale": 1.35,
+ "target": [
+  0,
+  0.002587,
+  0.5
+ ],
+ "sprite_px": 1024,
+ "face_window_y0_z0_size": [
+  -0.178048,
+  0.548638,
+  0.36
+ ]
+}

@@ -1,0 +1,59 @@
+00:00.464  blend            | Read blend: "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/lumi/model/lumi.blend"
+Info: Saved as "lumi_actor.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+20:05:23 | INFO: Data are loaded, start creating Blender stuff
+20:05:23 | INFO: Blender create Mesh node tripo_mesh_d2dbfe89-6ca2-4aeb-92b3-9afbe1d8feb4
+20:05:23 | INFO: glTF import finished in 0.18s
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+BUILD| lumi: idle 461f touching=0 left=[]
+BUILD| lumi: walk 71f touching=0 left=[]
+BUILD| lumi: run 20f touching=2 left=[]
+BUILD| lumi: jump_crouch 13f touching=0 left=[]
+BUILD| lumi: jump_air 13f touching=0 left=[]
+BUILD| lumi: jump_land 14f touching=0 left=[]
+BUILD| lumi: land_squash 31f touching=0 left=[]
+BUILD| lumi: push 81f touching=103 left=[]
+BUILD| lumi: sad 85f touching=0 left=[]
+BUILD| lumi: dizzy 129f touching=0 left=[]
+BUILD| lumi: float_sleep 91f touching=45 left=[]
+BUILD| lumi: foot_tap 90f touching=0 left=[]
+BUILD| lumi: throw 67f touching=10 left=[]
+BUILD| lumi: point 142f touching=0 left=[]
+BUILD| lumi: cheer 198f touching=0 left=[]
+BUILD| lumi: panic_fall 109f touching=21 left=[]
+BUILD| lumi: sit 68f touching=0 left=[]
+INFO Draco is available, use library at /home/nyxelyn/.local/opt/blender-5.2.2-linux-x64/lib/libbf_intern_draco_bridge.so
+INFO MeshOptimizer is available, use library at /home/nyxelyn/.local/opt/blender-5.2.2-linux-x64/lib/libbf_intern_meshopt_bridge.so
+20:07:18 | INFO: Starting glTF 2.0 export
+20:07:18 | INFO: Extracting primitive: lumi_body
+20:07:18 | INFO: Primitives created: 1
+20:07:18 | INFO: Extracting primitive: lumi_face
+20:07:18 | INFO: Primitives created: 1
+20:07:18 | INFO: Extracting primitive: lumi_glasses
+20:07:18 | INFO: Primitives created: 1
+20:07:18 | INFO: Extracting primitive: lumi_lenses
+20:07:18 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+20:07:18 | INFO: Primitives created: 1
+20:07:28 | INFO: Finished glTF 2.0 export in 10.152603387832642 s
+
+Info: Saved "lumi_actor.blend"
+BUILD| DONE 128 s {'glb': '/home/nyxelyn/Documents/Playgrounds/content-project/mascots/lumi/model/lumi_actor.glb', 'bytes': 5466192}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:34:58)
+
+Blender quit

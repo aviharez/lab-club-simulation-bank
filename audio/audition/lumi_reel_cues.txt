@@ -1,0 +1,42 @@
+0:00.00  happy          take 1  [happy] わぁい！ · Waai!
+0:01.22  happy          take 2  [happy] わぁい！ · Waai!
+0:02.46  happy          take 3  [happy] わぁい！ · Waai!
+0:04.42  giggle         take 1  [giggles] ふふっ · Fufu
+0:06.42  giggle         take 2  [giggles] ふふっ · Fufu
+0:08.39  giggle         take 3  [giggles] ふふっ · Fufu
+0:11.20  smug           take 1  [smug] ふふん · Fufun
+0:12.76  smug           take 2  [smug] ふふん · Fufun
+0:13.96  smug           take 3  [smug] ふふん · Fufun
+0:15.77  smug_laugh     take 1  [laughs softly] ふふふ〜 · Fufufu~
+0:17.94  smug_laugh     take 2  [laughs softly] ふふふ〜 · Fufufu~
+0:20.15  smug_laugh     take 3  [laughs softly] ふふふ〜 · Fufufu~
+0:22.97  shocked        take 1  [gasps] えっ？！ · E?!
+0:24.45  shocked        take 2  [gasps] えっ？！ · E?!
+0:26.13  shocked        take 3  [gasps] えっ？！ · E?!
+0:28.34  small_gasp     take 1  [gasps] あっ！ · A!
+0:29.93  small_gasp     take 2  [gasps] あっ！ · A!
+0:31.51  small_gasp     take 3  [gasps] あっ！ · A!
+0:33.83  dizzy          take 1  [dizzy] ふにゃ〜… · Funya~...
+0:35.49  dizzy          take 2  [dizzy] ふにゃ〜… · Funya~...
+0:37.25  dizzy          take 3  [dizzy] ふにゃ〜… · Funya~...
+0:39.64  crying         take 1  [crying] うぅ…ぐすっ… · Uu... gusu...
+0:41.82  crying         take 2  [crying] うぅ…ぐすっ… · Uu... gusu...
+0:44.36  crying         take 3  [crying] うぅ…ぐすっ… · Uu... gusu...
+0:46.98  fall           take 1  [shouts] きゃあっ！ · Kyaa!
+0:48.16  fall           take 2  [shouts] きゃあっ！ · Kyaa!
+0:49.24  fall           take 3  [shouts] きゃあっ！ · Kyaa!
+0:51.02  effort         take 1  [straining] んんっ…！ · Nnn...!
+0:53.24  effort         take 2  [straining] んんっ…！ · Nnn...!
+0:54.86  effort         take 3  [straining] んんっ…！ · Nnn...!
+0:57.17  cheer          take 1  [cheerful] やった！ · Yatta!
+0:58.50  cheer          take 2  [cheerful] やった！ · Yatta!
+1:00.10  cheer          take 3  [cheerful] やった！ · Yatta!
+1:02.15  annoyed        take 1  [frustrated] もう… · Mou...
+1:03.63  annoyed        take 2  [frustrated] もう… · Mou...
+1:05.18  annoyed        take 3  [frustrated] もう… · Mou...
+1:07.53  thinking       take 1  [curious] うーん… · Uun...
+1:08.94  thinking       take 2  [curious] うーん… · Uun...
+1:10.36  thinking       take 3  [curious] うーん… · Uun...
+1:12.53  explain_start  take 1  [confident] こほん！ · Ahem!
+1:13.62  explain_start  take 2  [confident] こほん！ · Ahem!
+1:14.62  explain_start  take 3  [confident] こほん！ · Ahem!

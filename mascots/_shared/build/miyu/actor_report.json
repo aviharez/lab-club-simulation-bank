@@ -1,0 +1,323 @@
+{
+ "name": "miyu",
+ "open": {
+  "file": "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/miyu/model/miyu_actor.blend"
+ },
+ "fix": {
+  "removed_modifiers": [
+   "tripo_node_cdfe9a56-6c2f-4ac2-b809-b79a57bdd6e0:Outline_Weld",
+   "tripo_node_cdfe9a56-6c2f-4ac2-b809-b79a57bdd6e0:Outline_Hull"
+  ],
+  "loose_verts_removed": 3,
+  "tiny_island_faces_removed": 0,
+  "verts_capped_to_4": 89,
+  "feet_z_before": -0.0,
+  "tris": 5167,
+  "height": 0.9995
+ },
+ "split": {
+  "face_polys": 99,
+  "body_polys": 5068,
+  "face_obj": "miyu_face"
+ },
+ "bake": [
+  "neutral",
+  "happy",
+  "smug",
+  "shocked",
+  "dizzy",
+  "crying",
+  "squint"
+ ],
+ "uv": {
+  "face_uv": [
+   "UVMap"
+  ],
+  "body_uv": [
+   "UVMap"
+  ]
+ },
+ "materials": {
+  "body": "miyu_body_mat",
+  "face": "miyu_face_mat"
+ },
+ "clips": {
+  "idle": {
+   "name": "idle",
+   "frames": 461,
+   "seconds": 15.333,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 922,
+    "max_deg": 31.5
+   }
+  },
+  "walk": {
+   "name": "walk",
+   "frames": 71,
+   "seconds": 2.333,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 142,
+    "max_deg": 26.5
+   }
+  },
+  "run": {
+   "name": "run",
+   "frames": 20,
+   "seconds": 0.633,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 4,
+    "max_correction_deg": 15.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 10,
+    "max_deg": 14.0
+   }
+  },
+  "jump_crouch": {
+   "name": "jump_crouch",
+   "frames": 13,
+   "seconds": 0.4,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 26,
+    "max_deg": 26.5
+   }
+  },
+  "jump_air": {
+   "name": "jump_air",
+   "frames": 13,
+   "seconds": 0.4,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 14,
+    "max_deg": 26.5
+   }
+  },
+  "jump_land": {
+   "name": "jump_land",
+   "frames": 14,
+   "seconds": 0.433,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 27,
+    "max_deg": 26.5
+   }
+  },
+  "land_squash": {
+   "name": "land_squash",
+   "frames": 31,
+   "seconds": 1.0,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 61,
+    "max_deg": 26.5
+   }
+  },
+  "push": {
+   "name": "push",
+   "frames": 81,
+   "seconds": 2.667,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 162,
+    "max_correction_deg": 39.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 0,
+    "max_deg": 0.0
+   }
+  },
+  "sad": {
+   "name": "sad",
+   "frames": 85,
+   "seconds": 2.8,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 159,
+    "max_deg": 31.5
+   }
+  },
+  "dizzy": {
+   "name": "dizzy",
+   "frames": 129,
+   "seconds": 4.267,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 258,
+    "max_deg": 31.5
+   }
+  },
+  "float_sleep": {
+   "name": "float_sleep",
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 176,
+    "max_correction_deg": 21.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 0,
+    "max_deg": 0.0
+   }
+  },
+  "foot_tap": {
+   "name": "foot_tap",
+   "frames": 90,
+   "seconds": 2.967,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 117,
+    "max_deg": 24.0
+   }
+  },
+  "throw": {
+   "name": "throw",
+   "frames": 67,
+   "seconds": 2.2,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 10,
+    "max_correction_deg": 78.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 88,
+    "max_deg": 29.0
+   }
+  },
+  "point": {
+   "name": "point",
+   "frames": 142,
+   "seconds": 4.7,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 258,
+    "max_deg": 31.5
+   }
+  },
+  "cheer": {
+   "name": "cheer",
+   "frames": 198,
+   "seconds": 6.567,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 250,
+    "max_deg": 40.0
+   }
+  },
+  "panic_fall": {
+   "name": "panic_fall",
+   "frames": 109,
+   "seconds": 3.6,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 49,
+    "max_correction_deg": 15.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 0,
+    "max_deg": 0.0
+   }
+  },
+  "sit": {
+   "name": "sit",
+   "frames": 68,
+   "seconds": 2.233,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 124,
+    "max_deg": 40.0
+   }
+  }
+ },
+ "export": {
+  "glb": "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/miyu/model/miyu_actor.glb",
+  "bytes": 5069900
+ },
+ "seconds": 129
+}

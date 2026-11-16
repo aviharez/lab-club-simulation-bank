@@ -1,0 +1,86 @@
+{
+  "lumi": {
+    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. Calm, soft, gentle and intelligent, mid pitch, warm and thoughtful delivery. Studio quality recording.",
+    "text": "うーん…ちょっと考えさせてね。あ、わかった！青いカードをここに置けば、全部ぴったり収まるよ。ふふっ、なんだか楽しくなってきちゃった。次はどんなパズルかな？一緒にゆっくり解いていこうね。大丈夫、きっとうまくいくから。",
+    "previews": [
+      {
+        "file": "lumi_preview_1.mp3",
+        "generated_voice_id": "peYBOx7lwlis04T9q8dZ",
+        "duration": 25.315375
+      },
+      {
+        "file": "lumi_preview_2.mp3",
+        "generated_voice_id": "FU8eT7pZVJdALLA0CPmB",
+        "duration": 22.2851875
+      },
+      {
+        "file": "lumi_preview_3.mp3",
+        "generated_voice_id": "Px3OiiT9bP8Ze2SbW56m",
+        "duration": 24.6100625
+      }
+    ]
+  },
+  "zuzu": {
+    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. High-pitched, very energetic, slightly squeaky and highly expressive, bouncy cheerful cartoon energy. Studio quality recording.",
+    "text": "やったー！見た見た？すっごく高く跳べたよ！ねえねえ、もう一回やるから見ててね！いっくよー！わーい、今日は最高の日だね！ズズ、まだまだ元気いっぱいだよ！次は何して遊ぶ？早く早くー！えへへ、楽しみすぎてじっとしてられないよー！",
+    "previews": [
+      {
+        "file": "zuzu_preview_1.mp3",
+        "generated_voice_id": "KSRwNAkUQi2KxSmG7KXU",
+        "duration": 25.6288125
+      },
+      {
+        "file": "zuzu_preview_2.mp3",
+        "generated_voice_id": "Ujecsus4wQQggS7oKtF4",
+        "duration": 27.4835625
+      },
+      {
+        "file": "zuzu_preview_3.mp3",
+        "generated_voice_id": "3JvisAMJPe95KckQV3qJ",
+        "duration": 26.2035625
+      }
+    ]
+  },
+  "anna": {
+    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. Bright and confident, a bit bossy and smug, proud teasing ojou-sama delivery, clear and assertive. Studio quality recording.",
+    "text": "ふん！当然、私の勝ちよね。まさか本気で私に勝てると思ってたの？ふふっ、まあいいわ。私は心が広いから、もう一回だけチャンスをあげる。でも、次も負けたって泣かないでよね？ま、せいぜい頑張りなさい。おーっほっほっほ！",
+    "previews": [
+      {
+        "file": "anna_preview_1.mp3",
+        "generated_voice_id": "RakQkPsY2o06G3exLIzX",
+        "duration": 23.878625
+      },
+      {
+        "file": "anna_preview_2.mp3",
+        "generated_voice_id": "6W89TKZN0G5Pj2InIZkK",
+        "duration": 24.7668125
+      },
+      {
+        "file": "anna_preview_3.mp3",
+        "generated_voice_id": "M2vyCPKWKIHEh1cVaDYg",
+        "duration": 23.2516875
+      }
+    ]
+  },
+  "miyu": {
+    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. Quiet, sleepy, breathy, soft and slow, drowsy dreamy delivery, slightly mumbling. Studio quality recording.",
+    "text": "ふぁ〜あ…もう朝なの…？んん…あと五分だけ…お願い…。すごくいい夢を見てたの…ふわふわの雲の上で…ねこさんと一緒に…お昼寝してて…。ねむい…。おやすみなさい…。むにゃむにゃ…もう食べられないよぉ…。ふにゃ…。",
+    "previews": [
+      {
+        "file": "miyu_preview_1.mp3",
+        "generated_voice_id": "vZKCpQDLh870EVnHQvl8",
+        "duration": 34.7716875
+      },
+      {
+        "file": "miyu_preview_2.mp3",
+        "generated_voice_id": "IHBvshHqLdp2LDgU7mmx",
+        "duration": 31.715375
+      },
+      {
+        "file": "miyu_preview_3.mp3",
+        "generated_voice_id": "5H48T84Qf2AgkNRUi2T2",
+        "duration": 37.958625
+      }
+    ]
+  }
+}

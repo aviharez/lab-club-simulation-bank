@@ -1,0 +1,19 @@
+# Local secrets written by `elevenlabs onboard`
+/.env.local
+.env
+.env.*
+
+# Dependencies / build output
+node_modules/
+dist/
+episodes/out/
+
+# Archives, autosaves, caches
+mascots/_archive/
+*.blend1
+__pycache__/
+*.pyc
+.DS_Store
+
+# Unprocessed audio originals (processed takes live in audio/_takes)
+audio/_raw/

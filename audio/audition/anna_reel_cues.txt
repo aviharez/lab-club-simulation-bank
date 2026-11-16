@@ -1,0 +1,39 @@
+0:00.00  happy          take 1  [excited] わぁっ！ · Waa!
+0:01.39  happy          take 2  [excited] わぁっ！ · Waa!
+0:02.75  happy          take 3  [excited] わぁっ！ · Waa!
+0:04.75  giggle         take 1  [giggles] うふふっ · Ufufu
+0:06.79  giggle         take 2  [giggles] うふふっ · Ufufu
+0:09.07  giggle         take 3  [giggles] うふふっ · Ufufu
+0:11.85  smug           take 1  [smug] ふんっ！ · Hmph!
+0:12.72  smug           take 2  [smug] ふんっ！ · Hmph!
+0:13.62  smug           take 3  [smug] ふんっ！ · Hmph!
+0:15.16  smug_laugh     take 1  [proud laugh] おーっほっほっほ！ · Oh-hohoho!
+0:18.07  smug_laugh     take 2  [proud laugh] おーっほっほっほ！ · Oh-hohoho!
+0:20.86  smug_laugh     take 3  [proud laugh] おーっほっほっほ！ · Oh-hohoho!
+0:24.54  shocked        take 1  [gasps] はぁっ？！ · Haa?!
+0:26.23  shocked        take 2  [gasps] はぁっ？！ · Haa?!
+0:27.94  shocked        take 3  [gasps] はぁっ？！ · Haa?!
+0:30.29  small_gasp     take 1  [gasps] あらっ！ · Ara!
+0:31.89  small_gasp     take 2  [gasps] あらっ！ · Ara!
+0:33.86  small_gasp     take 3  [gasps] あらっ！ · Ara!
+0:36.23  dizzy          take 1  [dizzy] あうぅ〜… · Auu~...
+0:37.90  dizzy          take 2  [dizzy] あうぅ〜… · Auu~...
+0:39.54  dizzy          take 3  [dizzy] あうぅ〜… · Auu~...
+0:41.89  crying         take 1  [crying] うぅっ…ひっく… · Uu... hikku...
+0:44.28  crying         take 2  [crying] うぅっ…ひっく… · Uu... hikku...
+0:46.23  crying         take 3  [crying] うぅっ…ひっく… · Uu... hikku...
+0:49.10  fall           take 1  [shouts] きゃああっ！ · Kyaaa!
+0:50.39  fall           take 2  [shouts] きゃああっ！ · Kyaaa!
+0:51.65  fall           take 3  [shouts] きゃああっ！ · Kyaaa!
+0:53.60  effort         take 1  [straining] くっ…んんっ！ · Ku... nn!
+0:55.88  effort         take 2  [straining] くっ…んんっ！ · Ku... nn!
+0:58.11  effort         take 3  [straining] くっ…んんっ！ · Ku... nn!
+1:00.75  cheer          take 1  [shouts] やったわーっ！ · Yatta waa!
+1:02.75  cheer          take 2  [shouts] やったわーっ！ · Yatta waa!
+1:04.50  cheer          take 3  [shouts] やったわーっ！ · Yatta waa!
+1:07.00  annoyed        take 1  [frustrated] もうっ！ · Mou!
+1:08.42  annoyed        take 2  [frustrated] もうっ！ · Mou!
+1:09.82  annoyed        take 3  [frustrated] もうっ！ · Mou!
+1:12.02  confident      take 1  [confident] 楽勝よ！ · Rakushou yo! (Easy!)
+1:13.50  confident      take 2  [confident] 楽勝よ！ · Rakushou yo! (Easy!)
+1:14.99  confident      take 3  [confident] 楽勝よ！ · Rakushou yo! (Easy!)

@@ -1,0 +1,315 @@
+{
+ "ui": {
+  "pop": [
+   "Short crisp cartoon pop for a UI element appearing, bubble pop, single hit, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "whoosh": [
+   "Quick cartoon whoosh, fast air swipe, single pass, cute cartoon style, clean, no music, no voices",
+   1.0,
+   2
+  ],
+  "swish": [
+   "Tiny light swish, quick soft UI swipe, single short sweep, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "reveal_ding": [
+   "Bright clean reveal ding bell, single satisfying ding, cute cartoon style, clean, no music, no voices",
+   1.5,
+   1
+  ],
+  "countdown_beep": [
+   "Single game show countdown beep, short clean electronic tone, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "go_whistle": [
+   "Short sharp referee whistle blow signaling go, single blast, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "sparkle_chime": [
+   "Magical sparkle chime, bright shimmering glitter twinkle, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "counter_tick": [
+   "Single tiny digital counter tick, soft click for a number incrementing, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "result_stamp": [
+   "Rubber stamp slamming onto paper, satisfying punchy stamp thump for a result, cute cartoon style, clean, no music, no voices",
+   1.0,
+   2
+  ],
+  "transition_whoosh": [
+   "Smooth airy whoosh rising then falling for a scene transition, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "glint_shine": [
+   "Quick glint shine ting, light reflecting off glasses or metal, anime style sparkle, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "exclaim_sting": [
+   "Short anime exclamation sting, quick bright surprise accent hit, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "sweat_plip": [
+   "Single cartoon sweat drop plip, tiny water droplet blip, anime style, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "dizzy_twinkle": [
+   "Cartoon dizzy stars twinkle, circling sparkly chimes after a bonk, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "card_flip": [
+   "Single playing card flip, crisp paper flick, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "stopwatch_tick": [
+   "Single mechanical stopwatch tick, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "win_fanfare_short": [
+   "Very short cheerful victory fanfare sound effect, bright brass and chime flourish, two seconds, cute cartoon style, clean, no music, no voices",
+   2.5,
+   2
+  ],
+  "fail_trombone_short": [
+   "Short comedic sad trombone wah wah wah fail sound effect, cute cartoon style, clean, no music, no voices",
+   2.5,
+   2
+  ]
+ },
+ "body": {
+  "footsteps_tile": [
+   "Light cartoon footsteps walking on a tile floor, soft shoes, a few steps, cute cartoon style, clean, no music, no voices",
+   2.0,
+   2
+  ],
+  "run_patter": [
+   "Fast cartoon running feet patter, quick light footsteps scurrying, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "jump_boing": [
+   "Cartoon spring boing jump, bouncy and playful, single hit, cute cartoon style, clean, no music, no voices",
+   1.0,
+   2
+  ],
+  "soft_land": [
+   "Cartoon character landing softly on a pillow, clear audible soft thump with a light fluffy bounce, single hit, cute cartoon style, clean, no music, no voices",
+   1.2,
+   2
+  ],
+  "heavy_thud": [
+   "Heavy cartoon thud, big object slamming onto the floor, low boom, single hit, cute cartoon style, clean, no music, no voices",
+   1.0,
+   2
+  ],
+  "butt_bump": [
+   "Cartoon character falling on their bottom, comedic soft bump with a little squish, cute cartoon style, clean, no music, no voices",
+   1.0,
+   2
+  ],
+  "tumble_cartoon": [
+   "Cartoon character tumbling and rolling over, a series of comedic bumps and thumps, cute cartoon style, clean, no music, no voices",
+   2.0,
+   2
+  ],
+  "slide_whoosh": [
+   "Cartoon character sliding fast across a floor, slippery whoosh with a slight squeak, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ]
+ },
+ "lab": {
+  "button_press": [
+   "Single chunky plastic button press click on a lab machine, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "machine_hum": [
+   "Friendly science lab machine humming steadily, soft electrical hum with gentle whirr, cute cartoon style, clean, no music, no voices",
+   3.0,
+   2
+  ],
+  "vacuum_hiss": [
+   "Lab vacuum chamber hiss, air being sucked out, pressurized hiss, cute cartoon style, clean, no music, no voices",
+   2.0,
+   2
+  ],
+  "pump_running": [
+   "Small lab pump running rhythmically, mechanical pumping chug, cute cartoon style, clean, no music, no voices",
+   3.0,
+   2
+  ],
+  "elevator_ding": [
+   "Single elevator arrival ding bell, cute cartoon style, clean, no music, no voices",
+   1.2,
+   1
+  ],
+  "elevator_motor": [
+   "Elevator motor running, smooth mechanical hum of a lift moving, cute cartoon style, clean, no music, no voices",
+   3.0,
+   2
+  ],
+  "glass_clink": [
+   "Bright glass clink, two lab beakers tapped together, clear ringing tone, single hit, cute cartoon style, clean, no music, no voices",
+   1.2,
+   1
+  ],
+  "bubbling_liquid": [
+   "Bubbling liquid in a lab beaker, playful gurgling bubbles, cute cartoon style, clean, no music, no voices",
+   3.0,
+   2
+  ],
+  "beaker_slide": [
+   "Glass beaker sliding across a lab bench, smooth glass scrape, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "door_open": [
+   "Futuristic lab sliding door opening with a soft pneumatic swoosh, cute cartoon style, clean, no music, no voices",
+   1.5,
+   4
+  ]
+ },
+ "objects": {
+  "marbles_rolling": [
+   "Small marbles rolling across a wooden table, rattle and roll, cute cartoon style, clean, no music, no voices",
+   2.0,
+   2
+  ],
+  "marbles_scatter_hit": [
+   "Many marbles spilling and scattering, hitting a hard floor and bouncing, cute cartoon style, clean, no music, no voices",
+   2.0,
+   2
+  ],
+  "wall_crack": [
+   "Cartoon wall crack, plaster cracking and splitting with small debris, single event, cute cartoon style, clean, no music, no voices",
+   1.0,
+   2
+  ],
+  "wall_shatter": [
+   "Cartoon wall shattering and crumbling apart, bricks and debris tumbling, cute cartoon style, clean, no music, no voices",
+   2.0,
+   2
+  ],
+  "big_ball_roll": [
+   "Big heavy ball rolling across a floor, deep rumbling roll, cute cartoon style, clean, no music, no voices",
+   2.5,
+   2
+  ],
+  "feather_flutter": [
+   "Light feather fluttering and drifting down, soft airy flutter, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "hammer_clank": [
+   "Cartoon hammer hitting metal, bright clank, cute cartoon style, clean, no music, no voices",
+   1.0,
+   2
+  ],
+  "ball_bounce": [
+   "Rubber ball bouncing a few times on a floor, getting smaller, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "domino_click": [
+   "Single domino tile tipping over and clicking against another, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "domino_giant_crash": [
+   "Giant dominoes toppling in a long chain reaction ending in a big crash, cute cartoon style, clean, no music, no voices",
+   3.0,
+   2
+  ],
+  "water_splash_small": [
+   "Small water splash, a little object dropping into water, cute cartoon style, clean, no music, no voices",
+   1.0,
+   4
+  ],
+  "water_splash_big": [
+   "Big water splash, someone falling into a pool, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "water_spill_bucket": [
+   "Bucket of water being spilled and splashing onto the floor, cute cartoon style, clean, no music, no voices",
+   2.0,
+   2
+  ],
+  "rope_pull_creak": [
+   "Rope being pulled taut, creaking strain of rope fibers, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "pulley_squeak": [
+   "Old pulley wheel squeaking as it turns, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "crate_scrape": [
+   "Wooden crate being dragged and scraping across a floor, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "bumper_bonk": [
+   "Cartoon rubber bumper bonk, springy comedic bounce hit, cute cartoon style, clean, no music, no voices",
+   1.0,
+   2
+  ],
+  "ice_slide": [
+   "Object sliding across ice, smooth glassy glide, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "coin_flip_ring": [
+   "Coin flicked into the air, metallic ringing spin, cute cartoon style, clean, no music, no voices",
+   1.0,
+   2
+  ],
+  "coin_land": [
+   "Coin landing on a table, spinning and settling with a clatter, cute cartoon style, clean, no music, no voices",
+   1.5,
+   2
+  ],
+  "paper_fold_rustle": [
+   "Paper being folded, crisp rustle and crease, cute cartoon style, clean, no music, no voices",
+   1.0,
+   2
+  ],
+  "sock_pull_soft": [
+   "Soft fabric sock being pulled on, gentle cloth stretch, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "cookie_crunch": [
+   "Single crunchy cookie bite, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ],
+  "swing_creak": [
+   "Playground swing chains creaking back and forth, cute cartoon style, clean, no music, no voices",
+   2.0,
+   2
+  ],
+  "chips_clatter": [
+   "Plastic poker chips clattering onto a table, cute cartoon style, clean, no music, no voices",
+   1.0,
+   1
+  ]
+ }
+}

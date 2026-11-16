@@ -1,0 +1,871 @@
+{
+  "sprite_size": [
+    1024,
+    1024
+  ],
+  "sprite_pattern": "{name}/sprites/{name}_{pose}_{expression}.png",
+  "coordinates": "pixels, origin top-left, measured on {name}_idle_01_neutral.png; same camera and scale for every character",
+  "poses": [
+    "idle",
+    "happy",
+    "panic"
+  ],
+  "characters": {
+    "zuzu": {
+      "name": "zuzu",
+      "signature_color": "#f2bf3b",
+      "poses": [
+        "idle",
+        "happy",
+        "panic"
+      ],
+      "expressions": [
+        "01_neutral",
+        "02_happy",
+        "03_smug",
+        "04_shocked",
+        "05_dizzy",
+        "06_crying",
+        "07_squint"
+      ],
+      "sprite_pattern": "zuzu/sprites/zuzu_{pose}_{expression}.png",
+      "contact_sheet": "zuzu/sheets/zuzu_contact_sheet.png",
+      "sprite_size": [
+        1024,
+        1024
+      ],
+      "feet_baseline_y": 895,
+      "bbox": [
+        240,
+        128,
+        777,
+        895
+      ],
+      "face_center_x": 510,
+      "face_center_y": 383,
+      "eye_left": [
+        466,
+        356
+      ],
+      "eye_right": [
+        555,
+        356
+      ],
+      "mouth": [
+        511,
+        410
+      ],
+      "actor": {
+        "glb": "zuzu/model/zuzu_actor.glb",
+        "height": 1.0,
+        "tris": 5503,
+        "rig": "zuzu_rig",
+        "skeleton_joints": 78,
+        "meshes": {
+          "zuzu_body": [
+            "zuzu_body_mat"
+          ],
+          "zuzu_face": [
+            "zuzu_face_mat"
+          ]
+        },
+        "clips": {
+          "cheer": {
+            "duration": 6.567,
+            "frames": 198,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "dizzy": {
+            "duration": 4.267,
+            "frames": 129,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "float_sleep": {
+            "duration": 3,
+            "frames": 91,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "foot_tap": {
+            "duration": 2.967,
+            "frames": 90,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "idle": {
+            "duration": 15.333,
+            "frames": 461,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "jump_air": {
+            "duration": 0.4,
+            "frames": 13,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "jump_crouch": {
+            "duration": 0.4,
+            "frames": 13,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "jump_land": {
+            "duration": 0.433,
+            "frames": 14,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "land_squash": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "panic_fall": {
+            "duration": 3.6,
+            "frames": 109,
+            "fps": 30,
+            "loop": false,
+            "seamless": true
+          },
+          "point": {
+            "duration": 4.7,
+            "frames": 142,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "push": {
+            "duration": 2.667,
+            "frames": 81,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "run": {
+            "duration": 0.633,
+            "frames": 20,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "speed_units_per_s": 1.247
+          },
+          "sad": {
+            "duration": 2.8,
+            "frames": 85,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "sit": {
+            "duration": 2.233,
+            "frames": 68,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "throw": {
+            "duration": 2.2,
+            "frames": 67,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "walk": {
+            "duration": 2.333,
+            "frames": 71,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "speed_units_per_s": 0.361
+          }
+        },
+        "face": {
+          "mesh": "zuzu_face",
+          "material": "zuzu_face_mat",
+          "swap": [
+            "map",
+            "emissiveMap"
+          ],
+          "default": "neutral",
+          "expressions": {
+            "neutral": "zuzu/model/textures/zuzu_face_neutral.png",
+            "happy": "zuzu/model/textures/zuzu_face_happy.png",
+            "smug": "zuzu/model/textures/zuzu_face_smug.png",
+            "shocked": "zuzu/model/textures/zuzu_face_shocked.png",
+            "dizzy": "zuzu/model/textures/zuzu_face_dizzy.png",
+            "crying": "zuzu/model/textures/zuzu_face_crying.png",
+            "squint": "zuzu/model/textures/zuzu_face_squint.png"
+          }
+        },
+        "body": {
+          "mesh": "zuzu_body",
+          "material": "zuzu_body_mat"
+        },
+        "turntable": "zuzu/tests/zuzu_turntable.mp4"
+      }
+    },
+    "anna": {
+      "name": "anna",
+      "signature_color": "#f27096",
+      "poses": [
+        "idle",
+        "happy",
+        "panic"
+      ],
+      "expressions": [
+        "01_neutral",
+        "02_happy",
+        "03_smug",
+        "04_shocked",
+        "05_dizzy",
+        "06_crying",
+        "07_squint"
+      ],
+      "sprite_pattern": "anna/sprites/anna_{pose}_{expression}.png",
+      "contact_sheet": "anna/sheets/anna_contact_sheet.png",
+      "sprite_size": [
+        1024,
+        1024
+      ],
+      "feet_baseline_y": 895,
+      "bbox": [
+        305,
+        128,
+        766,
+        895
+      ],
+      "face_center_x": 510,
+      "face_center_y": 387,
+      "eye_left": [
+        468,
+        364
+      ],
+      "eye_right": [
+        552,
+        364
+      ],
+      "mouth": [
+        510,
+        410
+      ],
+      "actor": {
+        "glb": "anna/model/anna_actor.glb",
+        "height": 1.0,
+        "tris": 5468,
+        "rig": "anna_rig",
+        "skeleton_joints": 78,
+        "meshes": {
+          "anna_body": [
+            "anna_body_mat"
+          ],
+          "anna_face": [
+            "anna_face_mat"
+          ]
+        },
+        "clips": {
+          "cheer": {
+            "duration": 6.567,
+            "frames": 198,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "dizzy": {
+            "duration": 4.267,
+            "frames": 129,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "float_sleep": {
+            "duration": 3,
+            "frames": 91,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "foot_tap": {
+            "duration": 2.967,
+            "frames": 90,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "idle": {
+            "duration": 15.333,
+            "frames": 461,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "jump_air": {
+            "duration": 0.4,
+            "frames": 13,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "jump_crouch": {
+            "duration": 0.4,
+            "frames": 13,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "jump_land": {
+            "duration": 0.433,
+            "frames": 14,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "land_squash": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "panic_fall": {
+            "duration": 3.6,
+            "frames": 109,
+            "fps": 30,
+            "loop": false,
+            "seamless": true
+          },
+          "point": {
+            "duration": 4.7,
+            "frames": 142,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "push": {
+            "duration": 2.667,
+            "frames": 81,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "run": {
+            "duration": 0.633,
+            "frames": 20,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "speed_units_per_s": 1.426
+          },
+          "sad": {
+            "duration": 2.8,
+            "frames": 85,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "sit": {
+            "duration": 2.233,
+            "frames": 68,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "throw": {
+            "duration": 2.2,
+            "frames": 67,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "walk": {
+            "duration": 2.333,
+            "frames": 71,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "speed_units_per_s": 0.412
+          }
+        },
+        "face": {
+          "mesh": "anna_face",
+          "material": "anna_face_mat",
+          "swap": [
+            "map",
+            "emissiveMap"
+          ],
+          "default": "neutral",
+          "expressions": {
+            "neutral": "anna/model/textures/anna_face_neutral.png",
+            "happy": "anna/model/textures/anna_face_happy.png",
+            "smug": "anna/model/textures/anna_face_smug.png",
+            "shocked": "anna/model/textures/anna_face_shocked.png",
+            "dizzy": "anna/model/textures/anna_face_dizzy.png",
+            "crying": "anna/model/textures/anna_face_crying.png",
+            "squint": "anna/model/textures/anna_face_squint.png"
+          }
+        },
+        "body": {
+          "mesh": "anna_body",
+          "material": "anna_body_mat"
+        },
+        "turntable": "anna/tests/anna_turntable.mp4"
+      }
+    },
+    "lumi": {
+      "name": "lumi",
+      "signature_color": "#80adf2",
+      "poses": [
+        "idle",
+        "happy",
+        "panic"
+      ],
+      "expressions": [
+        "01_neutral",
+        "02_happy",
+        "03_smug",
+        "04_shocked",
+        "05_dizzy",
+        "06_crying",
+        "07_squint",
+        "08_glint"
+      ],
+      "sprite_pattern": "lumi/sprites/lumi_{pose}_{expression}.png",
+      "contact_sheet": "lumi/sheets/lumi_contact_sheet.png",
+      "sprite_size": [
+        1024,
+        1024
+      ],
+      "feet_baseline_y": 895,
+      "bbox": [
+        306,
+        128,
+        712,
+        895
+      ],
+      "face_center_x": 510,
+      "face_center_y": 384,
+      "eye_left": [
+        464,
+        360
+      ],
+      "eye_right": [
+        556,
+        360
+      ],
+      "mouth": [
+        510,
+        408
+      ],
+      "actor": {
+        "glb": "lumi/model/lumi_actor.glb",
+        "height": 1.0,
+        "tris": 7131,
+        "rig": "lumi_rig",
+        "skeleton_joints": 78,
+        "meshes": {
+          "lumi_body": [
+            "lumi_body_mat"
+          ],
+          "lumi_glasses": [
+            "lumi_glasses_mat"
+          ],
+          "lumi_lenses": [
+            "lumi_lens_mat"
+          ],
+          "lumi_face": [
+            "lumi_face_mat"
+          ]
+        },
+        "clips": {
+          "cheer": {
+            "duration": 6.567,
+            "frames": 198,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "dizzy": {
+            "duration": 4.267,
+            "frames": 129,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "float_sleep": {
+            "duration": 3,
+            "frames": 91,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "foot_tap": {
+            "duration": 2.967,
+            "frames": 90,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "idle": {
+            "duration": 15.333,
+            "frames": 461,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "jump_air": {
+            "duration": 0.4,
+            "frames": 13,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "jump_crouch": {
+            "duration": 0.4,
+            "frames": 13,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "jump_land": {
+            "duration": 0.433,
+            "frames": 14,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "land_squash": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "panic_fall": {
+            "duration": 3.6,
+            "frames": 109,
+            "fps": 30,
+            "loop": false,
+            "seamless": true
+          },
+          "point": {
+            "duration": 4.7,
+            "frames": 142,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "push": {
+            "duration": 2.667,
+            "frames": 81,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "run": {
+            "duration": 0.633,
+            "frames": 20,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "speed_units_per_s": 1.286
+          },
+          "sad": {
+            "duration": 2.8,
+            "frames": 85,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "sit": {
+            "duration": 2.233,
+            "frames": 68,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "throw": {
+            "duration": 2.2,
+            "frames": 67,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "walk": {
+            "duration": 2.333,
+            "frames": 71,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "speed_units_per_s": 0.371
+          }
+        },
+        "face": {
+          "mesh": "lumi_face",
+          "material": "lumi_face_mat",
+          "swap": [
+            "map",
+            "emissiveMap"
+          ],
+          "default": "neutral",
+          "expressions": {
+            "neutral": "lumi/model/textures/lumi_face_neutral.png",
+            "happy": "lumi/model/textures/lumi_face_happy.png",
+            "smug": "lumi/model/textures/lumi_face_smug.png",
+            "shocked": "lumi/model/textures/lumi_face_shocked.png",
+            "dizzy": "lumi/model/textures/lumi_face_dizzy.png",
+            "crying": "lumi/model/textures/lumi_face_crying.png",
+            "squint": "lumi/model/textures/lumi_face_squint.png",
+            "glint": "lumi/model/textures/lumi_face_glint.png"
+          }
+        },
+        "body": {
+          "mesh": "lumi_body",
+          "material": "lumi_body_mat"
+        },
+        "turntable": "lumi/tests/lumi_turntable.mp4",
+        "lenses": {
+          "mesh": "lumi_lenses",
+          "material": "lumi_lens_mat",
+          "swap": [
+            "map",
+            "emissiveMap"
+          ],
+          "textures": {
+            "clear": "lumi/model/textures/lens_clear.png",
+            "glint": "lumi/model/textures/lens_glint.png"
+          },
+          "note": "with the 'glint' face expression also set the lens texture to 'glint'"
+        },
+        "glasses": {
+          "mesh": "lumi_glasses",
+          "material": "lumi_glasses_mat"
+        }
+      }
+    },
+    "miyu": {
+      "name": "miyu",
+      "signature_color": "#6e4a8f",
+      "poses": [
+        "idle",
+        "happy",
+        "panic"
+      ],
+      "expressions": [
+        "01_neutral",
+        "02_happy",
+        "03_smug",
+        "04_shocked",
+        "05_dizzy",
+        "06_crying",
+        "07_squint"
+      ],
+      "sprite_pattern": "miyu/sprites/miyu_{pose}_{expression}.png",
+      "contact_sheet": "miyu/sheets/miyu_contact_sheet.png",
+      "sprite_size": [
+        1024,
+        1024
+      ],
+      "feet_baseline_y": 895,
+      "bbox": [
+        295,
+        128,
+        724,
+        895
+      ],
+      "face_center_x": 512,
+      "face_center_y": 404,
+      "eye_left": [
+        466,
+        382
+      ],
+      "eye_right": [
+        559,
+        382
+      ],
+      "mouth": [
+        512,
+        426
+      ],
+      "actor": {
+        "glb": "miyu/model/miyu_actor.glb",
+        "height": 1.0,
+        "tris": 5167,
+        "rig": "miyu_rig",
+        "skeleton_joints": 78,
+        "meshes": {
+          "miyu_body": [
+            "miyu_body_mat"
+          ],
+          "miyu_face": [
+            "miyu_face_mat"
+          ]
+        },
+        "clips": {
+          "cheer": {
+            "duration": 6.567,
+            "frames": 198,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "dizzy": {
+            "duration": 4.267,
+            "frames": 129,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "float_sleep": {
+            "duration": 3,
+            "frames": 91,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "foot_tap": {
+            "duration": 2.967,
+            "frames": 90,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "idle": {
+            "duration": 15.333,
+            "frames": 461,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "jump_air": {
+            "duration": 0.4,
+            "frames": 13,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "jump_crouch": {
+            "duration": 0.4,
+            "frames": 13,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "jump_land": {
+            "duration": 0.433,
+            "frames": 14,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "land_squash": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "panic_fall": {
+            "duration": 3.6,
+            "frames": 109,
+            "fps": 30,
+            "loop": false,
+            "seamless": true
+          },
+          "point": {
+            "duration": 4.7,
+            "frames": 142,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "push": {
+            "duration": 2.667,
+            "frames": 81,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "run": {
+            "duration": 0.633,
+            "frames": 20,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "speed_units_per_s": 1.312
+          },
+          "sad": {
+            "duration": 2.8,
+            "frames": 85,
+            "fps": 30,
+            "loop": true,
+            "seamless": true
+          },
+          "sit": {
+            "duration": 2.233,
+            "frames": 68,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "throw": {
+            "duration": 2.2,
+            "frames": 67,
+            "fps": 30,
+            "loop": false,
+            "seamless": false
+          },
+          "walk": {
+            "duration": 2.333,
+            "frames": 71,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "speed_units_per_s": 0.381
+          }
+        },
+        "face": {
+          "mesh": "miyu_face",
+          "material": "miyu_face_mat",
+          "swap": [
+            "map",
+            "emissiveMap"
+          ],
+          "default": "neutral",
+          "expressions": {
+            "neutral": "miyu/model/textures/miyu_face_neutral.png",
+            "happy": "miyu/model/textures/miyu_face_happy.png",
+            "smug": "miyu/model/textures/miyu_face_smug.png",
+            "shocked": "miyu/model/textures/miyu_face_shocked.png",
+            "dizzy": "miyu/model/textures/miyu_face_dizzy.png",
+            "crying": "miyu/model/textures/miyu_face_crying.png",
+            "squint": "miyu/model/textures/miyu_face_squint.png"
+          }
+        },
+        "body": {
+          "mesh": "miyu_body",
+          "material": "miyu_body_mat"
+        },
+        "turntable": "miyu/tests/miyu_turntable.mp4"
+      }
+    }
+  },
+  "actor_conventions": {
+    "format": "glTF 2.0 binary, Y-up, origin at the feet, height ~1.0 (scale in code), character faces +X: set rotation.y = -Math.PI / 2 to face a camera on +Z",
+    "clips": "every clip is in place: horizontal travel and jump height come from code; loop=true clips have last frame == first frame (play with THREE.LoopRepeat)",
+    "speed": "walk/run speed_units_per_s = ground speed that keeps the feet planted at height 1.0 (multiply by your scale)",
+    "face": "swap expressions by setting face material .map AND .emissiveMap to the expression texture (texture.flipY = false, colorSpace = SRGBColorSpace); the face is lit dimly + emissive so it stays bright",
+    "material": "MeshStandardMaterial: base color map + roughness, metalness 0; doubleSided"
+  }
+}

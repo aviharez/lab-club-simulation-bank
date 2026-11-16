@@ -1,0 +1,325 @@
+{
+ "name": "anna",
+ "open": {
+  "file": "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/anna/model/anna_actor.blend"
+ },
+ "fix": {
+  "removed_modifiers": [
+   "tripo_node_8916c088-5bd9-44d5-8b5d-ca60b87a986e:Outline_Weld",
+   "tripo_node_8916c088-5bd9-44d5-8b5d-ca60b87a986e:Outline_Hull"
+  ],
+  "loose_verts_removed": 5,
+  "tiny_island_faces_removed": 0,
+  "verts_capped_to_4": 37,
+  "feet_z_before": -0.0,
+  "tris": 5468,
+  "height": 0.9995
+ },
+ "split": {
+  "face_polys": 255,
+  "body_polys": 5213,
+  "face_obj": "anna_face"
+ },
+ "bake": [
+  "neutral",
+  "happy",
+  "smug",
+  "shocked",
+  "dizzy",
+  "crying",
+  "squint"
+ ],
+ "uv": {
+  "face_uv": [
+   "UVMap"
+  ],
+  "body_uv": [
+   "UVMap"
+  ]
+ },
+ "materials": {
+  "body": "anna_body_mat",
+  "face": "anna_face_mat"
+ },
+ "clips": {
+  "idle": {
+   "name": "idle",
+   "frames": 461,
+   "seconds": 15.333,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 922,
+    "max_deg": 31.5
+   }
+  },
+  "walk": {
+   "name": "walk",
+   "frames": 71,
+   "seconds": 2.333,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 142,
+    "max_deg": 31.5
+   }
+  },
+  "run": {
+   "name": "run",
+   "frames": 20,
+   "seconds": 0.633,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 15,
+    "max_correction_deg": 36.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 18,
+    "max_deg": 21.5
+   }
+  },
+  "jump_crouch": {
+   "name": "jump_crouch",
+   "frames": 13,
+   "seconds": 0.4,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 26,
+    "max_deg": 36.5
+   }
+  },
+  "jump_air": {
+   "name": "jump_air",
+   "frames": 13,
+   "seconds": 0.4,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 25,
+    "max_deg": 40.0
+   }
+  },
+  "jump_land": {
+   "name": "jump_land",
+   "frames": 14,
+   "seconds": 0.433,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 28,
+    "max_deg": 34.0
+   }
+  },
+  "land_squash": {
+   "name": "land_squash",
+   "frames": 31,
+   "seconds": 1.0,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 62,
+    "max_deg": 34.0
+   }
+  },
+  "push": {
+   "name": "push",
+   "frames": 81,
+   "seconds": 2.667,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 162,
+    "max_correction_deg": 27.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 0,
+    "max_deg": 0.0
+   }
+  },
+  "sad": {
+   "name": "sad",
+   "frames": 85,
+   "seconds": 2.8,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 167,
+    "max_deg": 34.0
+   }
+  },
+  "dizzy": {
+   "name": "dizzy",
+   "frames": 129,
+   "seconds": 4.267,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 258,
+    "max_deg": 36.5
+   }
+  },
+  "float_sleep": {
+   "name": "float_sleep",
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 158,
+    "max_correction_deg": 21.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 0,
+    "max_deg": 0.0
+   }
+  },
+  "foot_tap": {
+   "name": "foot_tap",
+   "frames": 90,
+   "seconds": 2.967,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 133,
+    "max_deg": 34.0
+   }
+  },
+  "throw": {
+   "name": "throw",
+   "frames": 67,
+   "seconds": 2.2,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 11,
+    "max_correction_deg": 90.0,
+    "forearm_correction_deg": 93.0,
+    "frames_still_touching": [
+     23
+    ]
+   },
+   "coat": {
+    "frames_covered_before": 103,
+    "max_deg": 34.0
+   }
+  },
+  "point": {
+   "name": "point",
+   "frames": 142,
+   "seconds": 4.7,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 260,
+    "max_deg": 39.0
+   }
+  },
+  "cheer": {
+   "name": "cheer",
+   "frames": 198,
+   "seconds": 6.567,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 10,
+    "max_correction_deg": 12.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 263,
+    "max_deg": 40.0
+   }
+  },
+  "panic_fall": {
+   "name": "panic_fall",
+   "frames": 109,
+   "seconds": 3.6,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 37,
+    "max_correction_deg": 30.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 0,
+    "max_deg": 0.0
+   }
+  },
+  "sit": {
+   "name": "sit",
+   "frames": 68,
+   "seconds": 2.233,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 17,
+    "max_correction_deg": 18.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 130,
+    "max_deg": 40.0
+   }
+  }
+ },
+ "export": {
+  "glb": "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/anna/model/anna_actor.glb",
+  "bytes": 5688496
+ },
+ "seconds": 142
+}

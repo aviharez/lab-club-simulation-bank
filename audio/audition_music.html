@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Music audition</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1c1a;--mute:#76716a;--line:#e6e2dc;--acc:#d9467a;--pick:#fde6ef}
+@media (prefers-color-scheme:dark){:root{--bg:#141317;--card:#1e1d22;--ink:#ecebef;--mute:#9a97a3;--line:#2e2c34;--acc:#ff7aa8;--pick:#3a2030}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,sans-serif}
+header{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+h1{font-size:17px;margin:0 12px 0 0}nav{display:flex;gap:6px;flex-wrap:wrap}
+nav button,.act{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;font:inherit;text-transform:capitalize}
+nav button.on{background:var(--acc);border-color:var(--acc);color:#fff}.sp{flex:1}#count{color:var(--mute)}
+main{max-width:880px;margin:0 auto;padding:12px 16px 60px}
+.reel{color:var(--mute);margin:8px 0 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0}
+.row h3{margin:0;font-size:14px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.row h3 small{color:var(--mute);font-weight:400}
+.takes{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.take{flex:1 1 150px;display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:6px 8px;cursor:pointer}
+.take.picked{background:var(--pick);border-color:var(--acc)}
+.play{width:32px;height:32px;border-radius:50%;border:0;background:var(--acc);color:#fff;cursor:pointer;flex:none;font-size:13px}
+.seam{background:var(--mute)}.stop{margin-left:6px}.take span{color:var(--mute);font-size:12px}.take b{font-weight:600}
+.redo{margin-left:auto;font-size:12px;color:var(--mute);display:flex;gap:4px;align-items:center;cursor:pointer}
+</style>
+<header><h1>Music audition</h1><nav id="tabs"></nav><span class="sp"></span><span id="count"></span><button class="act" onclick="audio.pause()">Stop</button><button class="act" id="copy">Copy picks JSON</button></header>
+<main id="main"></main>
+<script>
+const ITEMS=[{"group": "loops", "key": "main_theme_loop", "label": "main_theme_loop", "sub": "116.1 BPM · 29 bars · loop", "take": 1, "file": "final/music/main_theme_loop.mp3", "duration": 59.996, "loop": true}, {"group": "loops", "key": "main_theme_loop", "label": "main_theme_loop", "sub": "116.1 BPM · 29 bars · loop", "take": 2, "file": "_takes/music/main_theme_loop_2.mp3", "duration": 60.002, "loop": true}, {"group": "loops", "key": "buildup_tension_loop", "label": "buildup_tension_loop", "sub": "112.35 BPM · 28 bars · loop", "take": 1, "file": "final/music/buildup_tension_loop.mp3", "duration": 60.027, "loop": true}, {"group": "loops", "key": "buildup_tension_loop", "label": "buildup_tension_loop", "sub": "112.35 BPM · 28 bars · loop", "take": 2, "file": "_takes/music/buildup_tension_loop_2.mp3", "duration": 60.006, "loop": true}, {"group": "loops", "key": "montage_fast_loop", "label": "montage_fast_loop", "sub": "123.9 BPM · 31 bars · loop", "take": 1, "file": "final/music/montage_fast_loop.mp3", "duration": 59.992, "loop": true}, {"group": "loops", "key": "montage_fast_loop", "label": "montage_fast_loop", "sub": "123.9 BPM · 31 bars · loop", "take": 2, "file": "_takes/music/montage_fast_loop_2.mp3", "duration": 59.996, "loop": true}, {"group": "loops", "key": "reveal_calm_bed", "label": "reveal_calm_bed", "sub": "109.95 BPM · 14 bars · loop", "take": 1, "file": "_takes/music/reveal_calm_bed_1.mp3", "duration": 30.558, "loop": true}, {"group": "loops", "key": "reveal_calm_bed", "label": "reveal_calm_bed", "sub": "109.95 BPM · 14 bars · loop", "take": 2, "file": "final/music/reveal_calm_bed.mp3", "duration": 30.541, "loop": true}, {"group": "stingers", "key": "stinger_win", "label": "stinger_win", "sub": "one-shot", "take": 1, "file": "final/music/stinger_win.mp3", "duration": 7.11, "loop": false}, {"group": "stingers", "key": "stinger_fail", "label": "stinger_fail", "sub": "one-shot", "take": 1, "file": "final/music/stinger_fail.mp3", "duration": 6.841, "loop": false}, {"group": "stingers", "key": "stinger_twist", "label": "stinger_twist", "sub": "one-shot", "take": 1, "file": "final/music/stinger_twist.mp3", "duration": 5.373, "loop": false}, {"group": "stingers", "key": "intro_jingle", "label": "intro_jingle", "sub": "one-shot", "take": 1, "file": "final/music/intro_jingle.mp3", "duration": 3.113, "loop": false}], REELS=false, KEY="audition_music";
+const groups=[...new Set(ITEMS.map(i=>i.group))];
+let st={picks:{},redo:{},tab:groups[0]};try{Object.assign(st,JSON.parse(localStorage.getItem(KEY)||"{}"))}catch(e){}
+if(!groups.includes(st.tab))st.tab=groups[0];
+const audio=new Audio();
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+const rows=()=>{const m={};ITEMS.forEach(i=>(m[i.group+"/"+i.key]??=[]).push(i));return m};
+function render(){
+  const R=rows(),all=Object.keys(R);
+  document.getElementById("count").textContent=`${all.filter(k=>st.picks[k]).length}/${all.length} picked`;
+  document.getElementById("tabs").innerHTML=groups.map(g=>`<button class="${g==st.tab?"on":""}" data-g="${g}">${g}</button>`).join("");
+  let h=REELS?`<div class="reel">Full reel: <audio controls preload="none" src="audition/${st.tab}_reel.mp3"></audio><span>cues: audition/${st.tab}_reel_cues.txt</span></div>`:"";
+  for(const [k,fs] of Object.entries(R)){ if(!k.startsWith(st.tab+"/"))continue;
+    h+=`<div class="row"><h3>${fs[0].label} <small>${fs[0].sub||""}</small><label class="redo"><input type="checkbox" data-redo="${k}" ${st.redo[k]?"checked":""}>redo</label></h3><div class="takes">`+
+      fs.map(f=>`<div class="take ${st.picks[k]==f.take?"picked":""}" data-k="${k}" data-t="${f.take}"><button class="play" data-src="${f.file}">▶</button>${f.loop?`<button class="play seam" title="Play the last 4 s and wrap around, looping" data-src="${f.file}" data-seam="${f.duration}">⟲</button>`:""}<b>Take ${f.take}</b><span>${f.duration.toFixed(2)}s${f.loop?" · loop":""}</span></div>`).join("")+`</div></div>`;}
+  document.getElementById("main").innerHTML=h;
+}
+document.addEventListener("click",e=>{
+  const g=e.target.closest("[data-g]");if(g){st.tab=g.dataset.g;save();render();return}
+  const p=e.target.closest(".play");if(p){e.stopPropagation();const sm=p.dataset.seam;audio.src=p.dataset.src;audio.loop=!!sm;
+   if(sm){audio.addEventListener("loadedmetadata",()=>{audio.currentTime=Math.max(0,audio.duration-4);audio.play()},{once:true})}else audio.play();return}
+  const k=e.target.closest(".take");if(k){st.picks[k.dataset.k]=st.picks[k.dataset.k]==+k.dataset.t?0:+k.dataset.t;if(!st.picks[k.dataset.k])delete st.picks[k.dataset.k];save();render()}
+});
+document.addEventListener("change",e=>{const r=e.target.dataset.redo;if(r){st.redo[r]=e.target.checked;if(!st.redo[r])delete st.redo[r];save()}});
+document.getElementById("copy").onclick=e=>{
+  const s=JSON.stringify({picks:st.picks,redo:Object.keys(st.redo)},null,1);
+  (navigator.clipboard?navigator.clipboard.writeText(s):Promise.reject()).then(()=>{e.target.textContent="Copied!";setTimeout(()=>e.target.textContent="Copy picks JSON",1500)},()=>prompt?console.log(s):0);
+};
+render();
+</script></html>

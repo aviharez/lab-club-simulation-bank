@@ -1,0 +1,53 @@
+00:00.525  blend            | Read blend: "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/miyu/model/miyu.blend"
+Info: Saved as "miyu_actor.blend"
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+Info: Baking map saved to internal image, save it externally or pack it
+20:07:32 | INFO: Data are loaded, start creating Blender stuff
+20:07:32 | INFO: Blender create Mesh node tripo_mesh_cdfe9a56-6c2f-4ac2-b809-b79a57bdd6e0
+20:07:32 | INFO: glTF import finished in 0.18s
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+FBX version: 7700
+BUILD| miyu: idle 461f touching=0 left=[]
+BUILD| miyu: walk 71f touching=0 left=[]
+BUILD| miyu: run 20f touching=4 left=[]
+BUILD| miyu: jump_crouch 13f touching=0 left=[]
+BUILD| miyu: jump_air 13f touching=0 left=[]
+BUILD| miyu: jump_land 14f touching=0 left=[]
+BUILD| miyu: land_squash 31f touching=0 left=[]
+BUILD| miyu: push 81f touching=162 left=[]
+BUILD| miyu: sad 85f touching=0 left=[]
+BUILD| miyu: dizzy 129f touching=0 left=[]
+BUILD| miyu: float_sleep 91f touching=176 left=[]
+BUILD| miyu: foot_tap 90f touching=0 left=[]
+BUILD| miyu: throw 67f touching=10 left=[]
+BUILD| miyu: point 142f touching=0 left=[]
+BUILD| miyu: cheer 198f touching=0 left=[]
+BUILD| miyu: panic_fall 109f touching=49 left=[]
+BUILD| miyu: sit 68f touching=0 left=[]
+INFO Draco is available, use library at /home/nyxelyn/.local/opt/blender-5.2.2-linux-x64/lib/libbf_intern_draco_bridge.so
+INFO MeshOptimizer is available, use library at /home/nyxelyn/.local/opt/blender-5.2.2-linux-x64/lib/libbf_intern_meshopt_bridge.so
+20:09:28 | INFO: Starting glTF 2.0 export
+20:09:28 | INFO: Extracting primitive: miyu_body
+20:09:28 | INFO: Primitives created: 1
+20:09:28 | INFO: Extracting primitive: miyu_face
+20:09:28 | INFO: Primitives created: 1
+20:09:38 | INFO: Finished glTF 2.0 export in 9.653604507446289 s
+
+Info: Saved "miyu_actor.blend"
+BUILD| DONE 129 s {'glb': '/home/nyxelyn/Documents/Playgrounds/content-project/mascots/miyu/model/miyu_actor.glb', 'bytes': 5069900}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:34:58)
+
+Blender quit

@@ -1,0 +1,18 @@
+{
+ "lab/door_open": {
+  "prompt": "Lab door sliding open, smooth short pneumatic whoosh with a soft click at the end, cute cartoon style, clean, no music, no voices",
+  "duration": 1.5,
+  "takes": [
+   3,
+   4
+  ]
+ },
+ "objects/water_splash_small": {
+  "prompt": "Small cute water splash, a pebble plopping into a glass of water, short bright plop with a few tiny droplets, cartoon style, clean, no music, no voices",
+  "duration": 1.2,
+  "takes": [
+   3,
+   4
+  ]
+ }
+}
