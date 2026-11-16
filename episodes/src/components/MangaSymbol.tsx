@@ -1,7 +1,9 @@
 import React from "react";
 import { spring, useCurrentFrame, useVideoConfig } from "remotion";
-import type { SymbolKind } from "../episode.ts";
-import { INK } from "../theme.tsx";
+
+export type SymbolKind = "sweat" | "exclaim" | "sparkle" | "spiral" | "none";
+
+const INK = "#2b2118";
 
 /**
  * Simple SVG manga symbols. (x, y) is the symbol center in parent px; `from` is the frame it appears.

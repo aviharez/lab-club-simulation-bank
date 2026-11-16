@@ -38,11 +38,9 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "report": "node --no-warnings scripts/report.ts",
     "report:jump": "node --no-warnings scripts/jump-report.ts",
     "render:jump": "remotion render SameJump out/.same-jump-raw.mp4 --gl=angle-egl --concurrency=2 && scripts/master-jump.sh out/.same-jump-raw.mp4 out/.same-jump-raw.mp4 out/same-jump-different-planets.mp4",
-    "sync-mascots": "node scripts/sync-mascots.mjs",
-    "render": "remotion render MathRace out/math-race-ep01.mp4"
+    "sync-mascots": "node scripts/sync-mascots.mjs"
   },
   "allowScripts": {
     "esbuild": false

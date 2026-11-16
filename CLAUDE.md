@@ -18,10 +18,9 @@ Episode prompts that say "Follow SERIES_RULES.md" mean the **Series rules** sect
 | `audio/_takes/` | Unused takes. Never reference from episodes |
 | `episodes/` | Remotion project (React + TypeScript, `@remotion/three`) |
 | `episodes/src/jump/` | EP01 "Same Jump, Different Planets" (`SameJump` composition) |
-| `episodes/src/mathrace/` | Old 2D Math Race prototype (sprite-based, superseded) |
 | `episodes/src/sets/lab/` | Reusable 3D lab set: room, props, control panel, gravity chambers |
 | `episodes/src/actors/` | `Actor` component (GLB + clip + expression) and actor test compositions |
-| `episodes/src/components/remocn/` | remocn pieces (some edited locally, see file headers) |
+| `episodes/src/components/` | Shared 2D pieces: `MangaSymbol`, remocn components in `remocn/` (edited locally, see file headers) |
 
 ## Commands (run in `episodes/`)
 

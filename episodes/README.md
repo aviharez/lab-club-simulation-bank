@@ -1,28 +1,26 @@
-# Math Race episodes (Remotion)
+# Lab Club episodes (Remotion)
 
 ```bash
-npm run sync-mascots   # copy ../mascots/manifest.json + sprites into public/mascots
-npm run dev            # Remotion Studio  → http://localhost:3000/MathRace
-npm run report         # round log + SFX cue sheet + PASS/FAIL checks (same sim the video uses)
-npm run render         # out/math-race-ep01.mp4
+npm run sync-mascots   # copy ../mascots/manifest.json + GLBs/textures into public/mascots
+npm run dev            # Remotion Studio → SameJump, ActorTests/*
+npm run report:jump    # EP01 physics table + cue sheet + PASS/FAIL checks (same code the video uses)
+npm run render:jump    # EP01 render + mastering → out/same-jump-different-planets.mp4
 ```
 
 ## Layout
 
-- `src/mathrace/sim.ts` is the pure, deterministic simulation (seeded PRNG, no React). It returns the event timeline: rounds, hit windows, wall breaks, overtake, finish, SFX cues and duration.
-- `src/episodes/ep01-math-race.ts` holds everything specific to one episode: rules, walls, timing, expression cues, captions, ending text, audio paths and expected results.
-- `src/mathrace/components/` holds the reusable components: `Lane`, `HeaderCards`/`RoundPill`, `Mascot`, `MangaSymbol`, `Captions`, `RevealCard`, plus effects.
-- `src/components/remocn/` holds the remocn presentation pieces (spring-scale-in, number-wheel odometer, warp-cream background, iris-wipe). Two were edited locally; see the comments at the top of those files.
+- `src/jump/` is EP01 "Same Jump, Different Planets": `timeline.ts` (beats, physics, per-frame acting for each
+  mascot), `physics.ts`, `camera.ts`, `Scene3D.tsx`, `Overlays.tsx` (captions, readouts, result and reveal cards),
+  `sound.ts` + `Soundtrack.tsx` (cue sheet and audio).
+- `src/sets/lab/` is the reusable 3D lab set (room, props, control panel, gravity chambers).
+- `src/actors/` holds the `Actor` component (mascot GLB + clip + expression) and the actor test compositions.
+- `src/components/` holds shared 2D pieces: `MangaSymbol` and the remocn components in `remocn/`
+  (`spring-scale-in`, edited locally; see its header).
 
 ## New episode
 
-1. Copy `src/episodes/ep01-math-race.ts`, then change `id`, the `rule`s, `walls`, `roundSeconds`, cues and texts.
-2. Register the new file in `src/episodes/index.ts`.
-3. Pass `{"episodeId": "ep02"}` as props, or add a second `<Composition>` in `src/Root.tsx`.
-4. Run `npm run report` and check that the `expect` block passes.
+Create `src/<episode>/` next to `src/jump/` with its own timeline, scene, overlays and cue sheet, reuse
+`src/sets/lab/`, `src/actors/` and `src/components/`, register a `<Composition>` in `src/Root.tsx`, and add
+`report:<episode>` / `render:<episode>` scripts. See the root `CLAUDE.md` for the series rules.
 
-## Audio
-
-Audio slots are empty placeholders. To fill one, put the files in `public/audio/` and set `audio.music` / `audio.sfx.{hit,crack,whoosh,win}` in the episode config. They then play at the frames in the cue sheet.
-
-The background is a WebGL shader. `remotion.config.ts` sets `swangle` so it renders headless.
+`remotion.config.ts` sets the GL backend so the 3D scenes render headless.
