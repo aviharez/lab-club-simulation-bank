@@ -1,0 +1,97 @@
+# Lab Club — project guide for Claude Code
+
+Lab Club is a faceless short-video channel: four chibi anime mascots act out science experiments
+(physics, math, probability, computer science) in a colorful 3D lab. Videos are built from code
+(Remotion + three.js), never generated video. Vertical 1080×1920, 30 fps, 35–50 s, English on-screen text.
+
+Episode prompts that say "Follow SERIES_RULES.md" mean the **Series rules** section of this file.
+
+## Repository map
+
+| Path | What it is |
+| --- | --- |
+| `mascots/manifest.json` | Single source of truth for mascots: colors, GLB paths, clips (duration, loop, speed), face material, expression textures, actor conventions |
+| `mascots/<name>/model/` | `<name>.blend` (rigged source, never modify), `<name>_actor.blend`, `<name>_actor.glb` |
+| `mascots/_shared/scripts/` | Rebuild pipeline (`rebuild.sh`), see its README. Needs Blender 5.2 |
+| `audio/final/` | Approved audio library: `voices/<name>/<name>_<reaction>.mp3`, `sfx/{ui,body,lab,objects}/<name>.mp3`, `music/<name>.mp3` |
+| `audio/audio_manifest.json` | Every final audio file: type, character, reaction, text, duration, loop flag, LUFS |
+| `audio/_takes/` | Unused takes. Never reference from episodes |
+| `episodes/` | Remotion project (React + TypeScript, `@remotion/three`) |
+| `episodes/src/jump/` | EP01 "Same Jump, Different Planets" (`SameJump` composition) |
+| `episodes/src/mathrace/` | Old 2D Math Race prototype (sprite-based, superseded) |
+| `episodes/src/sets/lab/` | Reusable 3D lab set: room, props, control panel, gravity chambers |
+| `episodes/src/actors/` | `Actor` component (GLB + clip + expression) and actor test compositions |
+| `episodes/src/components/remocn/` | remocn pieces (some edited locally, see file headers) |
+
+## Commands (run in `episodes/`)
+
+```bash
+npm run dev            # Remotion Studio
+npm run sync-mascots   # copy mascots/manifest.json + GLBs/textures into public/mascots
+npm run report:jump    # EP01 physics table + checks (same code as the video)
+npm run render:jump    # EP01 render + mastering → out/same-jump-different-planets.mp4
+npm run lint           # eslint + tsc
+```
+
+Render with `--gl=angle-egl` (already in the scripts); the 3D scenes need it headless.
+
+## Cast
+
+| Name | Color | Look | Personality → typical role |
+| --- | --- | --- | --- |
+| Lumi | blue | bob hair, thin round glasses | calm genius → lab operator, delivers the reveal card with the `glint` expression |
+| Zuzu | yellow | twin tails, ahoge, cheek bandage | clumsy, energetic underdog → gets launched, dizzy, or makes the comeback |
+| Anna | pink | high ponytail, lab goggles, star clip | overconfident leader → bets loudly, usually wrong |
+| Miyu | purple | cat-ear hoodie, sleepy eyes | quiet, sleepy → wins quietly, falls asleep at the worst moment |
+
+Never use the old names (kiri, momo, nova, sora) in code, files or on screen. Never use characters, logos or music
+owned by others.
+
+## Series rules
+
+1. **Mascots are actors, not decorations.** They move, act and react inside the scene. During key moments each
+   mascot is at least ~1/5 of the frame height or shown in a close-up.
+2. **Determinism.** Everything is driven by `useCurrentFrame()`. GLB animation uses `THREE.AnimationMixer` with
+   `mixer.setTime(...)` computed from the frame, never a real-time clock. Randomness is always seeded.
+   Simulations are pure functions precomputed before rendering.
+3. **Honesty.** Every number on screen comes from a formula or the simulation, never from sampled frames or
+   hand-typed values. Same rounding everywhere; count-ups end exactly on the final value. Simplifications are
+   labelled on screen ("2x SLOW-MO", "no friction", "simplified air drag"). Each episode has a report script that
+   prints the data table and PASS/FAIL checks.
+4. **Look.** Soft 3D figurine/diorama style, no outlines, matte pastel `MeshStandardMaterial`, ACES or Neutral tone
+   mapping, soft shadows + `ContactShadows`, subtle AO, light bloom, colored rim lights. Faces stay bright
+   (see `actor_conventions.face` in the mascot manifest). Candy-colored lab, background slightly less saturated
+   than the mascots.
+5. **Layout.** Safe areas: top 150 px, bottom 300 px. Readable text ≥ ~28 px. Top caption pill per beat; optional
+   bottom notebook panel for live charts/counters.
+6. **Episode structure.** Hook question + "Guess first!" (0–3 s) → setup → experiment → twist at ~60% → results →
+   reveal card by Lumi (glint) → CTA question for comments. At least two mascots bet on opposite outcomes; always
+   a moving counter, timer or live chart; escalation.
+7. **Tooling.** Remotion skills (`/remotion-best-practices`, `/remotion-render`), motion-design skill for timing,
+   easing, choreography and acting, remocn only for 2D text/caption animations and transitions (never the
+   `/remocn:video` workflow), blender-skills + Blender MCP only for new props, clips or expressions.
+8. **Outputs per episode.** Preview MP4, 8 stills at the main beats, the report (data table + checks), and the
+   cue sheet (audio).
+
+## Audio rules
+
+- Use only files from `audio/final/` (ElevenLabs, commercial license). Do not use `audio/_takes/` or any placeholder
+  audio in a final render.
+- Voices are short non-verbal/Japanese interjections (see `text`/`romaji` in the audio manifest). Each character
+  only uses her own voice folder. Voices play at normal speed even during slow-mo.
+- One voice at a time by default; allow overlaps only for group moments (e.g. CTA cheer), staggered 3–6 frames.
+- Voice reactions follow the acting: when an actor's expression or clip changes to a reaction-worthy state, the
+  matching reaction plays (with a cooldown so the same reaction does not repeat within ~1.5 s).
+- Mix hierarchy: voices > key SFX > ambient SFX > music. Music sits around 15–25% and ducks under voices, the
+  countdown, big impacts and the reveal line. Loops (`loop: true` in the manifest) crossfade at bar lines.
+- Mastering: `scripts/master-jump.sh` normalizes to -14 LUFS / -1.5 dBTP for social platforms.
+- Export two versions of each episode: full (music + SFX + voices) and no-music (SFX + voices) for IG/TikTok.
+- Every cue is pure data derived from the same timeline as the picture, and the report prints the cue sheet and
+  fails if a referenced file is missing.
+
+## Working agreements
+
+- Never delete assets; move old or unused files to an `_archive/` or `_takes/` folder.
+- Do not modify `mascots/<name>/model/<name>.blend`; rebuild actors with the scripts.
+- After changing mascots, run `npm run sync-mascots`. After changing audio, re-sync it into `episodes/public/`.
+- Show a plan before large renames or moves. Keep renders out of git (`episodes/out/` is ignored).
