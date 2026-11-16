@@ -2,7 +2,7 @@
 // Every cue derives from the same timeline functions as the picture; every file comes from the approved
 // library (src/audio/library.ts). The Soundtrack component and the report both read `soundtrack()`.
 import { barFrames, music, sfx, STINGER_HIT } from "../audio/library.ts";
-import { duckEnvelope, duckWindows, type Cue, type DuckWindow } from "../audio/mix.ts";
+import { duckEnvelope, duckWindows, type Cue, type SoundtrackData } from "../audio/mix.ts";
 import { buildVoiceCues, type ActingSample, type CastVoices } from "../audio/voiceCues.ts";
 import { PLANETS } from "./physics.ts";
 import {
@@ -287,7 +287,7 @@ const musicCues = (): Cue[] => {
 
 // ---------------------------------------------------------------- the whole soundtrack
 
-export type Soundtrack = { cues: Cue[]; /** per-frame music gain from ducking (linear) */ duck: number[]; ducks: DuckWindow[]; voiceLog: string[] };
+export type Soundtrack = SoundtrackData;
 
 let cached: Soundtrack | undefined;
 

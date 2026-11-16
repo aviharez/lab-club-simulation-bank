@@ -1,7 +1,16 @@
 import { Composition, Folder } from "remotion";
-import { ActorClipsTest, ActorFaceTest, calcClips, calcFace } from "./actors/ActorTests";
-import { SameJump } from "./jump/SameJump";
-import { SoundtrackOnly } from "./jump/Soundtrack";
+import {
+  ActorClipsTest,
+  ActorFaceTest,
+  calcClips,
+  calcFace,
+} from "./actors/ActorTests";
+import { Template, TemplateAudio } from "./_template/Episode";
+import {
+  DURATION as TEMPLATE_DURATION,
+  FPS as TEMPLATE_FPS,
+} from "./_template/timeline";
+import { SameJump, SameJumpAudio } from "./jump/SameJump";
 import { DURATION, FPS } from "./jump/timeline";
 
 const MASCOTS = ["zuzu", "anna", "lumi", "miyu"];
@@ -9,9 +18,45 @@ const MASCOTS = ["zuzu", "anna", "lumi", "miyu"];
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      <Composition id="SameJump" component={SameJump} durationInFrames={DURATION} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
+      <Composition
+        id="SameJump"
+        component={SameJump}
+        durationInFrames={DURATION}
+        fps={FPS}
+        width={1080}
+        height={1920}
+        defaultProps={{ music: true }}
+      />
       {/* same soundtrack without the picture: fast WAV renders for mastering (pass {"music": false} for the no-music mix) */}
-      <Composition id="SameJumpAudio" component={SoundtrackOnly} durationInFrames={DURATION} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
+      <Composition
+        id="SameJumpAudio"
+        component={SameJumpAudio}
+        durationInFrames={DURATION}
+        fps={FPS}
+        width={1080}
+        height={1920}
+        defaultProps={{ music: true }}
+      />
+      <Folder name="Template">
+        <Composition
+          id="Template"
+          component={Template}
+          durationInFrames={TEMPLATE_DURATION}
+          fps={TEMPLATE_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ music: true }}
+        />
+        <Composition
+          id="TemplateAudio"
+          component={TemplateAudio}
+          durationInFrames={TEMPLATE_DURATION}
+          fps={TEMPLATE_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ music: true }}
+        />
+      </Folder>
       <Folder name="ActorTests">
         {MASCOTS.map((name) => (
           <Composition

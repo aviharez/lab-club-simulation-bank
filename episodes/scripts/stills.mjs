@@ -29,9 +29,15 @@ const withAlias = (config) => ({
   },
 });
 
+// The bundle copies all of public/ (GLBs, audio): build it inside out/ (not /tmp) and delete it afterwards.
+const bundleDir = path.join(root, "out", `.stills-bundle-${process.pid}`);
+process.on("exit", () =>
+  fs.rmSync(bundleDir, { recursive: true, force: true }),
+);
 const serveUrl = await bundle({
   entryPoint: path.join(root, "src/index.ts"),
   publicDir: path.join(root, "public"),
+  outDir: bundleDir,
   webpackOverride: withAlias,
   rspackOverride: withAlias,
   bundlerOverride: withAlias,

@@ -1,7 +1,11 @@
-// Fonts + colours for the episode overlays (and the canvas textures in the 3D set).
+// Lab Club house style for every episode: Fredoka, ink/paper colours, safe areas, motion personality.
+// Shared by the 2D overlays (src/kit) and the canvas textures of the 3D sets.
 import { loadFont } from "@remotion/google-fonts/Fredoka";
 
-export const fredoka = loadFont("normal", { weights: ["500", "600", "700"], subsets: ["latin"] });
+export const fredoka = loadFont("normal", {
+  weights: ["500", "600", "700"],
+  subsets: ["latin"],
+});
 export const FONT = fredoka.fontFamily;
 
 export const INK = "#3a2c24";

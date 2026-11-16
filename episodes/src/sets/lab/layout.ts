@@ -1,12 +1,8 @@
 // Geometry, palette and camera presets for the reusable 3D lab set. 1 world unit = 1 metre; mascots are ~1 unit tall.
 import * as THREE from "three";
 
-export const MASCOT_COLORS = {
-  zuzu: "#f2bf3b",
-  anna: "#f27096",
-  lumi: "#80adf2",
-  miyu: "#6e4a8f",
-} as const;
+/** Mascot colours live in src/kit/cast.ts; re-exported here for the lab set. */
+export { MASCOT_COLORS } from "../../kit/cast";
 
 export const PASTEL = {
   wall: "#fbf6ee",

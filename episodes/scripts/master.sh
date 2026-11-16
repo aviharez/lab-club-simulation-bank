@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Mux the episode video with its soundtrack, loudness-normalized for social (-14 LUFS, -1.5 dBTP).
-# Usage: scripts/master-jump.sh <video.mp4> <audio.wav> <out.mp4>
+# Usage: scripts/master.sh <video.mp4> <audio.wav> <out.mp4>   (any episode)
 set -euo pipefail
 V=$1; A=$2; O=$3
 # Two-pass loudnorm, aimed 1.2 LU hot with a -2 dBTP ceiling. Its dynamic mode lands within ~1 LU of the aim

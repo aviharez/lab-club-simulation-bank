@@ -102,3 +102,6 @@ export const cueVolumeAt = (c: Cue, f: number, fps: number, duck: number[]) => {
   const b = fadeOut ? Math.min(1, (len - local) / fadeOut) : 1;
   return c.volume * a * b;
 };
+
+/** What an episode's sound.ts `soundtrack()` returns: read by the kit's <Soundtrack> and by the report. */
+export type SoundtrackData = { cues: Cue[]; /** per-frame music gain from ducking (linear) */ duck: number[]; ducks: DuckWindow[]; voiceLog: string[] };
