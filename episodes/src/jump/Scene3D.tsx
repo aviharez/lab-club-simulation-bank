@@ -1,8 +1,11 @@
-// The 3D half of the episode: lab set + four mascot actors, all posed from the frame.
+// The 3D half of the episode: the gravity-lab set (or the original candy lab with `legacySet`) + the four gravity
+// chambers, the console and four mascot actors, all posed from the frame.
 import React from "react";
 import { Easing, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { Actor } from "../actors/Actor";
 import type { CastMember } from "../kit";
+import { SetStage, type LoadedSet } from "../kit/env";
+import { GravityLab, GRAVITY_LAB_LOOK } from "../sets/gravity-lab";
 import {
   ControlPanel,
   GravityChambers,
@@ -20,6 +23,7 @@ import {
   COUNTDOWN,
   DOOR,
   peakFrame,
+  worldTime,
 } from "./timeline";
 
 export type Cast = CastMember[];
@@ -68,10 +72,14 @@ const Console: React.FC<{ font: string }> = ({ font }) => {
   );
 };
 
-export const Scene3D: React.FC<{ cast: Cast; font: string }> = ({
-  cast,
-  font,
-}) => {
+export const Scene3D: React.FC<{
+  cast: Cast;
+  font: string;
+  /** the gravity-lab GLB, loaded outside the canvas (useSetGLB) */
+  set: LoadedSet | null;
+  /** render on the original sets/lab room instead (A/B comparisons) */
+  legacySet?: boolean;
+}> = ({ cast, font, set, legacySet = false }) => {
   const f = useCurrentFrame();
   const { width, height, fps } = useVideoConfig();
   const cam = camAt(f);
@@ -99,9 +107,8 @@ export const Scene3D: React.FC<{ cast: Cast; font: string }> = ({
     return { height: peakHeight(p.g), color: cast[i].color, pop };
   });
 
-  return (
-    <LabStage width={width} height={height} cam={cam}>
-      <LabRoom font={font} />
+  const content = (
+    <>
       <GravityChambers
         font={font}
         doors={[0, 0, Math.max(0, earthDoor), 0]}
@@ -129,6 +136,19 @@ export const Scene3D: React.FC<{ cast: Cast; font: string }> = ({
           </group>
         );
       })}
-    </LabStage>
+    </>
+  );
+  if (legacySet)
+    return (
+      <LabStage width={width} height={height} cam={cam}>
+        <LabRoom font={font} />
+        {content}
+      </LabStage>
+    );
+  return (
+    <SetStage width={width} height={height} cam={cam} look={GRAVITY_LAB_LOOK}>
+      <GravityLab set={set} time={worldTime(f)} />
+      {content}
+    </SetStage>
   );
 };

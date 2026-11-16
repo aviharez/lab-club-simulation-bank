@@ -14,6 +14,7 @@ Episode prompts that say "Follow SERIES_RULES.md" mean the **Series rules** sect
 | `mascots/<name>/model/` | `<name>.blend` (rigged source, never modify), `<name>_actor.blend`, `<name>_actor.glb` |
 | `mascots/_shared/scripts/` | Rebuild pipeline (`rebuild.sh`; `run_proc.py` rebuilds/previews only the hand-keyed clips), see its README. Needs Blender 5.2 |
 | `assets/sets/<name>/` | Set sources: `<name>.blend`, `<name>.glb` and the Blender build script. Copied to `episodes/public/sets/` by `npm run sync-sets` |
+| `assets/sets/_shared/set_lib.py` | Shared Blender helpers for set builds (three.js coordinates, boxes/cylinders/tubes/text, generated textures, AO bake + join + GLB export in `finish()`). New set scripts import it |
 | `audio/final/` | Approved audio library: `voices/<name>/<name>_<reaction>.mp3`, `sfx/{ui,body,lab,objects}/<name>.mp3`, `music/<name>.mp3` |
 | `audio/audio_manifest.json` | Every final audio file: type, character, reaction, text, duration, loop flag, LUFS |
 | `audio/_takes/` | Unused takes (and `unused/placeholders_jump/`, the old EP01 placeholder audio). Never reference from episodes |
@@ -22,7 +23,7 @@ Episode prompts that say "Follow SERIES_RULES.md" mean the **Series rules** sect
 | `episodes/src/kit/` | Episode kit: theme, cast (`useCast`), motion, `CountUp`, seeded random, `Soundtrack`/`soundtrackOnly`, report helpers (`createReport`), camera model; `overlays/` (CaptionPills, Countdown, Badge, ResultCards, RevealCard, CtaCard, ChartPanel with log axes, MangaSymbols) |
 | `episodes/src/kit/env/` | Environment kit: `LookPreset` (tone mapping, exposure, fog, light rig, post), `SetStage`, `SetPost`, `VolumetricCone`, `Dust`, `Caustics`, `ReflectiveFloor`, `GradientSky`/`ParallaxLayers`, `useSetGLB`, `SetLookdev` (3 lookdev stills), `PostReady` gate |
 | `episodes/src/_template/` | Starting point for a new episode (data, timeline, camera, Scene3D, overlays, sound, report). See "New episode checklist" |
-| `episodes/src/sets/<name>/` | One folder per set: r3f wrapper (practicals, haze, animated parts), `look.ts` preset, `<Set>Lookdev` composition. `lab/` is the original home lab used by EP01; `home-lab-v2/` is its upgraded GLB-based version |
+| `episodes/src/sets/<name>/` | One folder per set: r3f wrapper (practicals, haze, animated parts), `look.ts` preset, `<Set>Lookdev` composition. `lab/` is the original candy lab (its `GravityChambers` and `ControlPanel` are still used by EP01); `home-lab-v2/` is the upgraded home lab; `gravity-lab/` is EP01's purpose-built set (observatory hall at dusk) |
 | `episodes/src/audio/` | Audio for all episodes: `library.ts` (typed `voice()`, `sfx()`, `music()` from the manifest), `voiceCues.ts` (voices from the acting), `mix.ts` (cue model, ducking, headroom) |
 | `episodes/public/audio/lib/` | Mirror of `audio/final/` made by `npm run sync-audio`. Never edit by hand |
 | `episodes/src/actors/` | `Actor` component (GLB + clip + expression) and actor test compositions. Clips per mascot: idle, walk, run, point, cheer, sad, dizzy, sit, throw, push, foot_tap, float_sleep, panic_fall, land_squash, jump_crouch/air/land, plus hold_drop (prop released at frame 27), carry, compare, spin_overhead, pull_rope, push_hands, slide, hold_sign, sleep_stand |
@@ -37,6 +38,7 @@ npm run sync-mascots   # copy mascots/manifest.json + GLBs/textures into public/
 npm run sync-audio     # copy audio/final + manifest into public/audio/lib, regenerate src/audio/library.generated.ts
 npm run sync-sets      # copy assets/sets/<name>/<name>.glb into public/sets
 npm run lookdev:home-lab-v2  # 3 lookdev stills → out/lookdev/home-lab-v2
+npm run lookdev:gravity-lab  # same for EP01's set
 npm run report:jump    # EP01 physics table, cue sheet, checks, loudness of the rendered files
 npm run render:jump    # EP01 picture + both masters → out/same-jump-different-planets{,_nomusic}.mp4
 npm run render:jump:full     # re-mix + re-master the full version only (reuses the rendered picture)

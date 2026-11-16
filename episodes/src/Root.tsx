@@ -11,6 +11,7 @@ import {
   FPS as TEMPLATE_FPS,
 } from "./_template/timeline";
 import { SameJump, SameJumpAudio } from "./jump/SameJump";
+import { GravityLabLookdev } from "./sets/gravity-lab";
 import { HomeLabV2Lookdev } from "./sets/home-lab-v2";
 import { DURATION, FPS } from "./jump/timeline";
 
@@ -62,6 +63,14 @@ export const RemotionRoot: React.FC = () => {
         <Composition
           id="HomeLabV2Lookdev"
           component={HomeLabV2Lookdev}
+          durationInFrames={3}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="GravityLabLookdev"
+          component={GravityLabLookdev}
           durationInFrames={3}
           fps={30}
           width={1080}

@@ -20,6 +20,7 @@ import {
   SlowMoBadge,
 } from "./Overlays";
 import { PLANETS } from "./physics";
+import { useSetGLB } from "../kit/env";
 import { Scene3D } from "./Scene3D";
 import { soundtrack } from "./sound";
 import { BEAT, REVEAL_CARD } from "./timeline";
@@ -27,16 +28,20 @@ import { BEAT, REVEAL_CARD } from "./timeline";
 /** Chamber order, left → right. */
 const ORDER = PLANETS.map((p) => p.mascot);
 
-export const SameJump: React.FC<{ music?: boolean }> = ({ music = true }) => {
-  // actors are loaded OUTSIDE the canvas so their delayRender is registered before capture
+export const SameJump: React.FC<{ music?: boolean; legacySet?: boolean }> = ({
+  music = true,
+  legacySet = false,
+}) => {
+  // actors and the set GLB are loaded OUTSIDE the canvas so their delayRender is registered before capture
   const cast = useCast(ORDER);
+  const set = useSetGLB("gravity-lab");
   const fontReady = useFontReady();
   const colors = cast.map((c) => c.color);
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#f6efe6" }}>
       <Soundtrack soundtrack={soundtrack} music={music} />
-      {fontReady ? <Scene3D cast={cast} font={FONT} /> : null}
+      {fontReady ? <Scene3D cast={cast} font={FONT} set={set} legacySet={legacySet} /> : null}
       <EpisodeChart colors={colors} />
       <HeightReadouts colors={colors} />
       <MangaSymbols />
