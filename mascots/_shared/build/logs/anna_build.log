@@ -1,4 +1,4 @@
-00:00.476  blend            | Read blend: "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/anna/model/anna.blend"
+00:00.283  blend            | Read blend: "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/anna/model/anna.blend"
 Info: Saved as "anna_actor.blend"
 Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
@@ -7,9 +7,9 @@ Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
-20:02:59 | INFO: Data are loaded, start creating Blender stuff
-20:02:59 | INFO: Blender create Mesh node tripo_mesh_8916c088-5bd9-44d5-8b5d-ca60b87a986e
-20:02:59 | INFO: glTF import finished in 0.17s
+01:42:53 | INFO: Data are loaded, start creating Blender stuff
+01:42:53 | INFO: Blender create Mesh node tripo_mesh_8916c088-5bd9-44d5-8b5d-ca60b87a986e
+01:42:53 | INFO: glTF import finished in 0.16s
 FBX version: 7700
 FBX version: 7700
 FBX version: 7700
@@ -37,17 +37,26 @@ BUILD| anna: point 142f touching=0 left=[]
 BUILD| anna: cheer 198f touching=10 left=[]
 BUILD| anna: panic_fall 109f touching=37 left=[]
 BUILD| anna: sit 68f touching=17 left=[]
+BUILD| anna: hold_drop 46f touching=41 left=[]
+BUILD| anna: carry 71f touching=0 left=[]
+BUILD| anna: compare 97f touching=97 left=[]
+BUILD| anna: spin_overhead 31f touching=17 left=[]
+BUILD| anna: pull_rope 41f touching=39 left=[]
+BUILD| anna: push_hands 40f touching=56 left=[]
+BUILD| anna: slide 61f touching=0 left=[]
+BUILD| anna: hold_sign 31f touching=62 left=[]
+BUILD| anna: sleep_stand 91f touching=0 left=[]
 INFO Draco is available, use library at /home/nyxelyn/.local/opt/blender-5.2.2-linux-x64/lib/libbf_intern_draco_bridge.so
 INFO MeshOptimizer is available, use library at /home/nyxelyn/.local/opt/blender-5.2.2-linux-x64/lib/libbf_intern_meshopt_bridge.so
-20:05:08 | INFO: Starting glTF 2.0 export
-20:05:08 | INFO: Extracting primitive: anna_body
-20:05:08 | INFO: Primitives created: 1
-20:05:08 | INFO: Extracting primitive: anna_face
-20:05:08 | INFO: Primitives created: 1
-20:05:19 | INFO: Finished glTF 2.0 export in 10.344806432723999 s
+01:45:24 | INFO: Starting glTF 2.0 export
+01:45:24 | INFO: Extracting primitive: anna_body
+01:45:24 | INFO: Primitives created: 1
+01:45:24 | INFO: Extracting primitive: anna_face
+01:45:24 | INFO: Primitives created: 1
+01:45:38 | INFO: Finished glTF 2.0 export in 13.909448623657227 s
 
 Info: Saved "anna_actor.blend"
-BUILD| DONE 142 s {'glb': '/home/nyxelyn/Documents/Playgrounds/content-project/mascots/anna/model/anna_actor.glb', 'bytes': 5688496}
+BUILD| DONE 167 s {'glb': '/home/nyxelyn/Documents/Playgrounds/content-project/mascots/anna/model/anna_actor.glb', 'bytes': 6466612}
 Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:34:58)
 
 Blender quit

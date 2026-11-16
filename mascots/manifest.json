@@ -70,12 +70,28 @@
           ]
         },
         "clips": {
+          "carry": {
+            "duration": 2.333,
+            "frames": 71,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "walk cycle with both hands at chest height in front: parent the object between the hands; travel speed = walk"
+          },
           "cheer": {
             "duration": 6.567,
             "frames": 198,
             "fps": 30,
             "loop": false,
             "seamless": false
+          },
+          "compare": {
+            "duration": 3.2,
+            "frames": 97,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "right hand on chin, looks to her left, then right (head turn +-26 deg, tilt 7 deg)"
           },
           "dizzy": {
             "duration": 4.267,
@@ -97,6 +113,22 @@
             "fps": 30,
             "loop": true,
             "seamless": true
+          },
+          "hold_drop": {
+            "duration": 1.5,
+            "frames": 46,
+            "fps": 30,
+            "loop": false,
+            "seamless": false,
+            "note": "right arm reaches forward gripping a small object; the hand opens at ~60% (frames 26-30 of 46): release the prop at frame 27"
+          },
+          "hold_sign": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "hands raised beside the head with a small bounce; chibi arms cannot reach above the head, so the sign stands on stick(s) held in the hands"
           },
           "idle": {
             "duration": 15.333,
@@ -147,12 +179,28 @@
             "loop": false,
             "seamless": false
           },
+          "pull_rope": {
+            "duration": 1.333,
+            "frames": 41,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "hand-over-hand on a vertical rope in front of the chest, two pulls per loop; rope x ~ arm length in front"
+          },
           "push": {
             "duration": 2.667,
             "frames": 81,
             "fps": 30,
             "loop": true,
             "seamless": true
+          },
+          "push_hands": {
+            "duration": 1.3,
+            "frames": 40,
+            "fps": 30,
+            "loop": false,
+            "seamless": false,
+            "note": "two-hand shove (full reach at 30-45%), recoil, then back to neutral at the end"
           },
           "run": {
             "duration": 0.633,
@@ -175,6 +223,30 @@
             "fps": 30,
             "loop": false,
             "seamless": false
+          },
+          "sleep_stand": {
+            "duration": 3,
+            "frames": 91,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "standing asleep: head sinks slowly, jerks up at 72-80%, settles; arms hang"
+          },
+          "slide": {
+            "duration": 2,
+            "frames": 61,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "gliding on ice: arms out, left foot forward, gentle sway; travel comes from code"
+          },
+          "spin_overhead": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "right arm swings a vertical circle beside the body, 1 turn per loop; attach the bucket rope to R_Hand"
           },
           "throw": {
             "duration": 2.2,
@@ -276,12 +348,28 @@
           ]
         },
         "clips": {
+          "carry": {
+            "duration": 2.333,
+            "frames": 71,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "walk cycle with both hands at chest height in front: parent the object between the hands; travel speed = walk"
+          },
           "cheer": {
             "duration": 6.567,
             "frames": 198,
             "fps": 30,
             "loop": false,
             "seamless": false
+          },
+          "compare": {
+            "duration": 3.2,
+            "frames": 97,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "right hand on chin, looks to her left, then right (head turn +-26 deg, tilt 7 deg)"
           },
           "dizzy": {
             "duration": 4.267,
@@ -303,6 +391,22 @@
             "fps": 30,
             "loop": true,
             "seamless": true
+          },
+          "hold_drop": {
+            "duration": 1.5,
+            "frames": 46,
+            "fps": 30,
+            "loop": false,
+            "seamless": false,
+            "note": "right arm reaches forward gripping a small object; the hand opens at ~60% (frames 26-30 of 46): release the prop at frame 27"
+          },
+          "hold_sign": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "hands raised beside the head with a small bounce; chibi arms cannot reach above the head, so the sign stands on stick(s) held in the hands"
           },
           "idle": {
             "duration": 15.333,
@@ -353,12 +457,28 @@
             "loop": false,
             "seamless": false
           },
+          "pull_rope": {
+            "duration": 1.333,
+            "frames": 41,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "hand-over-hand on a vertical rope in front of the chest, two pulls per loop; rope x ~ arm length in front"
+          },
           "push": {
             "duration": 2.667,
             "frames": 81,
             "fps": 30,
             "loop": true,
             "seamless": true
+          },
+          "push_hands": {
+            "duration": 1.3,
+            "frames": 40,
+            "fps": 30,
+            "loop": false,
+            "seamless": false,
+            "note": "two-hand shove (full reach at 30-45%), recoil, then back to neutral at the end"
           },
           "run": {
             "duration": 0.633,
@@ -381,6 +501,30 @@
             "fps": 30,
             "loop": false,
             "seamless": false
+          },
+          "sleep_stand": {
+            "duration": 3,
+            "frames": 91,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "standing asleep: head sinks slowly, jerks up at 72-80%, settles; arms hang"
+          },
+          "slide": {
+            "duration": 2,
+            "frames": 61,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "gliding on ice: arms out, left foot forward, gentle sway; travel comes from code"
+          },
+          "spin_overhead": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "right arm swings a vertical circle beside the body, 1 turn per loop; attach the bucket rope to R_Hand"
           },
           "throw": {
             "duration": 2.2,
@@ -489,12 +633,28 @@
           ]
         },
         "clips": {
+          "carry": {
+            "duration": 2.333,
+            "frames": 71,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "walk cycle with both hands at chest height in front: parent the object between the hands; travel speed = walk"
+          },
           "cheer": {
             "duration": 6.567,
             "frames": 198,
             "fps": 30,
             "loop": false,
             "seamless": false
+          },
+          "compare": {
+            "duration": 3.2,
+            "frames": 97,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "right hand on chin, looks to her left, then right (head turn +-26 deg, tilt 7 deg)"
           },
           "dizzy": {
             "duration": 4.267,
@@ -516,6 +676,22 @@
             "fps": 30,
             "loop": true,
             "seamless": true
+          },
+          "hold_drop": {
+            "duration": 1.5,
+            "frames": 46,
+            "fps": 30,
+            "loop": false,
+            "seamless": false,
+            "note": "right arm reaches forward gripping a small object; the hand opens at ~60% (frames 26-30 of 46): release the prop at frame 27"
+          },
+          "hold_sign": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "hands raised beside the head with a small bounce; chibi arms cannot reach above the head, so the sign stands on stick(s) held in the hands"
           },
           "idle": {
             "duration": 15.333,
@@ -566,12 +742,28 @@
             "loop": false,
             "seamless": false
           },
+          "pull_rope": {
+            "duration": 1.333,
+            "frames": 41,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "hand-over-hand on a vertical rope in front of the chest, two pulls per loop; rope x ~ arm length in front"
+          },
           "push": {
             "duration": 2.667,
             "frames": 81,
             "fps": 30,
             "loop": true,
             "seamless": true
+          },
+          "push_hands": {
+            "duration": 1.3,
+            "frames": 40,
+            "fps": 30,
+            "loop": false,
+            "seamless": false,
+            "note": "two-hand shove (full reach at 30-45%), recoil, then back to neutral at the end"
           },
           "run": {
             "duration": 0.633,
@@ -594,6 +786,30 @@
             "fps": 30,
             "loop": false,
             "seamless": false
+          },
+          "sleep_stand": {
+            "duration": 3,
+            "frames": 91,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "standing asleep: head sinks slowly, jerks up at 72-80%, settles; arms hang"
+          },
+          "slide": {
+            "duration": 2,
+            "frames": 61,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "gliding on ice: arms out, left foot forward, gentle sway; travel comes from code"
+          },
+          "spin_overhead": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "right arm swings a vertical circle beside the body, 1 turn per loop; attach the bucket rope to R_Hand"
           },
           "throw": {
             "duration": 2.2,
@@ -713,12 +929,28 @@
           ]
         },
         "clips": {
+          "carry": {
+            "duration": 2.333,
+            "frames": 71,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "walk cycle with both hands at chest height in front: parent the object between the hands; travel speed = walk"
+          },
           "cheer": {
             "duration": 6.567,
             "frames": 198,
             "fps": 30,
             "loop": false,
             "seamless": false
+          },
+          "compare": {
+            "duration": 3.2,
+            "frames": 97,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "right hand on chin, looks to her left, then right (head turn +-26 deg, tilt 7 deg)"
           },
           "dizzy": {
             "duration": 4.267,
@@ -740,6 +972,22 @@
             "fps": 30,
             "loop": true,
             "seamless": true
+          },
+          "hold_drop": {
+            "duration": 1.5,
+            "frames": 46,
+            "fps": 30,
+            "loop": false,
+            "seamless": false,
+            "note": "right arm reaches forward gripping a small object; the hand opens at ~60% (frames 26-30 of 46): release the prop at frame 27"
+          },
+          "hold_sign": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "hands raised beside the head with a small bounce; chibi arms cannot reach above the head, so the sign stands on stick(s) held in the hands"
           },
           "idle": {
             "duration": 15.333,
@@ -790,12 +1038,28 @@
             "loop": false,
             "seamless": false
           },
+          "pull_rope": {
+            "duration": 1.333,
+            "frames": 41,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "hand-over-hand on a vertical rope in front of the chest, two pulls per loop; rope x ~ arm length in front"
+          },
           "push": {
             "duration": 2.667,
             "frames": 81,
             "fps": 30,
             "loop": true,
             "seamless": true
+          },
+          "push_hands": {
+            "duration": 1.3,
+            "frames": 40,
+            "fps": 30,
+            "loop": false,
+            "seamless": false,
+            "note": "two-hand shove (full reach at 30-45%), recoil, then back to neutral at the end"
           },
           "run": {
             "duration": 0.633,
@@ -818,6 +1082,30 @@
             "fps": 30,
             "loop": false,
             "seamless": false
+          },
+          "sleep_stand": {
+            "duration": 3,
+            "frames": 91,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "standing asleep: head sinks slowly, jerks up at 72-80%, settles; arms hang"
+          },
+          "slide": {
+            "duration": 2,
+            "frames": 61,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "gliding on ice: arms out, left foot forward, gentle sway; travel comes from code"
+          },
+          "spin_overhead": {
+            "duration": 1,
+            "frames": 31,
+            "fps": 30,
+            "loop": true,
+            "seamless": true,
+            "note": "right arm swings a vertical circle beside the body, 1 turn per loop; attach the bucket rope to R_Hand"
           },
           "throw": {
             "duration": 2.2,

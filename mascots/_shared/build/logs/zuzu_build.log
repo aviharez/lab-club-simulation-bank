@@ -1,4 +1,4 @@
-00:00.471  blend            | Read blend: "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/zuzu/model/zuzu.blend"
+00:00.271  blend            | Read blend: "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/zuzu/model/zuzu.blend"
 Info: Saved as "zuzu_actor.blend"
 Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
@@ -7,9 +7,9 @@ Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
-20:00:50 | INFO: Data are loaded, start creating Blender stuff
-20:00:50 | INFO: Blender create Mesh node tripo_mesh_c94c4a92-c5b8-4d4e-aa36-9ecf5b257113
-20:00:50 | INFO: glTF import finished in 0.18s
+01:40:31 | INFO: Data are loaded, start creating Blender stuff
+01:40:31 | INFO: Blender create Mesh node tripo_mesh_c94c4a92-c5b8-4d4e-aa36-9ecf5b257113
+01:40:31 | INFO: glTF import finished in 0.15s
 FBX version: 7700
 FBX version: 7700
 FBX version: 7700
@@ -37,17 +37,26 @@ BUILD| zuzu: point 142f touching=0 left=[]
 BUILD| zuzu: cheer 198f touching=0 left=[]
 BUILD| zuzu: panic_fall 109f touching=36 left=[]
 BUILD| zuzu: sit 68f touching=0 left=[]
+BUILD| zuzu: hold_drop 46f touching=0 left=[]
+BUILD| zuzu: carry 71f touching=0 left=[]
+BUILD| zuzu: compare 97f touching=97 left=[]
+BUILD| zuzu: spin_overhead 31f touching=14 left=[]
+BUILD| zuzu: pull_rope 41f touching=26 left=[]
+BUILD| zuzu: push_hands 40f touching=10 left=[]
+BUILD| zuzu: slide 61f touching=0 left=[]
+BUILD| zuzu: hold_sign 31f touching=62 left=[]
+BUILD| zuzu: sleep_stand 91f touching=0 left=[]
 INFO Draco is available, use library at /home/nyxelyn/.local/opt/blender-5.2.2-linux-x64/lib/libbf_intern_draco_bridge.so
 INFO MeshOptimizer is available, use library at /home/nyxelyn/.local/opt/blender-5.2.2-linux-x64/lib/libbf_intern_meshopt_bridge.so
-20:02:45 | INFO: Starting glTF 2.0 export
-20:02:45 | INFO: Extracting primitive: zuzu_body
-20:02:45 | INFO: Primitives created: 1
-20:02:45 | INFO: Extracting primitive: zuzu_face
-20:02:45 | INFO: Primitives created: 1
-20:02:55 | INFO: Finished glTF 2.0 export in 10.028077363967896 s
+01:42:36 | INFO: Starting glTF 2.0 export
+01:42:36 | INFO: Extracting primitive: zuzu_body
+01:42:36 | INFO: Primitives created: 1
+01:42:36 | INFO: Extracting primitive: zuzu_face
+01:42:36 | INFO: Primitives created: 1
+01:42:50 | INFO: Finished glTF 2.0 export in 13.942051649093628 s
 
 Info: Saved "zuzu_actor.blend"
-BUILD| DONE 128 s {'glb': '/home/nyxelyn/Documents/Playgrounds/content-project/mascots/zuzu/model/zuzu_actor.glb', 'bytes': 5192656}
+BUILD| DONE 141 s {'glb': '/home/nyxelyn/Documents/Playgrounds/content-project/mascots/zuzu/model/zuzu_actor.glb', 'bytes': 5970128}
 Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:34:58)
 
 Blender quit

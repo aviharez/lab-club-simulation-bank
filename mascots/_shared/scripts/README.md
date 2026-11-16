@@ -1,7 +1,7 @@
 # Mascot 3D actors: rebuild
 
 These scripts turn `mascots/<name>/model/<name>.blend` (the rigged source, never modified) into
-`<name>_actor.blend` and `<name>_actor.glb`. The GLB holds the mesh, the armature and 17 in-place clips.
+`<name>_actor.blend` and `<name>_actor.glb`. The GLB holds the mesh, the armature and 26 in-place clips (17 Tripo/Mixamo clips + 9 hand-keyed procedural clips).
 All paths are resolved from this folder, so the project can live anywhere.
 
 ## One command
@@ -17,6 +17,8 @@ For each character, the script does these steps in order:
 
 1. **Build** (`run_build.py`, ~70 s): mesh cleanup, face split and expression bakes, PBR materials, then:
    - Tripo and Mixamo clips are retargeted and get the coat-clearance + anti-clip passes.
+   - The hand-keyed clips (hold_drop, carry, compare, spin_overhead, pull_rope, push_hands, slide, hold_sign,
+     sleep_stand) are built by `procedural_recipes()` in `actor_lib.py` (arm IK + keyed poses) and get the same passes.
    - The GLB is exported.
    - The report is written to `_shared/build/<name>/actor_report.json`.
 2. **Turntable** (`run_turn.py`): writes `<name>/tests/<name>_turntable.mp4`.
@@ -35,6 +37,13 @@ $B $S/run_build.py -- miyu                   # full rebuild of one character
 $B $S/run_fix.py   -- zuzu throw,panic_fall  # redo only some Mixamo clips + re-export (faster)
 $B $S/run_turn.py  -- miyu                   # turntable only
 $B $S/run_speed.py -- miyu                   # prints SPEED|{"walk":..,"run":..}
+```
+
+`run_proc.py` does the same for the hand-keyed clips, with optional preview renders (front, right, 3/4):
+
+```bash
+$B $S/run_proc.py -- zuzu hold_sign,compare --preview=/tmp/prev --no-save   # look without writing
+$B $S/run_proc.py -- zuzu all                                               # rebuild all 9 + re-export
 ```
 
 `run_fix.py` accepts these clips: push, sad, dizzy, float_sleep, foot_tap, throw, point, cheer, panic_fall, sit.

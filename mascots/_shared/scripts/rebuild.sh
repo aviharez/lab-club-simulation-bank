@@ -51,8 +51,8 @@ if [ -n "$EPISODES" ]; then
   if [ "$TESTS" = 1 ]; then
     for n in "${NAMES[@]}"; do
       echo "== $n: r3f test videos"
-      (cd "$EPISODES" && npx remotion render "ActorFace-$n" "$MASCOTS/$n/tests/${n}_faces.mp4" --log=error \
-        && npx remotion render "ActorClips-$n" "$MASCOTS/$n/tests/${n}_clips.mp4" --log=error)
+      (cd "$EPISODES" && npx remotion render "ActorFace-$n" "$MASCOTS/$n/tests/${n}_faces.mp4" --gl=angle-egl --log=error \
+        && npx remotion render "ActorClips-$n" "$MASCOTS/$n/tests/${n}_clips.mp4" --gl=angle-egl --log=error)
     done
   fi
 fi

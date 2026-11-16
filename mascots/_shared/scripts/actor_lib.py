@@ -416,7 +416,7 @@ def tripo_clips(glb):
         for f in range(int(round(f0)), int(round(f1)) + 1):
             sc.frame_set(f)
             frames.append({pb.name: (src.matrix_world @ pb.matrix).copy() for pb in src.pose.bones if pb.name in tgt.data.bones})
-        out[act.name] = frames
+        out[act.name.split(".")[0]] = frames          # ".001" when the file already holds a same-named action
     for act in acts: bpy.data.actions.remove(act)
     cleanup()
     return out
@@ -889,6 +889,309 @@ def land_squash_from_jump(tc):
     return ground(seq)
 
 
+# ----------------------------------------------------------------------------- hand-keyed clips (no mocap source)
+# Built on top of the Tripo idle/walk so the body keeps breathing; arms are placed with a two-bone IK whose
+# targets are measured from the character's own landmarks (shoulders, chest, head), so the same recipe fits all
+# four mascots. Conventions: +X forward, +Y = character's left, +Z up.
+FINGERS = ("Index", "Mid", "Ring", "Pinky")
+PROC_CLIPS = ["hold_drop", "carry", "compare", "spin_overhead", "pull_rope", "push_hands", "slide", "hold_sign",
+              "sleep_stand"]
+
+
+def _cp(L): return [{k: v.copy() for k, v in W.items()} for W in L]
+
+
+def _smooth(t): t = min(1.0, max(0.0, t)); return t * t * (3 - 2 * t)
+
+
+def _key(t, keys):
+    """Piecewise smoothstep through [(t, value), ...] (values: float or Vector)."""
+    if t <= keys[0][0]: return keys[0][1]
+    for (t0, v0), (t1, v1) in zip(keys, keys[1:]):
+        if t <= t1:
+            u = _smooth((t - t0) / max(1e-9, t1 - t0))
+            return v0 + (v1 - v0) * u
+    return keys[-1][1]
+
+
+def rotate_chain_q(a, W, bone, q, pivot):
+    R = Matrix.Translation(pivot) @ q.to_matrix().to_4x4() @ Matrix.Translation(-pivot)
+    for d in descendants(a, bone): W[d] = R @ W[d]
+
+
+def arm_ik(a, W, sd, target, pole):
+    """Two-bone IK in world space: place the wrist (Hand head) on `target`, elbow bent toward `pole`."""
+    S = W[sd + "_Upperarm"].translation.copy(); E0 = W[sd + "_Forearm"].translation.copy()
+    H0 = W[sd + "_Hand"].translation.copy()
+    L1, L2 = (E0 - S).length, (H0 - E0).length
+    d = target - S; dist = max(abs(L1 - L2) + 1e-4, min(d.length, (L1 + L2) * 0.995)); dn = d.normalized()
+    T = S + dn * dist
+    ca = max(-1.0, min(1.0, (L1 * L1 + dist * dist - L2 * L2) / (2 * L1 * dist))); a1 = math.acos(ca)
+    pv = pole - S; pv = pv - dn * pv.dot(dn)
+    if pv.length < 1e-6: pv = Vector((0, 0, -1)) - dn * dn.z
+    pv.normalize()
+    E = S + dn * (math.cos(a1) * L1) + pv * (math.sin(a1) * L1)
+    rotate_chain_q(a, W, sd + "_Upperarm", (E0 - S).rotation_difference(E - S), S)
+    E1 = W[sd + "_Forearm"].translation.copy(); H1 = W[sd + "_Hand"].translation.copy()
+    rotate_chain_q(a, W, sd + "_Forearm", (H1 - E1).rotation_difference(T - E1), E1)
+
+
+def _palm_local(a):
+    """Palm normal of each hand in the hand bone's local frame (rest: palms face the body)."""
+    out = {}
+    for sd in "LR":
+        hb = a.data.bones[sd + "_Hand"]; M = hb.matrix_local
+        fdir = (a.data.bones[sd + "_Mid1"].head_local - hb.head_local).normalized()
+        across = (a.data.bones[sd + "_Index1"].head_local - a.data.bones[sd + "_Pinky1"].head_local).normalized()
+        n = fdir.cross(across).normalized()
+        if n.dot(Vector((0, -hb.head_local.y, 0)).normalized()) < 0: n = -n
+        out[sd] = M.to_3x3().inverted() @ n
+    return out
+
+
+def curl(a, W, sd, deg, thumb=0.5, palm=None):
+    """Close the fingers of one hand by `deg` per joint (0 = open, ~70 = fist); thumb closes `thumb` as much."""
+    if abs(deg) < 1e-3: return
+    palm = palm or _palm_local(a)
+    n = (W[sd + "_Hand"].to_3x3() @ palm[sd]).normalized()
+    for f in FINGERS + ("Thumb",):
+        k = thumb if f == "Thumb" else 1.0
+        for j in (1, 2, 3):
+            b = f"{sd}_{f}{j}"
+            if b not in W: continue
+            nxt = f"{sd}_{f}{j + 1}"
+            tip = W[nxt].translation if nxt in W else W[b] @ Vector((0, a.data.bones[b].length, 0))
+            v = (tip - W[b].translation)
+            ax = v.cross(n)
+            if ax.length < 1e-6: continue
+            rotate_chain(a, W, b, ax.normalized(), deg * k)
+
+
+def wrist(a, W, sd, axis, deg):
+    rotate_chain(a, W, sd + "_Hand", axis, deg)
+
+
+def _land(W, a):
+    """Per-frame landmarks: shoulders, chest, head (pivot + approx. sphere centre), body axes."""
+    left = (W["L_Upperarm"].translation - W["R_Upperarm"].translation).normalized()
+    up = (W["Spine02"].translation - W["Hip"].translation).normalized()
+    fwd = left.cross(up).normalized()
+    hp = W["Head"].translation.copy()
+    hc = hp + W["Head"].to_3x3() @ Vector((0, 0.12, 0))
+    return {"S": {"L": W["L_Upperarm"].translation.copy(), "R": W["R_Upperarm"].translation.copy()},
+            "C": W["Spine02"].translation.copy(), "H": hp, "HC": hc, "fwd": fwd, "left": left, "up": up}
+
+
+def _sg(sd): return 1 if sd == "L" else -1
+
+
+def _P(L, sd, base, f=0.0, s=0.0, u=0.0):
+    """Point = base + f*forward + s*outward(for side sd) + u*up, in the body frame."""
+    return base + L["fwd"] * f + L["left"] * (s * _sg(sd)) + L["up"] * u
+
+
+def _arm_len(a, sd):
+    b = a.data.bones
+    return (b[sd + "_Forearm"].head_local - b[sd + "_Upperarm"].head_local).length + \
+           (b[sd + "_Hand"].head_local - b[sd + "_Forearm"].head_local).length
+
+
+def _loop_from(base, n):
+    """The first n frames of a clip at normal speed, made seamless (frame n would equal frame 0)."""
+    f = loop_seam(_cp(base[:n + 1]), blend=min(14, n // 3))
+    return f[:n]
+
+
+def procedural_recipes(tc, only=None):
+    a = arm(); palm = _palm_local(a); AL = _arm_len(a, "R")
+    idle = in_place(_cp(tc["idle"])); walk = in_place(_cp(tc["walk"]))
+    R = {}
+
+    def want(k): return only is None or k in only
+
+    def body(W, lean=0.0, roll=0.0, yaw=0.0):
+        """Lean (deg, + = forward) / roll (+ = toward the left) / yaw from the waist up."""
+        p = W["Waist"].translation.copy()
+        if lean: rotate_chain(a, W, "Waist", (0, 1, 0), lean, pivot=p)
+        if roll: rotate_chain(a, W, "Waist", (1, 0, 0), -roll, pivot=p)
+        if yaw: rotate_chain(a, W, "Waist", (0, 0, 1), yaw, pivot=p)
+
+    def head(W, nod=0.0, turn=0.0, tilt=0.0):
+        """nod + = chin down, turn + = look to her left, tilt + = ear toward the left shoulder."""
+        p = W["NeckTwist01"].translation.copy()
+        if turn: rotate_chain(a, W, "NeckTwist01", (0, 0, 1), turn, pivot=p)
+        if nod: rotate_chain(a, W, "NeckTwist01", (0, 1, 0), nod, pivot=p)
+        if tilt: rotate_chain(a, W, "NeckTwist01", (1, 0, 0), -tilt, pivot=p)
+
+    def legs(W, spread=0.0, fwd_l=0.0, bend=0.0):
+        """spread: thighs apart (deg); fwd_l: left thigh forward / right back (deg); bend: knee bend (deg)."""
+        for sd in "LR":
+            th = W[sd + "_Thigh"].translation.copy()
+            if spread: rotate_chain(a, W, sd + "_Thigh", (1, 0, 0), -spread * _sg(sd), pivot=th)
+            if fwd_l: rotate_chain(a, W, sd + "_Thigh", (0, 1, 0), -fwd_l * _sg(sd), pivot=th)
+            if bend:
+                rotate_chain(a, W, sd + "_Thigh", (0, 1, 0), -bend * 0.5, pivot=th)
+                kn = W[sd + "_Calf"].translation.copy()
+                rotate_chain(a, W, sd + "_Calf", (0, 1, 0), bend, pivot=kn)
+                an = W[sd + "_Foot"].translation.copy()
+                rotate_chain(a, W, sd + "_Foot", (0, 1, 0), -bend * 0.5, pivot=an)
+
+    # --- hold_drop: right arm reaches forward holding a small object, the hand opens ~60% through (one-shot)
+    if want("hold_drop"):
+        n = 46; out = []
+        for i, W in enumerate(_loop_from(idle, n)):
+            t = i / (n - 1); L = _land(W, a)
+            reach = _key(t, [(0, 0.0), (0.22, 1.0)])
+            rest = W["R_Hand"].translation.copy()
+            tgt = _P(L, "R", L["S"]["R"], f=AL * 0.93, s=0.02, u=-0.025)
+            arm_ik(a, W, "R", rest.lerp(tgt, reach), _P(L, "R", L["S"]["R"], f=0.02, s=0.12, u=-0.15))
+            head(W, nod=6 * reach, turn=-8 * reach)
+            opn = _key(t, [(0.58, 0.0), (0.66, 1.0)])
+            curl(a, W, "R", 55 * reach * (1 - opn) - 8 * opn, palm=palm)
+            out.append(W)
+        R["hold_drop"] = (ground(out), False)
+
+    # --- carry: walking with an object held at chest height in both hands (loop on the walk cycle)
+    if want("carry"):
+        out = []
+        for i, W in enumerate(_cp(walk)):
+            L = _land(W, a)
+            for sd in "LR":
+                tgt = _P(L, sd, L["C"], f=AL * 0.72, s=0.07, u=-0.035)
+                arm_ik(a, W, sd, tgt, _P(L, sd, L["S"][sd], f=-0.02, s=0.15, u=-0.12))
+                curl(a, W, sd, 35, palm=palm)
+            body(W, lean=-4)
+            out.append(W)
+        R["carry"] = (loop_seam(out, 4), True)
+
+    # --- compare: hand on chin, look left, then right, small head tilt (loop)
+    if want("compare"):
+        n = 96; out = []
+        for i, W in enumerate(_loop_from(idle, n)):
+            t = i / n; L = _land(W, a)
+            turn = _key(t, [(0, 0.0), (0.12, 26.0), (0.38, 26.0), (0.55, -26.0), (0.82, -26.0), (1.0, 0.0)])
+            tilt = _key(t, [(0, 0.0), (0.12, 7.0), (0.38, 7.0), (0.55, -7.0), (0.82, -7.0), (1.0, 0.0)])
+            chin = L["H"] + L["fwd"] * 0.115 + L["up"] * -0.005
+            arm_ik(a, W, "R", chin + L["left"] * -0.01 + L["up"] * -0.04, _P(L, "R", L["S"]["R"], f=0.05, s=0.03, u=-0.2))
+            wrist(a, W, "R", L["left"], -55)
+            curl(a, W, "R", 45, palm=palm)
+            # left forearm across the belly, supporting the right elbow
+            arm_ik(a, W, "L", _P(L, "R", L["C"], f=AL * 0.62, s=0.02, u=-0.09), _P(L, "L", L["S"]["L"], f=0.0, s=0.15, u=-0.12))
+            curl(a, W, "L", 25, palm=palm)
+            head(W, turn=turn, tilt=tilt, nod=3)
+            out.append(W)
+        out.append(_cp([out[0]])[0])
+        R["compare"] = (out, True)
+
+    # --- spin_overhead: right arm swings a bucket in a vertical circle beside the body (loop, 1 turn / s)
+    if want("spin_overhead"):
+        n = 30; out = []
+        for i, W in enumerate(_loop_from(idle, n)):
+            th = 2 * math.pi * i / n; L = _land(W, a)
+            c = _P(L, "R", L["S"]["R"], f=0.01, s=0.11, u=-0.01)
+            r = AL * 0.82
+            tgt = c + L["fwd"] * (r * math.sin(th)) + L["up"] * (r * math.cos(th))
+            arm_ik(a, W, "R", tgt, _P(L, "R", L["S"]["R"], s=0.3, u=-0.05))
+            curl(a, W, "R", 65, palm=palm)
+            body(W, roll=3.5 * math.cos(th), lean=2 * math.sin(th))
+            arm_ik(a, W, "L", _P(L, "L", L["S"]["L"], f=0.02, s=0.11, u=-0.13), _P(L, "L", L["S"]["L"], s=0.2, u=-0.1))
+            out.append(W)
+        out.append(_cp([out[0]])[0])
+        R["spin_overhead"] = (ground(out), True)
+
+    # --- pull_rope: hand-over-hand on a vertical rope in front of the chest (loop: two pulls)
+    if want("pull_rope"):
+        n = 40; out = []
+        hi, lo = 0.06, -0.12           # rope grip heights relative to the shoulders (chin .. belly)
+        for i, W in enumerate(_loop_from(idle, n)):
+            t = i / n; L = _land(W, a)
+            body(W, lean=-7 + 3 * math.sin(4 * math.pi * t))
+            L = _land(W, a)
+            rope = (L["S"]["L"] + L["S"]["R"]) * 0.5 + L["fwd"] * (AL * 0.9)
+            for sd, ph in (("R", 0.0), ("L", 0.5)):
+                u = (t + ph) % 1.0
+                if u < 0.5:                       # gripping: pull down the rope
+                    z = hi + (lo - hi) * _smooth(u / 0.5); off = 0.0; g = 70
+                else:                             # released: reach up again, a little off the rope
+                    v = (u - 0.5) / 0.5; z = lo + (hi - lo) * _smooth(v); off = 0.035 * math.sin(math.pi * v); g = 20 + 50 * (v > 0.85)
+                tgt = rope + L["up"] * z + L["left"] * (0.012 * _sg(sd)) + L["fwd"] * (-off * 0.3) + L["left"] * (off * _sg(sd))
+                arm_ik(a, W, sd, tgt, _P(L, sd, L["S"][sd], f=-0.03, s=0.2, u=-0.1))
+                curl(a, W, sd, g, palm=palm)
+            legs(W, bend=10, spread=3)
+            out.append(W)
+        out.append(_cp([out[0]])[0])
+        R["pull_rope"] = (ground(out), True)
+
+    # --- push_hands: two-hand shove forward, then recoil (lean back, elbows bend) and settle to neutral (one-shot)
+    if want("push_hands"):
+        n = 40; out = []
+        for i, W in enumerate(_loop_from(idle, n)):
+            t = i / (n - 1)
+            lean = _key(t, [(0, 0.0), (0.15, -5.0), (0.3, 12.0), (0.45, 12.0), (0.6, -8.0), (0.78, -3.0), (1.0, 0.0)])
+            ext = _key(t, [(0, 0.15), (0.15, 0.1), (0.3, 1.0), (0.45, 1.0), (0.6, 0.35), (1.0, 0.35)])
+            up = _key(t, [(0, 0.0), (0.13, 1.0), (0.72, 1.0), (1.0, 0.0)])
+            body(W, lean=lean); legs(W, fwd_l=9 * min(1.0, up * 2), bend=5 * up)
+            L = _land(W, a)
+            for sd in "LR":
+                rest = W[sd + "_Hand"].translation.copy()
+                tgt = _P(L, sd, L["S"][sd], f=0.06 + (AL * 0.97 - 0.06) * ext, s=0.02, u=-0.015)
+                arm_ik(a, W, sd, rest.lerp(tgt, up), _P(L, sd, L["S"][sd], f=-0.05, s=0.2, u=-0.12))
+                wrist(a, W, sd, L["left"], -65 * up * min(1.0, ext * 1.6))      # palms forward while pushing
+                curl(a, W, sd, -6 * up, palm=palm)
+            out.append(W)
+        R["push_hands"] = (ground(out), False)
+
+    # --- slide: balanced glide on ice, arms out, gentle sway (loop)
+    if want("slide"):
+        n = 60; out = []
+        for i, W in enumerate(_loop_from(idle, n)):
+            th = 2 * math.pi * i / n; L = _land(W, a)
+            legs(W, fwd_l=14, bend=16, spread=8)
+            body(W, lean=8, roll=4 * math.sin(th))
+            L = _land(W, a)
+            for sd in "LR":
+                tgt = _P(L, sd, L["S"][sd], f=0.03, s=AL * 0.9, u=-0.02 + 0.03 * math.sin(th) * _sg(sd))
+                arm_ik(a, W, sd, tgt, _P(L, sd, L["S"][sd], f=-0.05, s=0.1, u=-0.15))
+                curl(a, W, sd, 12, palm=palm)
+            head(W, tilt=-3 * math.sin(th))
+            out.append(W)
+        out.append(_cp([out[0]])[0])
+        R["slide"] = (ground(out), True)
+
+    # --- hold_sign: both hands raised beside the head (chibi arms cannot reach above it) gripping the stick(s) of a
+    #     sign the episode draws above the head; small bounce
+    if want("hold_sign"):
+        n = 30; out = []
+        for i, W in enumerate(_loop_from(idle, n)):
+            th = 2 * math.pi * i / n; L = _land(W, a)
+            b = 0.5 - 0.5 * math.cos(th)
+            legs(W, bend=7 * b)
+            L = _land(W, a)
+            for sd in "LR":
+                tgt = _P(L, sd, L["S"][sd], f=0.035, s=0.12, u=0.125 + 0.015 * b)
+                arm_ik(a, W, sd, tgt, _P(L, sd, L["S"][sd], f=-0.02, s=0.3, u=-0.1))
+                curl(a, W, sd, 60, palm=palm)
+            head(W, nod=-3 * b)
+            out.append(W)
+        out.append(_cp([out[0]])[0])
+        R["hold_sign"] = (ground(out), True)
+
+    # --- sleep_stand: standing asleep, head slowly sinks then jerks up (loop)
+    if want("sleep_stand"):
+        n = 90; base = damp(_loop_from(idle, n), ["L_Upperarm", "R_Upperarm", "L_Forearm", "R_Forearm"], 0.6)
+        out = []
+        for i, W in enumerate(base):
+            t = i / n
+            nod = _key(t, [(0, 6.0), (0.72, 24.0), (0.8, 2.0), (0.9, 7.0), (1.0, 6.0)])
+            sway = 3 * math.sin(2 * math.pi * t)
+            body(W, lean=4 + nod * 0.12, roll=sway)
+            head(W, nod=nod, tilt=-sway * 1.5)
+            out.append(W)
+        out.append(_cp([out[0]])[0])
+        R["sleep_stand"] = (ground(out), True)
+    return R
+
+
 def build(name, log=print):
     """Full pipeline for one character -> <name>_actor.blend + .glb. Returns a report dict."""
     import glob as _g, time as _t
@@ -904,6 +1207,7 @@ def build(name, log=print):
     clips = tripo_recipes(tc)
     clips["land_squash"] = (land_squash_from_jump(tc), False)
     clips.update(mixamo_recipes())
+    clips.update(procedural_recipes(tc))
     rep["clips"] = {}
     for k, (fr, loop) in clips.items():
         fr, cc = coat_clearance(fr)                    # hands out of the lab coat first, then keep them off the head
@@ -953,13 +1257,13 @@ def write_action(name, frames, loop):
 
 
 # ----------------------------------------------------------------------------- previews
-def preview_frames(frames, out_dir, tag, n=8, res=256, views=(("front", (4, 0, 0.55)), ("side", (0.6, 4, 0.55)))):
+def preview_frames(frames, out_dir, tag, n=8, res=256, views=(("front", (4, 0, 0.55)), ("side", (0.6, 4, 0.55))), ortho=1.5):
     """Workbench renders of n evenly spaced frames from each view -> out_dir/<tag>_<view>_<i>.png"""
     sc = bpy.context.scene; a = arm(); rr = rest_rel(a); order = bone_order(a)
     eng = sc.render.engine; cam0 = sc.camera
     sc.render.engine = 'BLENDER_WORKBENCH'; sc.display.shading.light = 'STUDIO'; sc.display.shading.color_type = 'TEXTURE'
     rx, ry = sc.render.resolution_x, sc.render.resolution_y; sc.render.resolution_x = sc.render.resolution_y = res
-    cd = bpy.data.cameras.get("_prevcam") or bpy.data.cameras.new("_prevcam"); cd.type = 'ORTHO'; cd.ortho_scale = 1.5
+    cd = bpy.data.cameras.get("_prevcam") or bpy.data.cameras.new("_prevcam"); cd.type = 'ORTHO'; cd.ortho_scale = ortho
     cam = bpy.data.objects.get("_prevcam") or bpy.data.objects.new("_prevcam", cd)
     if cam.name not in sc.collection.objects: sc.collection.objects.link(cam)
     sc.camera = cam

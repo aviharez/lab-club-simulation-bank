@@ -8,7 +8,8 @@ import { Actor, useActor, type ActorMeta } from "./Actor";
 const BG = "#f6ecf1";
 const FPS = 30;
 const ORDER = ["idle", "walk", "run", "push", "sad", "dizzy", "foot_tap", "float_sleep", "jump_crouch", "jump_air",
-  "jump_land", "land_squash", "throw", "point", "cheer", "panic_fall", "sit"];
+  "jump_land", "land_squash", "throw", "point", "cheer", "panic_fall", "sit",
+  "hold_drop", "carry", "compare", "spin_overhead", "pull_rope", "push_hands", "slide", "hold_sign", "sleep_stand"];
 
 export type ActorTestProps = { name: string; meta?: ActorMeta; color?: string };
 

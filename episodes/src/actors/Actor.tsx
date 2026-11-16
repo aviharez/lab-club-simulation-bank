@@ -8,7 +8,7 @@ import { clone as cloneSkinned } from "three/examples/jsm/utils/SkeletonUtils.js
 // 3D mascot actor: mascots/<name>/model/<name>_actor.glb (see manifest.actor_conventions).
 // Everything is driven by props (clip + time in seconds), never by r3f's useFrame, so renders are deterministic.
 
-export type ActorClip = { duration: number; frames: number; fps: number; loop: boolean; seamless: boolean; speed_units_per_s?: number };
+export type ActorClip = { duration: number; frames: number; fps: number; loop: boolean; seamless: boolean; speed_units_per_s?: number; note?: string };
 export type ActorMeta = {
   glb: string;
   height: number;

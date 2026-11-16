@@ -1,4 +1,4 @@
-00:00.525  blend            | Read blend: "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/miyu/model/miyu.blend"
+00:00.275  blend            | Read blend: "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/miyu/model/miyu.blend"
 Info: Saved as "miyu_actor.blend"
 Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
@@ -7,9 +7,9 @@ Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
 Info: Baking map saved to internal image, save it externally or pack it
-20:07:32 | INFO: Data are loaded, start creating Blender stuff
-20:07:32 | INFO: Blender create Mesh node tripo_mesh_cdfe9a56-6c2f-4ac2-b809-b79a57bdd6e0
-20:07:32 | INFO: glTF import finished in 0.18s
+01:48:14 | INFO: Data are loaded, start creating Blender stuff
+01:48:14 | INFO: Blender create Mesh node tripo_mesh_cdfe9a56-6c2f-4ac2-b809-b79a57bdd6e0
+01:48:14 | INFO: glTF import finished in 0.16s
 FBX version: 7700
 FBX version: 7700
 FBX version: 7700
@@ -37,17 +37,26 @@ BUILD| miyu: point 142f touching=0 left=[]
 BUILD| miyu: cheer 198f touching=0 left=[]
 BUILD| miyu: panic_fall 109f touching=49 left=[]
 BUILD| miyu: sit 68f touching=0 left=[]
+BUILD| miyu: hold_drop 46f touching=40 left=[]
+BUILD| miyu: carry 71f touching=0 left=[]
+BUILD| miyu: compare 97f touching=97 left=[]
+BUILD| miyu: spin_overhead 31f touching=16 left=[]
+BUILD| miyu: pull_rope 41f touching=37 left=[]
+BUILD| miyu: push_hands 40f touching=38 left=[]
+BUILD| miyu: slide 61f touching=0 left=[]
+BUILD| miyu: hold_sign 31f touching=62 left=[]
+BUILD| miyu: sleep_stand 91f touching=0 left=[]
 INFO Draco is available, use library at /home/nyxelyn/.local/opt/blender-5.2.2-linux-x64/lib/libbf_intern_draco_bridge.so
 INFO MeshOptimizer is available, use library at /home/nyxelyn/.local/opt/blender-5.2.2-linux-x64/lib/libbf_intern_meshopt_bridge.so
-20:09:28 | INFO: Starting glTF 2.0 export
-20:09:28 | INFO: Extracting primitive: miyu_body
-20:09:28 | INFO: Primitives created: 1
-20:09:28 | INFO: Extracting primitive: miyu_face
-20:09:28 | INFO: Primitives created: 1
-20:09:38 | INFO: Finished glTF 2.0 export in 9.653604507446289 s
+01:50:50 | INFO: Starting glTF 2.0 export
+01:50:50 | INFO: Extracting primitive: miyu_body
+01:50:50 | INFO: Primitives created: 1
+01:50:50 | INFO: Extracting primitive: miyu_face
+01:50:50 | INFO: Primitives created: 1
+01:51:05 | INFO: Finished glTF 2.0 export in 14.836171865463257 s
 
 Info: Saved "miyu_actor.blend"
-BUILD| DONE 129 s {'glb': '/home/nyxelyn/Documents/Playgrounds/content-project/mascots/miyu/model/miyu_actor.glb', 'bytes': 5069900}
+BUILD| DONE 174 s {'glb': '/home/nyxelyn/Documents/Playgrounds/content-project/mascots/miyu/model/miyu_actor.glb', 'bytes': 5847884}
 Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:34:58)
 
 Blender quit

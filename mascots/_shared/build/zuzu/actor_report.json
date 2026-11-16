@@ -319,11 +319,155 @@
     "frames_covered_before": 117,
     "max_deg": 40.0
    }
+  },
+  "hold_drop": {
+   "name": "hold_drop",
+   "frames": 46,
+   "seconds": 1.5,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 52,
+    "max_deg": 36.5
+   }
+  },
+  "carry": {
+   "name": "carry",
+   "frames": 71,
+   "seconds": 2.333,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 0,
+    "max_deg": 0.0
+   }
+  },
+  "compare": {
+   "name": "compare",
+   "frames": 97,
+   "seconds": 3.2,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 97,
+    "max_correction_deg": 21.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 14,
+    "max_deg": 16.5
+   }
+  },
+  "spin_overhead": {
+   "name": "spin_overhead",
+   "frames": 31,
+   "seconds": 1.0,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 14,
+    "max_correction_deg": 42.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 7,
+    "max_deg": 11.5
+   }
+  },
+  "pull_rope": {
+   "name": "pull_rope",
+   "frames": 41,
+   "seconds": 1.333,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 26,
+    "max_correction_deg": 15.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 0,
+    "max_deg": 0.0
+   }
+  },
+  "push_hands": {
+   "name": "push_hands",
+   "frames": 40,
+   "seconds": 1.3,
+   "loop": false,
+   "anticlip": {
+    "frames_touching_before": 10,
+    "max_correction_deg": 12.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 32,
+    "max_deg": 40.0
+   }
+  },
+  "slide": {
+   "name": "slide",
+   "frames": 61,
+   "seconds": 2.0,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 0,
+    "max_deg": 0.0
+   }
+  },
+  "hold_sign": {
+   "name": "hold_sign",
+   "frames": 31,
+   "seconds": 1.0,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 62,
+    "max_correction_deg": 24.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 0,
+    "max_deg": 0.0
+   }
+  },
+  "sleep_stand": {
+   "name": "sleep_stand",
+   "frames": 91,
+   "seconds": 3.0,
+   "loop": true,
+   "anticlip": {
+    "frames_touching_before": 0,
+    "max_correction_deg": 0.0,
+    "forearm_correction_deg": 0.0,
+    "frames_still_touching": []
+   },
+   "coat": {
+    "frames_covered_before": 182,
+    "max_deg": 24.0
+   }
   }
  },
  "export": {
   "glb": "/home/nyxelyn/Documents/Playgrounds/content-project/mascots/zuzu/model/zuzu_actor.glb",
-  "bytes": 5192656
+  "bytes": 5970128
  },
- "seconds": 128
+ "seconds": 141
 }
