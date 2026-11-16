@@ -1,8 +1,9 @@
 // Geometry, palette and camera presets for the reusable 3D lab set. 1 world unit = 1 metre; mascots are ~1 unit tall.
-import * as THREE from "three";
 
-/** Mascot colours live in src/kit/cast.ts; re-exported here for the lab set. */
+/** Mascot colours live in src/kit/cast.ts and the camera model in src/kit/camera.ts; re-exported here for the lab set. */
 export { MASCOT_COLORS } from "../../kit/cast";
+export { mixCam, project, toThreeCamera, type CamState } from "../../kit/camera";
+import type { CamState } from "../../kit/camera";
 
 export const PASTEL = {
   wall: "#fbf6ee",
@@ -34,7 +35,6 @@ export const CHAMBER_LABEL_Y = CHAMBER.floorY + CHAMBER.innerHeight + 0.55;
 
 // ---------------------------------------------------------------- camera
 
-export type CamState = { pos: [number, number, number]; target: [number, number, number]; fov: number };
 
 export const CAMERAS = {
   /** establishing: all four chambers, labels to floor, straight on */
@@ -49,37 +49,4 @@ export const CAMERAS = {
 export const closeUp = (i: number, y = CHAMBER.floorY, dist = 7.5): CamState => {
   const x = chamberX(i);
   return { pos: [x + 0.35, y + 1.25, dist], target: [x, y + 0.55, 0], fov: 24 };
-};
-
-const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-const lerp3 = (a: number[], b: number[], t: number) => [lerp(a[0], b[0], t), lerp(a[1], b[1], t), lerp(a[2], b[2], t)] as [number, number, number];
-
-/** Blend two camera states (t in 0..1, already eased by the caller). */
-export const mixCam = (a: CamState, b: CamState, t: number): CamState => ({
-  pos: lerp3(a.pos, b.pos, t),
-  target: lerp3(a.target, b.target, t),
-  fov: lerp(a.fov, b.fov, t),
-});
-
-/** A THREE camera configured from a CamState (used both by the 3D rig and the 2D overlays). */
-export const toThreeCamera = (c: CamState, aspect: number, cam = new THREE.PerspectiveCamera()) => {
-  cam.fov = c.fov;
-  cam.aspect = aspect;
-  cam.near = 0.1;
-  cam.far = 120;
-  cam.position.set(...c.pos);
-  cam.lookAt(...c.target);
-  cam.updateProjectionMatrix();
-  cam.updateMatrixWorld(true);
-  return cam;
-};
-
-const scratch = new THREE.PerspectiveCamera();
-const v = new THREE.Vector3();
-
-/** Project a world point to screen pixels for the given camera. `visible` is false behind the camera. */
-export const project = (c: CamState, p: [number, number, number], width: number, height: number) => {
-  toThreeCamera(c, width / height, scratch);
-  v.set(...p).project(scratch);
-  return { x: ((v.x + 1) / 2) * width, y: ((1 - v.y) / 2) * height, visible: v.z < 1 && v.z > -1 };
 };

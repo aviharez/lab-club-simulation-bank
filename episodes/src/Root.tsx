@@ -11,6 +11,7 @@ import {
   FPS as TEMPLATE_FPS,
 } from "./_template/timeline";
 import { SameJump, SameJumpAudio } from "./jump/SameJump";
+import { HomeLabV2Lookdev } from "./sets/home-lab-v2";
 import { DURATION, FPS } from "./jump/timeline";
 
 const MASCOTS = ["zuzu", "anna", "lumi", "miyu"];
@@ -55,6 +56,16 @@ export const RemotionRoot: React.FC = () => {
           width={1080}
           height={1920}
           defaultProps={{ music: true }}
+        />
+      </Folder>
+      <Folder name="Sets">
+        <Composition
+          id="HomeLabV2Lookdev"
+          component={HomeLabV2Lookdev}
+          durationInFrames={3}
+          fps={30}
+          width={1080}
+          height={1920}
         />
       </Folder>
       <Folder name="ActorTests">

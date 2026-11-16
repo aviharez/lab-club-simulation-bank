@@ -45,6 +45,8 @@
     "render:jump:full": "remotion render SameJumpAudio out/.same-jump-full.wav --codec=wav && scripts/master.sh out/.same-jump-video.mp4 out/.same-jump-full.wav out/same-jump-different-planets.mp4",
     "render:jump:nomusic": "remotion render SameJumpAudio out/.same-jump-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.same-jump-video.mp4 out/.same-jump-nomusic.wav out/same-jump-different-planets_nomusic.mp4",
     "sync-audio": "node scripts/sync-audio.mjs",
+    "sync-sets": "node scripts/sync-sets.mjs",
+    "lookdev:home-lab-v2": "node scripts/stills.mjs HomeLabV2Lookdev out/lookdev/home-lab-v2 0,1,2",
     "report:template": "node --no-warnings src/_template/report.ts",
     "render:template": "npm run render:template:video && npm run render:template:full && npm run render:template:nomusic",
     "render:template:video": "remotion render Template out/.template-video.mp4 --gl=angle-egl --concurrency=2 --muted",
