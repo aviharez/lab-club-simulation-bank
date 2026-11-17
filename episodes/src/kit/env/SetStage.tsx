@@ -2,7 +2,7 @@
 // shadows, gated post chain). Sets add their GLB, practicals, haze and animated parts as children.
 //   <SetStage width height cam={camAt(f)} look={HOME_LAB_V2_LOOK}> <HomeLabV2 set={set}/> …actors… </SetStage>
 import { ContactShadows } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { ThreeCanvas } from "@remotion/three";
 import React from "react";
 import * as THREE from "three";
@@ -15,6 +15,26 @@ import { SetPost } from "./SetPost";
 const CameraRig: React.FC<{ cam: CamState; aspect: number }> = ({ cam, aspect }) => {
   const camera = useThree((s) => s.camera) as THREE.PerspectiveCamera;
   toThreeCamera(cam, aspect, camera);
+  return null;
+};
+
+// EffectComposer turns gl.autoClear off, so drei's ContactShadows (here and inside sets/props) would draw every
+// frame on top of the last one and moving actors leave dark trails on the floor. These two bracket every
+// priority-0 useFrame in the scene (priority -1000 before, 0.5 after, so mount order does not matter) and switch
+// autoClear on for those offscreen passes. The restore runs before EffectComposer (priority 1); it is mounted only
+// with post on, because any priority > 0 stops r3f's own render.
+const autoClearSaved = { v: true };
+const AutoClearOn: React.FC = () => {
+  useFrame(({ gl }) => {
+    autoClearSaved.v = gl.autoClear;
+    gl.autoClear = true;
+  }, -1000);
+  return null;
+};
+const AutoClearRestore: React.FC = () => {
+  useFrame(({ gl }) => {
+    gl.autoClear = autoClearSaved.v;
+  }, 0.5);
   return null;
 };
 
@@ -40,6 +60,7 @@ export const SetStage: React.FC<SetStageProps> = ({ width, height, cam, look, ch
       camera={{ fov: cam.fov, position: cam.pos, near: 0.1, far: 120 }}
       style={{ backgroundColor: look.background }}
     >
+      <AutoClearOn />
       <color attach="background" args={[look.background]} />
       <CameraRig cam={cam} aspect={width / height} />
       <LightRig look={look} />
@@ -47,6 +68,7 @@ export const SetStage: React.FC<SetStageProps> = ({ width, height, cam, look, ch
         <ContactShadows position={cs.position} scale={cs.scale} far={cs.far} blur={cs.blur} opacity={cs.opacity} resolution={1024} color={cs.color} frames={Infinity} />
       ) : null}
       {children}
+      {post ? <AutoClearRestore /> : null}
       {post ? <SetPost look={look} gate={gate} /> : null}
     </ThreeCanvas>
   );
