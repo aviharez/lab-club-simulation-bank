@@ -106,9 +106,12 @@ export type ActorProps = {
   /** face (and lens) self-glow, 0..1 = share of the GLB's emissive level. 1 (default) suits daylight sets;
    *  dark sets lower it so the face sits in the same light as the body instead of glowing on its own */
   faceGlow?: number;
+  /** face base-color level (the GLB keeps it at 0.35: lit dimly, the glow does the rest). Dark sets set it to 1,
+   *  the body's level, with a small faceGlow, so the face takes the same light and colour as the hands and legs */
+  faceLit?: number;
 };
 
-export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expression, position = [0, 0, 0], yaw = 0, scale = 1, blend, attach, faceGlow = 1 }) => {
+export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expression, position = [0, 0, 0], yaw = 0, scale = 1, blend, attach, faceGlow = 1, faceLit }) => {
 
   const fromClip = blend?.clip;
   const fromTime = blend?.time;
@@ -162,6 +165,7 @@ export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expres
         m.needsUpdate = true;
       }
       m.emissiveIntensity = faceGlow;
+      if (faceLit !== undefined) m.color.setScalar(faceLit);
     }
     if (meta.lenses) {
       const lens = a.scene.getObjectByName(meta.lenses.mesh) as THREE.Mesh | undefined;
@@ -176,7 +180,7 @@ export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expres
         m.emissiveIntensity = faceGlow;
       }
     }
-  }, [a, clip, time, expression, meta, fromClip, fromTime, fromWeight, faceGlow]);
+  }, [a, clip, time, expression, meta, fromClip, fromTime, fromWeight, faceGlow, faceLit]);
 
   // ThreeCanvas only advances on frame changes while rendering: draw again once the actor is mounted/posed,
   // then release the load hold so the captured frame contains it.
