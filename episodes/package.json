@@ -77,7 +77,13 @@
     "render:galton-board:video": "remotion render GaltonBoard out/.galton-board-video.mp4 --gl=angle-egl --concurrency=2 --muted",
     "render:galton-board:full": "remotion render GaltonBoardAudio out/.galton-board-full.wav --codec=wav && scripts/master.sh out/.galton-board-video.mp4 out/.galton-board-full.wav out/galton-board.mp4",
     "render:galton-board:nomusic": "remotion render GaltonBoardAudio out/.galton-board-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.galton-board-video.mp4 out/.galton-board-nomusic.wav out/galton-board_nomusic.mp4",
+    "report:dizzy-walk": "node --no-warnings src/dizzy-walk/report.ts",
+    "render:dizzy-walk": "npm run render:dizzy-walk:video && npm run render:dizzy-walk:full && npm run render:dizzy-walk:nomusic",
+    "render:dizzy-walk:video": "remotion render DizzyWalk out/.dizzy-walk-video.mp4 --gl=angle-egl --concurrency=2 --muted",
+    "render:dizzy-walk:full": "remotion render DizzyWalkAudio out/.dizzy-walk-full.wav --codec=wav && scripts/master.sh out/.dizzy-walk-video.mp4 out/.dizzy-walk-full.wav out/dizzy-walk.mp4",
+    "render:dizzy-walk:nomusic": "remotion render DizzyWalkAudio out/.dizzy-walk-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.dizzy-walk-video.mp4 out/.dizzy-walk-nomusic.wav out/dizzy-walk_nomusic.mp4",
     "lookdev:probability-arcade": "node scripts/stills.mjs ProbabilityArcadeLookdev out/lookdev/probability-arcade 0,1,2",
+    "lookdev:night-plaza": "node scripts/stills.mjs NightPlazaLookdev out/lookdev/night-plaza 0,1,2",
     "lookdev:probability-arcade:board": "node scripts/stills.mjs ProbabilityArcadeBoardShots out/lookdev/probability-arcade/board 0,1,2"
   },
   "allowScripts": {

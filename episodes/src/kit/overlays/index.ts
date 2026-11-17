@@ -19,3 +19,4 @@ export {
 } from "./MangaSymbols";
 export { ResultCards, type ResultItem } from "./ResultCards";
 export { Mark, RevealCard } from "./RevealCard";
+export { WorldTags, type WorldTag } from "./WorldTags";

@@ -36,6 +36,9 @@ import {
 } from "./galton-board/timeline";
 import { ProbabilityArcadeBoardShots, ProbabilityArcadeLookdev } from "./sets/probability-arcade";
 import { GravityLabLookdev } from "./sets/gravity-lab";
+import { NightPlazaLookdev } from "./sets/night-plaza";
+import { DizzyWalk, DizzyWalkAudio } from "./dizzy-walk/DizzyWalk";
+import { DURATION as DW_DURATION, FPS as DW_FPS } from "./dizzy-walk/timeline";
 import { HomeLabV2Lookdev } from "./sets/home-lab-v2";
 import { DURATION, FPS } from "./jump/timeline";
 
@@ -143,6 +146,26 @@ export const RemotionRoot: React.FC = () => {
           defaultProps={{ music: true }}
         />
       </Folder>
+      <Folder name="EP06-DizzyWalk">
+        <Composition
+          id="DizzyWalk"
+          component={DizzyWalk}
+          durationInFrames={DW_DURATION}
+          fps={DW_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ music: true }}
+        />
+        <Composition
+          id="DizzyWalkAudio"
+          component={DizzyWalkAudio}
+          durationInFrames={DW_DURATION}
+          fps={DW_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ music: true }}
+        />
+      </Folder>
       <Folder name="Template">
         <Composition
           id="Template"
@@ -207,6 +230,14 @@ export const RemotionRoot: React.FC = () => {
         <Composition
           id="ProbabilityArcadeLookdev"
           component={ProbabilityArcadeLookdev}
+          durationInFrames={3}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="NightPlazaLookdev"
+          component={NightPlazaLookdev}
           durationInFrames={3}
           fps={30}
           width={1080}
