@@ -45,6 +45,7 @@
     "render:jump:full": "remotion render SameJumpAudio out/.same-jump-full.wav --codec=wav && scripts/master.sh out/.same-jump-video.mp4 out/.same-jump-full.wav out/same-jump-different-planets.mp4",
     "render:jump:nomusic": "remotion render SameJumpAudio out/.same-jump-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.same-jump-video.mp4 out/.same-jump-nomusic.wav out/same-jump-different-planets_nomusic.mp4",
     "sync-audio": "node scripts/sync-audio.mjs",
+    "import-voices": "node scripts/import-voice-pack.mjs && node scripts/sync-audio.mjs",
     "sync-sets": "node scripts/sync-sets.mjs",
     "lookdev:home-lab-v2": "node scripts/stills.mjs HomeLabV2Lookdev out/lookdev/home-lab-v2 0,1,2",
     "lookdev:gravity-lab": "node scripts/stills.mjs GravityLabLookdev out/lookdev/gravity-lab 0,1,2",

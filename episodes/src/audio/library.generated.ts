@@ -5,99 +5,99 @@ export const VOICES = {
   "lumi": {
     "happy": {
       "path": "voices/lumi/lumi_happy.mp3",
-      "duration": 0.716,
-      "lufs": -16.3,
+      "duration": 1.019,
+      "lufs": -16,
       "loop": false,
-      "text": "Waai!"
+      "text": "Yay!"
     },
     "giggle": {
       "path": "voices/lumi/lumi_giggle.mp3",
-      "duration": 1.494,
-      "lufs": -16.6,
+      "duration": 1.489,
+      "lufs": -18.2,
       "loop": false,
-      "text": "Fufu"
+      "text": "Hehe."
     },
     "smug": {
       "path": "voices/lumi/lumi_smug.mp3",
-      "duration": 1.054,
-      "lufs": -16.7,
+      "duration": 1.149,
+      "lufs": -16.3,
       "loop": false,
-      "text": "Fufun"
+      "text": "Hm-hm."
     },
     "smug_laugh": {
       "path": "voices/lumi/lumi_smug_laugh.mp3",
-      "duration": 1.674,
-      "lufs": -17.3,
+      "duration": 1.567,
+      "lufs": -17.8,
       "loop": false,
-      "text": "Fufufu~"
+      "text": "Heh-heh."
     },
     "shocked": {
       "path": "voices/lumi/lumi_shocked.mp3",
-      "duration": 0.98,
-      "lufs": -16.3,
+      "duration": 1.254,
+      "lufs": -16,
       "loop": false,
-      "text": "E?!"
+      "text": "Eh?!"
     },
     "small_gasp": {
       "path": "voices/lumi/lumi_small_gasp.mp3",
-      "duration": 1.092,
-      "lufs": -16.7,
+      "duration": 1.567,
+      "lufs": -16.1,
       "loop": false,
-      "text": "A!"
+      "text": "Oh!"
     },
     "dizzy": {
       "path": "voices/lumi/lumi_dizzy.mp3",
-      "duration": 1.162,
-      "lufs": -16.2,
+      "duration": 2.116,
+      "lufs": -16,
       "loop": false,
-      "text": "Funya~..."
+      "text": "Whoa-oa-oa..."
     },
     "crying": {
       "path": "voices/lumi/lumi_crying.mp3",
-      "duration": 1.68,
-      "lufs": -16.4,
+      "duration": 1.646,
+      "lufs": -16.2,
       "loop": false,
-      "text": "Uu... gusu..."
+      "text": "Uuu..."
     },
     "fall": {
       "path": "voices/lumi/lumi_fall.mp3",
-      "duration": 0.679,
-      "lufs": -16.3,
+      "duration": 1.907,
+      "lufs": -16,
       "loop": false,
-      "text": "Kyaa!"
+      "text": "Aaah!"
     },
     "effort": {
       "path": "voices/lumi/lumi_effort.mp3",
-      "duration": 1.111,
-      "lufs": -16.3,
+      "duration": 1.097,
+      "lufs": -16,
       "loop": false,
-      "text": "Nnn...!"
+      "text": "Nngh...!"
     },
     "cheer": {
       "path": "voices/lumi/lumi_cheer.mp3",
-      "duration": 0.834,
-      "lufs": -16.3,
+      "duration": 1.123,
+      "lufs": -16,
       "loop": false,
-      "text": "Yatta!"
+      "text": "Woohoo!"
     },
     "annoyed": {
       "path": "voices/lumi/lumi_annoyed.mp3",
-      "duration": 0.974,
-      "lufs": -16.3,
+      "duration": 2.142,
+      "lufs": -16.1,
       "loop": false,
-      "text": "Mou..."
+      "text": "Ugh..."
     },
     "thinking": {
       "path": "voices/lumi/lumi_thinking.mp3",
-      "duration": 0.917,
-      "lufs": -16.3,
+      "duration": 0.81,
+      "lufs": -16,
       "loop": false,
-      "text": "Uun..."
+      "text": "Hmm..."
     },
     "explain_start": {
       "path": "voices/lumi/lumi_explain_start.mp3",
-      "duration": 0.859,
-      "lufs": -16.4,
+      "duration": 1.672,
+      "lufs": -15.7,
       "loop": false,
       "text": "Ahem!"
     }
@@ -105,91 +105,91 @@ export const VOICES = {
   "zuzu": {
     "happy": {
       "path": "voices/zuzu/zuzu_happy.mp3",
-      "duration": 1.117,
-      "lufs": -16.3,
+      "duration": 1.228,
+      "lufs": -16,
       "loop": false,
-      "text": "Yattaaa!"
+      "text": "Yaaay!"
     },
     "giggle": {
       "path": "voices/zuzu/zuzu_giggle.mp3",
-      "duration": 1.808,
-      "lufs": -16.4,
+      "duration": 2.011,
+      "lufs": -16,
       "loop": false,
-      "text": "Nihihi!"
+      "text": "Hehehe!"
     },
     "smug": {
       "path": "voices/zuzu/zuzu_smug.mp3",
-      "duration": 1.158,
-      "lufs": -16.5,
+      "duration": 1.149,
+      "lufs": -16,
       "loop": false,
-      "text": "Hehheen!"
+      "text": "Heh-heh!"
     },
     "smug_laugh": {
       "path": "voices/zuzu/zuzu_smug_laugh.mp3",
-      "duration": 2.205,
-      "lufs": -16.2,
+      "duration": 2.116,
+      "lufs": -16,
       "loop": false,
-      "text": "Nishishi~!"
+      "text": "Ahahaha!"
     },
     "shocked": {
       "path": "voices/zuzu/zuzu_shocked.mp3",
-      "duration": 1.347,
-      "lufs": -16.3,
+      "duration": 1.567,
+      "lufs": -16,
       "loop": false,
-      "text": "Eeee?!"
+      "text": "Eeeh?!"
     },
     "small_gasp": {
       "path": "voices/zuzu/zuzu_small_gasp.mp3",
-      "duration": 0.99,
-      "lufs": -16.3,
+      "duration": 1.698,
+      "lufs": -16,
       "loop": false,
-      "text": "Wa!"
+      "text": "Whoa!"
     },
     "dizzy": {
       "path": "voices/zuzu/zuzu_dizzy.mp3",
-      "duration": 1.151,
-      "lufs": -16.3,
+      "duration": 2.09,
+      "lufs": -16,
       "loop": false,
-      "text": "Funyaa~~..."
+      "text": "Wooo-ah-ah..."
     },
     "crying": {
       "path": "voices/zuzu/zuzu_crying.mp3",
-      "duration": 1.871,
-      "lufs": -16.3,
+      "duration": 2.09,
+      "lufs": -16,
       "loop": false,
-      "text": "Uwaaaan!"
+      "text": "Waaaaah!"
     },
     "fall": {
       "path": "voices/zuzu/zuzu_fall.mp3",
-      "duration": 1.196,
-      "lufs": -16.3,
+      "duration": 2.247,
+      "lufs": -16,
       "loop": false,
-      "text": "Uwaaaa!"
+      "text": "Aaaaaah!"
     },
     "effort": {
       "path": "voices/zuzu/zuzu_effort.mp3",
-      "duration": 1.734,
-      "lufs": -16.2,
+      "duration": 1.358,
+      "lufs": -16,
       "loop": false,
-      "text": "Funnunu!"
+      "text": "Hnnnggh!"
     },
     "cheer": {
       "path": "voices/zuzu/zuzu_cheer.mp3",
-      "duration": 1.196,
-      "lufs": -16.3,
+      "duration": 1.306,
+      "lufs": -16,
       "loop": false,
-      "text": "Yattaa!"
+      "text": "Woohoo!"
     },
     "annoyed": {
       "path": "voices/zuzu/zuzu_annoyed.mp3",
-      "duration": 1.203,
-      "lufs": -16.3,
+      "duration": 1.149,
+      "lufs": -16,
       "loop": false,
-      "text": "Moooo!"
+      "text": "Grrr!"
     },
     "oops": {
       "path": "voices/zuzu/zuzu_oops.mp3",
-      "duration": 1.031,
+      "duration": 2.22,
       "lufs": -16.3,
       "loop": false,
       "text": "Ehehe..."
@@ -198,201 +198,201 @@ export const VOICES = {
   "anna": {
     "happy": {
       "path": "voices/anna/anna_happy.mp3",
-      "duration": 0.799,
-      "lufs": -16.3,
+      "duration": 1.019,
+      "lufs": -16,
       "loop": false,
-      "text": "Waa!"
+      "text": "Yay!"
     },
     "giggle": {
       "path": "voices/anna/anna_giggle.mp3",
-      "duration": 1.547,
-      "lufs": -16.7,
+      "duration": 1.698,
+      "lufs": -16.2,
       "loop": false,
-      "text": "Ufufu"
+      "text": "Hehe!"
     },
     "smug": {
       "path": "voices/anna/anna_smug.mp3",
-      "duration": 0.375,
-      "lufs": -16.3,
+      "duration": 0.496,
+      "lufs": -16.2,
       "loop": false,
       "text": "Hmph!"
     },
     "smug_laugh": {
       "path": "voices/anna/anna_smug_laugh.mp3",
-      "duration": 2.484,
-      "lufs": -16.3,
+      "duration": 1.28,
+      "lufs": -16,
       "loop": false,
-      "text": "Oh-hohoho!"
+      "text": "Ha-ha-ha!"
     },
     "shocked": {
       "path": "voices/anna/anna_shocked.mp3",
-      "duration": 1.193,
-      "lufs": -16.3,
+      "duration": 0.758,
+      "lufs": -16,
       "loop": false,
-      "text": "Haa?!"
+      "text": "Huh?!"
     },
     "small_gasp": {
       "path": "voices/anna/anna_small_gasp.mp3",
-      "duration": 1.095,
-      "lufs": -16.3,
+      "duration": 1.411,
+      "lufs": -16,
       "loop": false,
-      "text": "Ara!"
+      "text": "Oh!"
     },
     "dizzy": {
       "path": "voices/anna/anna_dizzy.mp3",
-      "duration": 1.134,
-      "lufs": -16.3,
+      "duration": 2.351,
+      "lufs": -16,
       "loop": false,
-      "text": "Auu~..."
+      "text": "Ooh-ooh-ooh..."
     },
     "crying": {
       "path": "voices/anna/anna_crying.mp3",
-      "duration": 1.446,
-      "lufs": -16.3,
+      "duration": 2.534,
+      "lufs": -16.1,
       "loop": false,
-      "text": "Uu... hikku..."
+      "text": "Waaah..."
     },
     "fall": {
       "path": "voices/anna/anna_fall.mp3",
-      "duration": 0.754,
-      "lufs": -16.3,
+      "duration": 1.907,
+      "lufs": -16,
       "loop": false,
-      "text": "Kyaaa!"
+      "text": "Aaaah!"
     },
     "effort": {
       "path": "voices/anna/anna_effort.mp3",
-      "duration": 1.445,
-      "lufs": -16.2,
+      "duration": 1.646,
+      "lufs": -16,
       "loop": false,
-      "text": "Ku... nn!"
+      "text": "Nngh!"
     },
     "cheer": {
       "path": "voices/anna/anna_cheer.mp3",
-      "duration": 1.249,
-      "lufs": -16.3,
+      "duration": 1.306,
+      "lufs": -16,
       "loop": false,
-      "text": "Yatta waa!"
+      "text": "Woohoo!"
     },
     "annoyed": {
       "path": "voices/anna/anna_annoyed.mp3",
-      "duration": 0.894,
-      "lufs": -16.3,
+      "duration": 1.672,
+      "lufs": -16,
       "loop": false,
-      "text": "Mou!"
+      "text": "Hmph! Ugh!"
     },
     "confident": {
       "path": "voices/anna/anna_confident.mp3",
-      "duration": 0.979,
-      "lufs": -16.3,
+      "duration": 0.836,
+      "lufs": -16,
       "loop": false,
-      "text": "Rakushou yo! (Easy!)"
+      "text": "Easy!"
     }
   },
   "miyu": {
     "happy": {
       "path": "voices/miyu/miyu_happy.mp3",
-      "duration": 0.883,
-      "lufs": -16.3,
+      "duration": 1.358,
+      "lufs": -16,
       "loop": false,
-      "text": "Waai..."
+      "text": "Yay..."
     },
     "giggle": {
       "path": "voices/miyu/miyu_giggle.mp3",
-      "duration": 1.599,
-      "lufs": -16.7,
+      "duration": 1.62,
+      "lufs": -17.5,
       "loop": false,
-      "text": "Ehehe..."
+      "text": "Hehe..."
     },
     "smug": {
       "path": "voices/miyu/miyu_smug.mp3",
-      "duration": 0.897,
-      "lufs": -17.2,
+      "duration": 0.627,
+      "lufs": -16,
       "loop": false,
-      "text": "Fufun..."
+      "text": "Hm."
     },
     "smug_laugh": {
       "path": "voices/miyu/miyu_smug_laugh.mp3",
-      "duration": 1.628,
-      "lufs": -18.9,
+      "duration": 1.959,
+      "lufs": -18.1,
       "loop": false,
-      "text": "Fufu..."
+      "text": "Heh..."
     },
     "shocked": {
       "path": "voices/miyu/miyu_shocked.mp3",
-      "duration": 1.053,
-      "lufs": -16.3,
+      "duration": 1.411,
+      "lufs": -16.2,
       "loop": false,
-      "text": "Nya?!"
+      "text": "Eep?!"
     },
     "small_gasp": {
       "path": "voices/miyu/miyu_small_gasp.mp3",
-      "duration": 1.364,
-      "lufs": -16.7,
+      "duration": 1.855,
+      "lufs": -16.2,
       "loop": false,
-      "text": "A...!"
+      "text": "Oh..."
     },
     "dizzy": {
       "path": "voices/miyu/miyu_dizzy.mp3",
-      "duration": 1.167,
-      "lufs": -16.3,
+      "duration": 1.593,
+      "lufs": -16,
       "loop": false,
-      "text": "Funyaa~..."
+      "text": "Wooo..."
     },
     "crying": {
       "path": "voices/miyu/miyu_crying.mp3",
-      "duration": 0.981,
-      "lufs": -16.5,
+      "duration": 0.967,
+      "lufs": -16.1,
       "loop": false,
-      "text": "Fuee..."
+      "text": "Uuu..."
     },
     "fall": {
       "path": "voices/miyu/miyu_fall.mp3",
-      "duration": 0.809,
-      "lufs": -16.3,
+      "duration": 1.593,
+      "lufs": -16,
       "loop": false,
-      "text": "Hyaaa!"
+      "text": "Wha-ah!"
     },
     "effort": {
       "path": "voices/miyu/miyu_effort.mp3",
-      "duration": 0.991,
-      "lufs": -16.2,
+      "duration": 1.358,
+      "lufs": -16,
       "loop": false,
-      "text": "Nnyu...!"
+      "text": "Nnn...!"
     },
     "cheer": {
       "path": "voices/miyu/miyu_cheer.mp3",
-      "duration": 1.225,
-      "lufs": -16.3,
+      "duration": 1.202,
+      "lufs": -16,
       "loop": false,
-      "text": "Yattaa...!"
+      "text": "Yaay...!"
     },
     "annoyed": {
       "path": "voices/miyu/miyu_annoyed.mp3",
-      "duration": 1.092,
-      "lufs": -16.2,
+      "duration": 2.22,
+      "lufs": -16.1,
       "loop": false,
-      "text": "Muu~..."
+      "text": "Mmmh..."
     },
     "yawn": {
       "path": "voices/miyu/miyu_yawn.mp3",
-      "duration": 1.026,
+      "duration": 2.377,
       "lufs": -16.1,
       "loop": false,
-      "text": "Fuaa~a..."
+      "text": "Haaah..."
     },
     "sleepy": {
       "path": "voices/miyu/miyu_sleepy.mp3",
-      "duration": 1.955,
-      "lufs": -16.3,
+      "duration": 1.28,
+      "lufs": -16,
       "loop": false,
-      "text": "Munya... nn..."
+      "text": "Mmm..."
     },
     "snore": {
       "path": "voices/miyu/miyu_snore.mp3",
-      "duration": 3.269,
-      "lufs": -16.6,
+      "duration": 4.598,
+      "lufs": -16.1,
       "loop": false,
-      "text": "Suu... supii..."
+      "text": "Hnnn... pshhh... hnnn... pshhh..."
     }
   }
 } as const;
