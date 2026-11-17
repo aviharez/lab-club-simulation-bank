@@ -44,6 +44,9 @@ export const HEADROOM = 0.6;
  */
 export const MUSIC_TRIM = 10 ** (4 / 20);
 
+/** Voice bus: every voice cue plays at this share of its cue volume (55 %, -5.2 dB) so they sit lower against the music and SFX. */
+export const VOICE_BUS = 0.55;
+
 /** Music ducking: depth under a full-level voice, and ramp lengths in frames. */
 export const DUCK = { voiceDb: -7, softVoiceDb: -3, attack: 5, release: 6 };
 
@@ -100,7 +103,7 @@ export const cueVolumeAt = (c: Cue, f: number, fps: number, duck: number[]) => {
   const fadeOut = c.fadeOut ?? (c.len ? 2 : 0);
   const a = c.fadeIn ? Math.min(1, (local + 1) / c.fadeIn) : 1;
   const b = fadeOut ? Math.min(1, (len - local) / fadeOut) : 1;
-  return c.volume * a * b;
+  return (c.layer === "voice" ? VOICE_BUS : 1) * c.volume * a * b;
 };
 
 /** What an episode's sound.ts `soundtrack()` returns: read by the kit's <Soundtrack> and by the report. */

@@ -14,6 +14,7 @@ import {
   cueFrames,
   HEADROOM,
   MUSIC_TRIM,
+  VOICE_BUS,
   type Cue,
   type SoundtrackData,
 } from "../audio/mix.ts";
@@ -76,7 +77,7 @@ export const createReport = ({
         .join(", ");
     const pad = (s: string | number, n: number) => String(s).padEnd(n);
     section(
-      `Cue sheet (${cues.length} cues; files under public/${LIB_DIR}; volumes before the ${(20 * Math.log10(HEADROOM)).toFixed(1)} dB mix headroom; music bus +${(20 * Math.log10(MUSIC_TRIM)).toFixed(0)} dB to match the voice loudness target)`,
+      `Cue sheet (${cues.length} cues; files under public/${LIB_DIR}; volumes before the ${(20 * Math.log10(HEADROOM)).toFixed(1)} dB mix headroom; music bus +${(20 * Math.log10(MUSIC_TRIM)).toFixed(0)} dB to match the voice loudness target; voice bus ${(20 * Math.log10(VOICE_BUS)).toFixed(1)} dB)`,
     );
     console.log(
       [
