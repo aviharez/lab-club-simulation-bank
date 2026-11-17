@@ -66,8 +66,8 @@ export const ACTING = (m: Member, f: number): ActorState => {
 export const CAPTIONS: Caption[] = [
   {
     from: 4,
-    to: BEAT.end,
+    to: Math.min(90, BEAT.end),
     text: "Template: who guesses best?",
-    sticker: { text: "Guess first!", at: 36 },
+    variant: "hook", sticker: { text: "Guess first!", at: 36 },
   },
 ];

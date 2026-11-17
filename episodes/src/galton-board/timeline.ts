@@ -274,15 +274,15 @@ const first10 = balls().slice(0, SLOW_BALLS).map((b) => b.bin);
 const distinct = new Set(first10).size;
 const total = int(BALLS);
 export const CAPTIONS: Caption[] = [
-  { from: 4, to: BEAT.bets, text: `${total} balls. Which bin wins?`, sticker: { text: "Guess first!", at: 36 } },
-  { from: BEAT.bets, to: BEAT.zuzuBet, text: `Anna: “Nobody picks bin ${BET.anna}. Mine!”` },
-  { from: BEAT.zuzuBet, to: BEAT.pour, text: `Zuzu: “The middle, bin ${BET.zuzu}!”` },
-  { from: BEAT.pour, to: BEAT.slow, text: "Miyu pours from the top" },
-  { from: BEAT.slow, to: POUR.first + POUR.firstDur + 4, text: `${ROWS} pegs: left or right, 50/50` },
+  { from: 4, to: BEAT.bets, text: `${total} balls. Which bin wins?`, variant: "hook", sticker: { text: "Guess first!", at: 36 } },
+  { from: BEAT.bets, to: BEAT.zuzuBet, speaker: "anna", text: `Nobody picks bin ${BET.anna}. Mine!` },
+  { from: BEAT.zuzuBet, to: BEAT.pour, speaker: "zuzu", text: `The middle, bin ${BET.zuzu}!` },
+  { from: BEAT.pour, to: BEAT.slow + 12, text: "Miyu pours from the top" },
+  { from: BEAT.slow + 12, to: POUR.first + POUR.firstDur + 4, text: `${ROWS} pegs: left or right, 50/50` },
   { from: POUR.first + POUR.firstDur + 4, to: BEAT.fast, text: `${SLOW_BALLS} balls, already ${distinct} bins` },
   { from: BEAT.fast, to: BEAT.annaBall, text: `Now all ${total}!` },
-  { from: BEAT.annaBall, to: BEAT.grow, text: `Ball #${ANNA_BALL + 1} lands in bin ${BET.anna}!` },
-  { from: BEAT.grow, to: BEAT.vs, text: "The middle keeps growing…" },
+  { from: BEAT.annaBall, to: BEAT.grow - 14, text: `Ball #${ANNA_BALL + 1} lands in bin ${BET.anna}!` },
+  { from: BEAT.grow - 14, to: BEAT.vs, text: "The middle keeps growing…" },
   { from: BEAT.vs, to: BEAT.twist, text: `Bin ${BET.anna}: ${C[BET.anna]} ${C[BET.anna] === 1 ? "ball" : "balls"} · bin ${BET.zuzu}: ${C[BET.zuzu]}` },
   { from: BEAT.twist, to: BEAT.paths, text: "The bins draw a bell curve", sticker: { text: "Twist!", at: BEAT.twist + 12, top: 330 } },
   { from: BEAT.paths, to: PATHS.fan - 4, text: `Bin ${BET.anna}: only ${choose(ROWS, BET.anna)} path (${ROWS} lefts)` },

@@ -1,8 +1,9 @@
 // Report: data table + PASS/FAIL checks + cue sheet. Run: npm run report:template
 import { createReport } from "../kit/report.ts";
+import { captionReadability } from "../kit/captions.ts";
 import { fmt, guesses, ORDER, SEED } from "./data.ts";
 import { MUSIC_RANGE, soundtrack, VOICE_COOLDOWN } from "./sound.ts";
-import { DURATION, FPS } from "./timeline.ts";
+import { CAPTIONS, DURATION, FPS } from "./timeline.ts";
 
 const r = createReport({ fps: FPS });
 
@@ -42,4 +43,5 @@ r.loudness(
   ],
   "npm run render:template",
 );
+r.check("captions stay up long enough to read (info pill ≥ 1.5 s, chat bubble ≥ 2.2 s)", captionReadability(CAPTIONS));
 r.finish();

@@ -1,6 +1,7 @@
 // Report: data table + PASS/FAIL checks (+ timeline checks and the cue sheet once the episode is animated).
 // Run: npm run report:galton-board
 import { createReport } from "../kit/report.ts";
+import { captionReadability } from "../kit/captions.ts";
 import { ARCADE, ballPath, contactPoint, overlayHeight, PATH_SEGMENTS, STACK, stackHeight, stackPos } from "../sets/probability-arcade/layout.ts";
 import { project } from "../kit/camera.ts";
 import { BOARD_SHOTS, boardShotAt, camAt } from "./camera.ts";
@@ -299,4 +300,5 @@ r.loudness(
   ],
   "npm run render:galton-board",
 );
+r.check("captions stay up long enough to read (info pill ≥ 1.5 s, chat bubble ≥ 2.2 s)", captionReadability(CAPTIONS));
 r.finish();

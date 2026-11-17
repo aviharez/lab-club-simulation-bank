@@ -1,6 +1,7 @@
 // Physics table, soundtrack cue sheet and checks for "Same Jump, Different Planets" (same functions the video uses).
 // Run: npm run report:jump
 import { createReport } from "../src/kit/report.ts";
+import { captionReadability } from "../src/kit/captions.ts";
 import { fmt2, physicsTable, V0, V0_LABEL } from "../src/jump/physics.ts";
 import {
   CTA_GROUP,
@@ -10,6 +11,7 @@ import {
 } from "../src/jump/sound.ts";
 import {
   BEAT,
+  CAPTIONS,
   DURATION,
   FPS,
   landFrame,
@@ -92,4 +94,5 @@ r.loudness(
   ],
   "npm run render:jump",
 );
+r.check("captions stay up long enough to read (info pill ≥ 1.5 s, chat bubble ≥ 2.2 s)", captionReadability(CAPTIONS));
 r.finish();

@@ -1,5 +1,6 @@
 // Report: data table + PASS/FAIL checks + cue sheet. Run: npm run report:drop-throw
 import { createReport } from "../kit/report.ts";
+import { captionReadability } from "../kit/captions.ts";
 import {
   ballAt,
   ballTable,
@@ -257,4 +258,5 @@ r.loudness(
   ],
   "npm run render:drop-throw",
 );
+r.check("captions stay up long enough to read (info pill ≥ 1.5 s, chat bubble ≥ 2.2 s)", captionReadability(CAPTIONS));
 r.finish();

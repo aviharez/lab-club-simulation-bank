@@ -520,9 +520,9 @@ export const REVEAL_CARD = { at: BEAT.reveal + 30, lands: BEAT.reveal + 40 };
 
 const t = (o: ObjectId, m: Medium) => fmt(landTime(o, m));
 export const CAPTIONS: Caption[] = [
-  { from: 4, to: BEAT.bets, text: "Hammer or feather: which lands first?", sticker: { text: "Guess first!", at: 36 } },
-  { from: BEAT.bets, to: 150, text: "Anna: “The heavy one wins!”" },
-  { from: 150, to: BEAT.countdown, text: "Zuzu: “They land together!”" },
+  { from: 4, to: BEAT.bets, text: "Hammer or feather: which lands first?", variant: "hook", sticker: { text: "Guess first!", at: 36 } },
+  { from: BEAT.bets, to: 150, speaker: "anna", text: "The heavy one wins!" },
+  { from: 150, to: BEAT.countdown, speaker: "zuzu", text: "They land together!" },
   { from: BEAT.countdown, to: HAMMER_AIR + 16, text: `Both from ${H} m, in normal air` },
   { from: HAMMER_AIR + 16, to: FEATHER_AIR, text: "The feather is… still falling" },
   { from: FEATHER_AIR, to: BEAT.twist, text: `Air: hammer ${t("hammer", "air")} s, feather ${t("feather", "air")} s` },

@@ -1,5 +1,6 @@
 // Report: data table + PASS/FAIL checks + cue sheet. Run: npm run report:feather-hammer
 import { createReport } from "../kit/report.ts";
+import { captionReadability } from "../kit/captions.ts";
 import {
   dropTable,
   FEATHER_VT,
@@ -202,4 +203,5 @@ r.loudness(
   ],
   "npm run render:feather-hammer",
 );
+r.check("captions stay up long enough to read (info pill ≥ 1.5 s, chat bubble ≥ 2.2 s)", captionReadability(CAPTIONS));
 r.finish();

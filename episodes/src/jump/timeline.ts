@@ -574,7 +574,7 @@ export const CAPTIONS: Caption[] = [
     from: 4,
     to: BEAT.setup,
     text: "Same jump. 4 planets. Who goes highest?",
-    sticker: { text: "Guess first!", at: 36 },
+    variant: "hook", sticker: { text: "Guess first!", at: 36 },
   },
   { from: BEAT.setup, to: 176, text: "Step 1: lock the jump speed" },
   { from: 176, to: BEAT.countdown, text: "Lumi is the control group." },

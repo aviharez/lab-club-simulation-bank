@@ -1,6 +1,7 @@
 // Report: data table + PASS/FAIL checks + timeline checks + cue sheet.
 // Run: npm run report:three-doors
 import { createReport } from "../kit/report.ts";
+import { captionReadability } from "../kit/captions.ts";
 import { frameOfRound, MUSIC_RANGE, soundtrack, TICK_AT, VOICE_COOLDOWN } from "./sound.ts";
 import { ACTING, ANNA, BEAT, CAPTIONS, doorsAt, DURATION, FPS, miniAt, MIYU, MONTAGE, played, RESULT_COUNT_END, RESULT_OUTS, RESULT_POPS, ROUND_AT, scoreAt, SLOW } from "./timeline.ts";
 import { simulate, DOORS, EXPECTED, pct, PLAYERS, rateAfter, ROUNDS, rounds, SEED_NOTE, STRATEGY, totalWins, winsAfter, doorLabel, type Player } from "./data.ts";
@@ -196,4 +197,5 @@ r.loudness(
   ],
   "npm run render:three-doors",
 );
+r.check("captions stay up long enough to read (info pill ≥ 1.5 s, chat bubble ≥ 2.2 s)", captionReadability(CAPTIONS));
 r.finish();
