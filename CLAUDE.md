@@ -77,7 +77,11 @@ owned by others.
    hand-typed values. Same rounding everywhere; count-ups end exactly on the final value. Simplifications are
    labelled on screen ("2x SLOW-MO", "no friction", "simplified air drag"). Each episode has a report script that
    prints the data table and PASS/FAIL checks.
-4. **Look.** Mascots: soft 3D figurine style, no outlines, matte MeshStandardMaterial, faces always bright (see actor_conventions.face). Environments: every episode gets a purpose-built set designed for its topic, following the ENVIRONMENT brief in its prompt. Sets do not have to be colorful, but they must meet the Environment quality bar.
+4. **Look.** Mascots: soft 3D figurine style, no outlines, matte MeshStandardMaterial, faces readable but lit like the rest of the skin (see actor_conventions.face).
+   In every episode and lookdev, render each `<Actor>` with `faceLit={1} faceGlow={0.08}`. Without these props the
+   face uses the default `faceGlow` of 1, glows brighter than the hands and legs and looks pasted on (this mistake
+   was flagged on EP07's lookdev). Check the faces against the hands and legs in the close-up lookdev still.
+   Environments: every episode gets a purpose-built set designed for its topic, following the ENVIRONMENT brief in its prompt. Sets do not have to be colorful, but they must meet the Environment quality bar.
 5. **Layout.** Safe areas: top 150 px, bottom 300 px. Readable text ≥ ~28 px. Top caption pill per beat; optional
    bottom notebook panel for live charts/counters.
 6. **Episode structure.** Hook question + "Guess first!" (0–3 s) → setup → experiment → twist at ~60% → results →
@@ -127,7 +131,7 @@ owned by others.
 2. Data first: pure, seeded functions in <slug>/data.ts (formulas or simulation). The report prints the data table and PASS/FAIL checks against the numbers in the episode prompt.
 3. Environment: build the episode's set from its ENVIRONMENT brief and the Environment quality bar. Render the lookdev stills and wait for approval before animating.
 4. timeline.ts: BEAT frames, ACTING per mascot (clip, expression, symbols) and CAPTIONS, all derived from data.ts.
-5. Scene3D: the episode set + Actor. Props reused by later episodes go to src/sets/<set>/props/ or a shared props folder.
+5. Scene3D: the episode set + Actor (always `faceLit={1} faceGlow={0.08}`, see Series rule 4). Props reused by later episodes go to src/sets/<set>/props/ or a shared props folder.
 6. Overlays: only src/kit components.
 7. sound.ts: music plan, SFX cues and voice rules (src/audio/voiceCues) using only library names. The report prints the cue sheet and fails on missing files, voice overlaps outside a group, or repeats inside the cooldown.
 8. Render both versions and 8 stills to out/<slug>/. Check: each mascot readable (>= ~1/5 frame height or close-up at key beats), text >= ~28 px inside safe areas, on-screen numbers equal the report, 35-50 s.
