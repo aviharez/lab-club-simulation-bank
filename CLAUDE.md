@@ -131,7 +131,7 @@ owned by others.
 6. Overlays: only src/kit components.
 7. sound.ts: music plan, SFX cues and voice rules (src/audio/voiceCues) using only library names. The report prints the cue sheet and fails on missing files, voice overlaps outside a group, or repeats inside the cooldown.
 8. Render both versions and 8 stills to out/<slug>/. Check: each mascot readable (>= ~1/5 frame height or close-up at key beats), text >= ~28 px inside safe areas, on-screen numbers equal the report, 35-50 s.
-9. Ask for approval of the rendered result (paths to both MP4s, the stills and the report summary). Only after an
+9. Ask for approval of the rendered result (the MP4 paths, the stills and the report summary). Only after an
    explicit approval, deliver it to `prod-ready/` (see "Production delivery").
 
 ## Production delivery
@@ -141,11 +141,11 @@ After any render of an episode (new episode, fix or re-render): show the result,
 and wait. Never copy an unapproved render; a re-render after a fix needs a new approval.
 
 On approval:
-- Name: `EPxx-<slug>` (two-digit episode number + the episode slug, e.g. `EP06-dizzy-walk`).
-- Copy `episodes/out/<slug>.mp4` → `prod-ready/EPxx-<slug>.mp4` (full: music + SFX + voices; YouTube Shorts, Facebook)
-  and `episodes/out/<slug>_nomusic.mp4` → `prod-ready/EPxx-<slug>_nomusic.mp4` (SFX + voices; Instagram/TikTok,
-  where a platform sound is added in the app). Overwrite an older delivery of the same episode.
-- Write `prod-ready/EPxx-<slug>.md` (same name) with the social copy, using the template below. English, no
+- Name: `EPxx-<name>`: the two-digit episode number + the base name of the episode's full master in `episodes/out/`
+  (e.g. `EP01-same-jump-different-planets`, `EP06-dizzy-walk`).
+- Copy only the full master (music + SFX + voices): `episodes/out/<name>.mp4` → `prod-ready/EPxx-<name>.mp4`. The
+  no-music version stays in `episodes/out/` and is not delivered. Overwrite an older delivery of the same episode.
+- Write `prod-ready/EPxx-<name>.md` (same name) with the social copy, using the template below. English, no
   Japanese words, no clickbait the video does not deliver; every number in the copy equals the report.
 - MP4s in `prod-ready/` are ignored by git; the `.md` files are committed.
 
@@ -159,33 +159,33 @@ Platform rules (checked Nov 2026; re-check if a platform changes them):
 - Hashtags: the series tag `#LabClub`, 1-2 topic tags (e.g. `#Probability`, `#Physics`), and broad ones (`#Science`,
   `#Math`, `#LearnOnTikTok`, `#STEM`). No unrelated trending tags, no banned or misleading tags.
 
-Template for `prod-ready/EPxx-<slug>.md`:
+Template for `prod-ready/EPxx-<name>.md`:
 
 ```markdown
 # EPxx: <Episode title>
 
-- Files: EPxx-<slug>.mp4 (full) · EPxx-<slug>_nomusic.mp4 (no music) · <duration> s · 1080×1920
+- File: EPxx-<name>.mp4 · <duration> s · 1080×1920
 - Topic: <one line: the science idea>
 - Key numbers (from the report): <...>
 
 ## Short description
 <2-3 sentences: what happens and what you learn>
 
-## YouTube Shorts (upload: EPxx-<slug>.mp4)
+## YouTube Shorts
 Title: <≤ 100 chars>
 Description:
 <2-3 lines + the CTA question>
 #LabClub #<Topic> #<Topic> #Science #Shorts
 
-## Instagram Reels (upload: EPxx-<slug>_nomusic.mp4 or the full one)
+## Instagram Reels
 <hook line>
 <1-2 lines + CTA question>
 #LabClub #<Topic> #<Topic> #Science #STEM        ← max 5
 
-## TikTok (upload: EPxx-<slug>_nomusic.mp4 or the full one)
+## TikTok
 <short hook + CTA question> #LabClub #<Topic> #<Topic> #Science #LearnOnTikTok
 
-## Facebook Reels (upload: EPxx-<slug>.mp4)
+## Facebook Reels
 <hook + CTA question> #LabClub #<Topic>
 ```
 
