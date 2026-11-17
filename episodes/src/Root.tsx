@@ -18,11 +18,17 @@ import {
 } from "./feather-hammer/timeline";
 import { VacuumHallLookdev } from "./sets/vacuum-hall";
 import { SunlitAtriumLookdev } from "./sets/sunlit-atrium";
+import { GameShowStudioLookdev } from "./sets/game-show-studio";
 import { DropThrow, DropThrowAudio } from "./drop-throw/DropThrow";
 import {
   DURATION as DT_DURATION,
   FPS as DT_FPS,
 } from "./drop-throw/timeline";
+import { ThreeDoors, ThreeDoorsAudio } from "./three-doors/ThreeDoors";
+import {
+  DURATION as TD_DURATION,
+  FPS as TD_FPS,
+} from "./three-doors/timeline";
 import { GravityLabLookdev } from "./sets/gravity-lab";
 import { HomeLabV2Lookdev } from "./sets/home-lab-v2";
 import { DURATION, FPS } from "./jump/timeline";
@@ -91,6 +97,26 @@ export const RemotionRoot: React.FC = () => {
           defaultProps={{ music: true }}
         />
       </Folder>
+      <Folder name="EP04-ThreeDoors">
+        <Composition
+          id="ThreeDoors"
+          component={ThreeDoors}
+          durationInFrames={TD_DURATION}
+          fps={TD_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ music: true }}
+        />
+        <Composition
+          id="ThreeDoorsAudio"
+          component={ThreeDoorsAudio}
+          durationInFrames={TD_DURATION}
+          fps={TD_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ music: true }}
+        />
+      </Folder>
       <Folder name="Template">
         <Composition
           id="Template"
@@ -139,6 +165,14 @@ export const RemotionRoot: React.FC = () => {
         <Composition
           id="SunlitAtriumLookdev"
           component={SunlitAtriumLookdev}
+          durationInFrames={3}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="GameShowStudioLookdev"
+          component={GameShowStudioLookdev}
           durationInFrames={3}
           fps={30}
           width={1080}

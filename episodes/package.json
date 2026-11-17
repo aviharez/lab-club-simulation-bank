@@ -65,7 +65,13 @@
     "render:drop-throw:video": "remotion render DropThrow out/.drop-throw-video.mp4 --gl=angle-egl --concurrency=2 --muted",
     "render:drop-throw:full": "remotion render DropThrowAudio out/.drop-throw-full.wav --codec=wav && scripts/master.sh out/.drop-throw-video.mp4 out/.drop-throw-full.wav out/drop-throw.mp4",
     "render:drop-throw:nomusic": "remotion render DropThrowAudio out/.drop-throw-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.drop-throw-video.mp4 out/.drop-throw-nomusic.wav out/drop-throw_nomusic.mp4",
-    "lookdev:sunlit-atrium": "node scripts/stills.mjs SunlitAtriumLookdev out/lookdev/sunlit-atrium 0,1,2"
+    "report:three-doors": "node --no-warnings src/three-doors/report.ts",
+    "render:three-doors": "npm run render:three-doors:video && npm run render:three-doors:full && npm run render:three-doors:nomusic",
+    "render:three-doors:video": "remotion render ThreeDoors out/.three-doors-video.mp4 --gl=angle-egl --concurrency=2 --muted",
+    "render:three-doors:full": "remotion render ThreeDoorsAudio out/.three-doors-full.wav --codec=wav && scripts/master.sh out/.three-doors-video.mp4 out/.three-doors-full.wav out/three-doors.mp4",
+    "render:three-doors:nomusic": "remotion render ThreeDoorsAudio out/.three-doors-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.three-doors-video.mp4 out/.three-doors-nomusic.wav out/three-doors_nomusic.mp4",
+    "lookdev:sunlit-atrium": "node scripts/stills.mjs SunlitAtriumLookdev out/lookdev/sunlit-atrium 0,1,2",
+    "lookdev:game-show-studio": "node scripts/stills.mjs GameShowStudioLookdev out/lookdev/game-show-studio 0,1,2"
   },
   "allowScripts": {
     "esbuild": false
