@@ -52,7 +52,13 @@
     "render:template": "npm run render:template:video && npm run render:template:full && npm run render:template:nomusic",
     "render:template:video": "remotion render Template out/.template-video.mp4 --gl=angle-egl --concurrency=2 --muted",
     "render:template:full": "remotion render TemplateAudio out/.template-full.wav --codec=wav && scripts/master.sh out/.template-video.mp4 out/.template-full.wav out/template.mp4",
-    "render:template:nomusic": "remotion render TemplateAudio out/.template-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.template-video.mp4 out/.template-nomusic.wav out/template_nomusic.mp4"
+    "render:template:nomusic": "remotion render TemplateAudio out/.template-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.template-video.mp4 out/.template-nomusic.wav out/template_nomusic.mp4",
+    "report:feather-hammer": "node --no-warnings src/feather-hammer/report.ts",
+    "render:feather-hammer": "npm run render:feather-hammer:video && npm run render:feather-hammer:full && npm run render:feather-hammer:nomusic",
+    "render:feather-hammer:video": "remotion render FeatherHammer out/.feather-hammer-video.mp4 --gl=angle-egl --concurrency=2 --muted",
+    "render:feather-hammer:full": "remotion render FeatherHammerAudio out/.feather-hammer-full.wav --codec=wav && scripts/master.sh out/.feather-hammer-video.mp4 out/.feather-hammer-full.wav out/feather-hammer.mp4",
+    "render:feather-hammer:nomusic": "remotion render FeatherHammerAudio out/.feather-hammer-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.feather-hammer-video.mp4 out/.feather-hammer-nomusic.wav out/feather-hammer_nomusic.mp4",
+    "lookdev:vacuum-hall": "node scripts/stills.mjs VacuumHallLookdev out/lookdev/vacuum-hall 0,1,2"
   },
   "allowScripts": {
     "esbuild": false

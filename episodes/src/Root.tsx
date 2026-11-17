@@ -11,6 +11,12 @@ import {
   FPS as TEMPLATE_FPS,
 } from "./_template/timeline";
 import { SameJump, SameJumpAudio } from "./jump/SameJump";
+import { FeatherHammer, FeatherHammerAudio } from "./feather-hammer/FeatherHammer";
+import {
+  DURATION as FH_DURATION,
+  FPS as FH_FPS,
+} from "./feather-hammer/timeline";
+import { VacuumHallLookdev } from "./sets/vacuum-hall";
 import { GravityLabLookdev } from "./sets/gravity-lab";
 import { HomeLabV2Lookdev } from "./sets/home-lab-v2";
 import { DURATION, FPS } from "./jump/timeline";
@@ -39,6 +45,26 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         defaultProps={{ music: true }}
       />
+      <Folder name="EP02-FeatherHammer">
+        <Composition
+          id="FeatherHammer"
+          component={FeatherHammer}
+          durationInFrames={FH_DURATION}
+          fps={FH_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ music: true }}
+        />
+        <Composition
+          id="FeatherHammerAudio"
+          component={FeatherHammerAudio}
+          durationInFrames={FH_DURATION}
+          fps={FH_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ music: true }}
+        />
+      </Folder>
       <Folder name="Template">
         <Composition
           id="Template"
@@ -71,6 +97,14 @@ export const RemotionRoot: React.FC = () => {
         <Composition
           id="GravityLabLookdev"
           component={GravityLabLookdev}
+          durationInFrames={3}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="VacuumHallLookdev"
+          component={VacuumHallLookdev}
           durationInFrames={3}
           fps={30}
           width={1080}

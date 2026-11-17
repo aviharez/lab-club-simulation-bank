@@ -20,10 +20,11 @@ Episode prompts that say "Follow SERIES_RULES.md" mean the **Series rules** sect
 | `audio/_takes/` | Unused takes (and `unused/placeholders_jump/`, the old EP01 placeholder audio). Never reference from episodes |
 | `episodes/` | Remotion project (React + TypeScript, `@remotion/three`) |
 | `episodes/src/jump/` | EP01 "Same Jump, Different Planets" (`SameJump` composition) |
+| `episodes/src/feather-hammer/` | EP02 "Feather vs Hammer" (`FeatherHammer` composition) on the `vacuum-hall` set |
 | `episodes/src/kit/` | Episode kit: theme, cast (`useCast`), motion, `CountUp`, seeded random, `Soundtrack`/`soundtrackOnly`, report helpers (`createReport`), camera model; `overlays/` (CaptionPills, Countdown, Badge, ResultCards, RevealCard, CtaCard, ChartPanel with log axes, MangaSymbols) |
 | `episodes/src/kit/env/` | Environment kit: `LookPreset` (tone mapping, exposure, fog, light rig, post), `SetStage`, `SetPost`, `VolumetricCone`, `Dust`, `Caustics`, `ReflectiveFloor`, `GradientSky`/`ParallaxLayers`, `useSetGLB`, `SetLookdev` (3 lookdev stills), `PostReady` gate |
 | `episodes/src/_template/` | Starting point for a new episode (data, timeline, camera, Scene3D, overlays, sound, report). See "New episode checklist" |
-| `episodes/src/sets/<name>/` | One folder per set: r3f wrapper (practicals, haze, animated parts), `look.ts` preset, `<Set>Lookdev` composition. `lab/` is the original candy lab (its `GravityChambers` and `ControlPanel` are still used by EP01); `home-lab-v2/` is the upgraded home lab; `gravity-lab/` is EP01's purpose-built set (observatory hall at dusk) |
+| `episodes/src/sets/<name>/` | One folder per set: r3f wrapper (practicals, haze, animated parts), `look.ts` preset, `<Set>Lookdev` composition. `lab/` is the original candy lab (its `GravityChambers` and `ControlPanel` are still used by EP01); `home-lab-v2/` is the upgraded home lab; `gravity-lab/` is EP01's purpose-built set (observatory hall at dusk); `vacuum-hall/` is EP02's (vacuum test hall). `lab/props/` holds reusable drop-test props: `VacuumColumn` (+ `PressureGauge`), `VacuumPump`, `Feather`, `Hammer` |
 | `episodes/src/audio/` | Audio for all episodes: `library.ts` (typed `voice()`, `sfx()`, `music()` from the manifest), `voiceCues.ts` (voices from the acting), `mix.ts` (cue model, ducking, headroom) |
 | `episodes/public/audio/lib/` | Mirror of `audio/final/` made by `npm run sync-audio`. Never edit by hand |
 | `episodes/src/actors/` | `Actor` component (GLB + clip + expression) and actor test compositions. Clips per mascot: idle, walk, run, point, cheer, sad, dizzy, sit, throw, push, foot_tap, float_sleep, panic_fall, land_squash, jump_crouch/air/land, plus hold_drop (prop released at frame 27), carry, compare, spin_overhead, pull_rope, push_hands, slide, hold_sign, sleep_stand |
@@ -39,10 +40,13 @@ npm run sync-audio     # copy audio/final + manifest into public/audio/lib, rege
 npm run sync-sets      # copy assets/sets/<name>/<name>.glb into public/sets
 npm run lookdev:home-lab-v2  # 3 lookdev stills → out/lookdev/home-lab-v2
 npm run lookdev:gravity-lab  # same for EP01's set
+npm run lookdev:vacuum-hall  # same for EP02's set
 npm run report:jump    # EP01 physics table, cue sheet, checks, loudness of the rendered files
 npm run render:jump    # EP01 picture + both masters → out/same-jump-different-planets{,_nomusic}.mp4
 npm run render:jump:full     # re-mix + re-master the full version only (reuses the rendered picture)
 npm run render:jump:nomusic  # same for the no-music version (SFX + voices)
+npm run report:feather-hammer   # EP02 drop table, timeline checks, cue sheet, loudness
+npm run render:feather-hammer   # EP02 picture + both masters → out/feather-hammer{,_nomusic}.mp4 (:video, :full, :nomusic)
 npm run lint           # eslint + tsc
 ```
 

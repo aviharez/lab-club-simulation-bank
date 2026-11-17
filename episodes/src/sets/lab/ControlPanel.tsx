@@ -15,11 +15,19 @@ export type ControlPanelProps = {
   cursor?: boolean;
   /** 0..1 per button: lit amount (frame-driven by the caller) */
   buttonGlow?: number[];
+  /** body colours (defaults: the candy lab palette of EP01) */
+  theme?: Partial<ControlPanelTheme>;
 };
+
+export type ControlPanelTheme = { cabinet: string; front: string; desk: string; stem: string; monitor: string; stand: string; side: string };
+export const CANDY_PANEL: ControlPanelTheme = { cabinet: "#e6dcf5", front: "#dcebfd", desk: "#fdf0c8", stem: "#cfc7bd", monitor: "#a9c8f4", stand: "#cbc2b7", side: "#f4a9bd" };
+/** steel/cyan body for industrial sets (vacuum-hall) */
+export const STEEL_PANEL: ControlPanelTheme = { cabinet: "#cfd6dc", front: "#e6ebef", desk: "#eef2f4", stem: "#8e98a1", monitor: "#56606a", stand: "#8e98a1", side: "#3cc8dc" };
 
 const BUTTONS = [MASCOT_COLORS.miyu, MASCOT_COLORS.anna, MASCOT_COLORS.lumi, MASCOT_COLORS.zuzu];
 
-export const ControlPanel: React.FC<ControlPanelProps> = ({ position, rotationY = 0, font, lines, cursor = false, buttonGlow = [0, 0, 0, 0] }) => {
+export const ControlPanel: React.FC<ControlPanelProps> = ({ position, rotationY = 0, font, lines, cursor = false, buttonGlow = [0, 0, 0, 0], theme }) => {
+  const T = { ...CANDY_PANEL, ...theme };
   const screen = useMemo(() => screenCanvas(), []);
   const key = JSON.stringify(lines) + cursor;
   useMemo(() => {
@@ -33,11 +41,11 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({ position, rotationY 
       {/* cabinet */}
       <mesh castShadow receiveShadow position={[0, 0.36, 0]}>
         <boxGeometry args={[1.25, 0.72, 0.62]} />
-        <Matte color="#e6dcf5" />
+        <Matte color={T.cabinet} />
       </mesh>
       <mesh position={[0, 0.36, 0.312]}>
         <boxGeometry args={[1.05, 0.5, 0.01]} />
-        <Matte color="#dcebfd" />
+        <Matte color={T.front} />
       </mesh>
       {/* front status lights + vent stripes */}
       {BUTTONS.map((c, i) => (
@@ -55,7 +63,7 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({ position, rotationY 
       {/* sloped desk */}
       <mesh castShadow receiveShadow position={[0, 0.79, 0.08]} rotation={[-0.42, 0, 0]}>
         <boxGeometry args={[1.32, 0.06, 0.62]} />
-        <Matte color="#fdf0c8" roughness={0.65} />
+        <Matte color={T.desk} roughness={0.65} />
       </mesh>
       <group position={[0, 0.83, 0.1]} rotation={[-0.42, 0, 0]}>
         {BUTTONS.map((c, i) => (
@@ -69,7 +77,7 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({ position, rotationY 
           <group key={i} position={[-0.3 + i * 0.3, 0.01, -0.13]}>
             <mesh>
               <boxGeometry args={[0.2, 0.012, 0.03]} />
-              <Matte color="#cfc7bd" />
+              <Matte color={T.stem} />
             </mesh>
             <mesh castShadow position={[-0.06 + i * 0.05, 0.025, 0]}>
               <boxGeometry args={[0.05, 0.04, 0.06]} />
@@ -87,7 +95,7 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({ position, rotationY 
       <group position={[0, 1.28, -0.12]} rotation={[-0.12, 0, 0]}>
         <mesh castShadow receiveShadow>
           <boxGeometry args={[1.08, 0.6, 0.08]} />
-          <Matte color="#a9c8f4" roughness={0.6} />
+          <Matte color={T.monitor} roughness={0.6} />
         </mesh>
         <mesh position={[0, 0, 0.042]}>
           <planeGeometry args={[0.98, 0.49]} />
@@ -96,14 +104,14 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({ position, rotationY 
         </mesh>
         <mesh position={[0, -0.36, -0.02]}>
           <boxGeometry args={[0.1, 0.2, 0.06]} />
-          <Matte color="#cbc2b7" />
+          <Matte color={T.stand} />
         </mesh>
       </group>
       {/* side mini screen with a pulse line */}
       <group position={[0.75, 0.98, 0.05]} rotation={[-0.2, -0.5, 0]}>
         <mesh castShadow>
           <boxGeometry args={[0.32, 0.26, 0.05]} />
-          <Matte color="#f4a9bd" />
+          <Matte color={T.side} />
         </mesh>
         <mesh position={[0, 0, 0.026]}>
           <planeGeometry args={[0.27, 0.2]} />
