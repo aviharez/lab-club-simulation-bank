@@ -84,6 +84,12 @@
     "render:dizzy-walk:nomusic": "remotion render DizzyWalkAudio out/.dizzy-walk-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.dizzy-walk-video.mp4 out/.dizzy-walk-nomusic.wav out/dizzy-walk_nomusic.mp4",
     "lookdev:probability-arcade": "node scripts/stills.mjs ProbabilityArcadeLookdev out/lookdev/probability-arcade 0,1,2",
     "lookdev:night-plaza": "node scripts/stills.mjs NightPlazaLookdev out/lookdev/night-plaza 0,1,2",
+    "lookdev:chem-prep-room": "node scripts/stills.mjs ChemPrepRoomLookdev out/lookdev/chem-prep-room 0,1,2",
+    "report:sorting-race": "node --no-warnings src/sorting-race/report.ts",
+    "render:sorting-race": "npm run render:sorting-race:video && npm run render:sorting-race:full && npm run render:sorting-race:nomusic",
+    "render:sorting-race:video": "remotion render SortingRace out/.sorting-race-video.mp4 --gl=angle-egl --concurrency=2 --muted",
+    "render:sorting-race:full": "remotion render SortingRaceAudio out/.sorting-race-full.wav --codec=wav && scripts/master.sh out/.sorting-race-video.mp4 out/.sorting-race-full.wav out/sorting-race.mp4",
+    "render:sorting-race:nomusic": "remotion render SortingRaceAudio out/.sorting-race-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.sorting-race-video.mp4 out/.sorting-race-nomusic.wav out/sorting-race_nomusic.mp4",
     "lookdev:probability-arcade:board": "node scripts/stills.mjs ProbabilityArcadeBoardShots out/lookdev/probability-arcade/board 0,1,2"
   },
   "allowScripts": {
