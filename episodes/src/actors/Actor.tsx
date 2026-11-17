@@ -103,9 +103,12 @@ export type ActorProps = {
   blend?: { clip: string; time: number; weight: number };
   /** props parented to a bone (e.g. "L_Hand"), so they follow the clip; children are in the bone's local frame */
   attach?: { bone: string; children: React.ReactNode }[];
+  /** face (and lens) self-glow, 0..1 = share of the GLB's emissive level. 1 (default) suits daylight sets;
+   *  dark sets lower it so the face sits in the same light as the body instead of glowing on its own */
+  faceGlow?: number;
 };
 
-export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expression, position = [0, 0, 0], yaw = 0, scale = 1, blend, attach }) => {
+export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expression, position = [0, 0, 0], yaw = 0, scale = 1, blend, attach, faceGlow = 1 }) => {
 
   const fromClip = blend?.clip;
   const fromTime = blend?.time;
@@ -158,6 +161,7 @@ export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expres
         m.emissiveMap = t;
         m.needsUpdate = true;
       }
+      m.emissiveIntensity = faceGlow;
     }
     if (meta.lenses) {
       const lens = a.scene.getObjectByName(meta.lenses.mesh) as THREE.Mesh | undefined;
@@ -169,9 +173,10 @@ export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expres
           m.emissiveMap = lt;
           m.needsUpdate = true;
         }
+        m.emissiveIntensity = faceGlow;
       }
     }
-  }, [a, clip, time, expression, meta, fromClip, fromTime, fromWeight]);
+  }, [a, clip, time, expression, meta, fromClip, fromTime, fromWeight, faceGlow]);
 
   // ThreeCanvas only advances on frame changes while rendering: draw again once the actor is mounted/posed,
   // then release the load hold so the captured frame contains it.

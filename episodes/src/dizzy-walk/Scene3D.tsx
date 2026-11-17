@@ -13,6 +13,9 @@ import { ACTING, BEAT, ghostScale, ghostsVisible, ringRadiusTiles, runAt, tapesA
 export const ZUZU_YELLOW = "#ffd84a";
 export const LUMI_BLUE = "#5f8fe8";
 
+/** Night set: the faces glow less than in the daylight episodes so they sit in the moonlight with the bodies. */
+const FACE_GLOW = 0.35;
+
 export const Scene3D: React.FC<{ cast: CastMember[]; font: string; set: LoadedSet | null }> = ({ cast, set }) => {
   const f = useCurrentFrame();
   const { width, height } = useVideoConfig();
@@ -64,7 +67,7 @@ export const Scene3D: React.FC<{ cast: CastMember[]; font: string; set: LoadedSe
         const st = ACTING(c.name as Member, f);
         return (
           <group key={c.name} position={st.pos}>
-            <Actor meta={c.meta} actor={c.actor} clip={st.clip} time={st.time} blend={st.from} expression={st.expression} yaw={st.yaw} />
+            <Actor meta={c.meta} actor={c.actor} clip={st.clip} time={st.time} blend={st.from} expression={st.expression} yaw={st.yaw} faceGlow={FACE_GLOW} />
           </group>
         );
       })}
