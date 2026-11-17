@@ -1,5 +1,6 @@
+import React from "react";
 import { useEffect, useLayoutEffect, useMemo, useState } from "react";
-import { useThree } from "@react-three/fiber";
+import { createPortal, useThree } from "@react-three/fiber";
 import { continueRender, delayRender, staticFile } from "remotion";
 import * as THREE from "three";
 import { GLTFLoader, type GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -100,9 +101,11 @@ export type ActorProps = {
   scale?: number | [number, number, number];
   /** optional crossfade: pose of `blend.clip` at `blend.time` mixed in with `blend.weight` (0..1) */
   blend?: { clip: string; time: number; weight: number };
+  /** props parented to a bone (e.g. "L_Hand"), so they follow the clip; children are in the bone's local frame */
+  attach?: { bone: string; children: React.ReactNode }[];
 };
 
-export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expression, position = [0, 0, 0], yaw = 0, scale = 1, blend }) => {
+export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expression, position = [0, 0, 0], yaw = 0, scale = 1, blend, attach }) => {
 
   const fromClip = blend?.clip;
   const fromTime = blend?.time;
@@ -183,6 +186,10 @@ export const Actor: React.FC<ActorProps> = ({ meta, actor: a, clip, time, expres
   return (
     <group position={position} rotation={[0, -Math.PI / 2 + yaw, 0]} scale={scale}>
       <primitive object={a.scene} />
+      {attach?.map((x) => {
+        const bone = a.scene.getObjectByName(x.bone);
+        return bone ? <React.Fragment key={x.bone}>{createPortal(<group>{x.children}</group>, bone)}</React.Fragment> : null;
+      })}
     </group>
   );
 };

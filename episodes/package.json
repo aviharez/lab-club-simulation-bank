@@ -71,7 +71,14 @@
     "render:three-doors:full": "remotion render ThreeDoorsAudio out/.three-doors-full.wav --codec=wav && scripts/master.sh out/.three-doors-video.mp4 out/.three-doors-full.wav out/three-doors.mp4",
     "render:three-doors:nomusic": "remotion render ThreeDoorsAudio out/.three-doors-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.three-doors-video.mp4 out/.three-doors-nomusic.wav out/three-doors_nomusic.mp4",
     "lookdev:sunlit-atrium": "node scripts/stills.mjs SunlitAtriumLookdev out/lookdev/sunlit-atrium 0,1,2",
-    "lookdev:game-show-studio": "node scripts/stills.mjs GameShowStudioLookdev out/lookdev/game-show-studio 0,1,2"
+    "lookdev:game-show-studio": "node scripts/stills.mjs GameShowStudioLookdev out/lookdev/game-show-studio 0,1,2",
+    "report:galton-board": "node --no-warnings src/galton-board/report.ts",
+    "render:galton-board": "npm run render:galton-board:video && npm run render:galton-board:full && npm run render:galton-board:nomusic",
+    "render:galton-board:video": "remotion render GaltonBoard out/.galton-board-video.mp4 --gl=angle-egl --concurrency=2 --muted",
+    "render:galton-board:full": "remotion render GaltonBoardAudio out/.galton-board-full.wav --codec=wav && scripts/master.sh out/.galton-board-video.mp4 out/.galton-board-full.wav out/galton-board.mp4",
+    "render:galton-board:nomusic": "remotion render GaltonBoardAudio out/.galton-board-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.galton-board-video.mp4 out/.galton-board-nomusic.wav out/galton-board_nomusic.mp4",
+    "lookdev:probability-arcade": "node scripts/stills.mjs ProbabilityArcadeLookdev out/lookdev/probability-arcade 0,1,2",
+    "lookdev:probability-arcade:board": "node scripts/stills.mjs ProbabilityArcadeBoardShots out/lookdev/probability-arcade/board 0,1,2"
   },
   "allowScripts": {
     "esbuild": false

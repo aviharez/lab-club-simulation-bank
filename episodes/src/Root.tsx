@@ -29,6 +29,12 @@ import {
   DURATION as TD_DURATION,
   FPS as TD_FPS,
 } from "./three-doors/timeline";
+import { GaltonBoard, GaltonBoardAudio } from "./galton-board/GaltonBoard";
+import {
+  DURATION as GB_DURATION,
+  FPS as GB_FPS,
+} from "./galton-board/timeline";
+import { ProbabilityArcadeBoardShots, ProbabilityArcadeLookdev } from "./sets/probability-arcade";
 import { GravityLabLookdev } from "./sets/gravity-lab";
 import { HomeLabV2Lookdev } from "./sets/home-lab-v2";
 import { DURATION, FPS } from "./jump/timeline";
@@ -117,6 +123,26 @@ export const RemotionRoot: React.FC = () => {
           defaultProps={{ music: true }}
         />
       </Folder>
+      <Folder name="EP05-GaltonBoard">
+        <Composition
+          id="GaltonBoard"
+          component={GaltonBoard}
+          durationInFrames={GB_DURATION}
+          fps={GB_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ music: true }}
+        />
+        <Composition
+          id="GaltonBoardAudio"
+          component={GaltonBoardAudio}
+          durationInFrames={GB_DURATION}
+          fps={GB_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ music: true }}
+        />
+      </Folder>
       <Folder name="Template">
         <Composition
           id="Template"
@@ -173,6 +199,22 @@ export const RemotionRoot: React.FC = () => {
         <Composition
           id="GameShowStudioLookdev"
           component={GameShowStudioLookdev}
+          durationInFrames={3}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="ProbabilityArcadeLookdev"
+          component={ProbabilityArcadeLookdev}
+          durationInFrames={3}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+        <Composition
+          id="ProbabilityArcadeBoardShots"
+          component={ProbabilityArcadeBoardShots}
           durationInFrames={3}
           fps={30}
           width={1080}
