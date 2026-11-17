@@ -130,7 +130,8 @@ const VOICES: CastVoices = {
     rules: [
       { reaction: "smug", on: { symbol: "sparkle" }, window: [ANNA.bet - 2, BEAT.countdown], label: "Anna bets on the hammer", priority: 55, once: true },
       { reaction: "smug", on: { symbol: "sparkle" }, window: [HAMMER_AIR - 2, HAMMER_AIR + 40], label: "Anna: the hammer is down", priority: 70, once: true },
-      { reaction: "annoyed", on: { clip: "foot_tap", expression: "squint" }, label: "Anna is tired of waiting", priority: 60, once: true },
+      // "Hmph! Ugh!": only the "Ugh!" (0.8-1.6 s); she already said "Hmph!" twice, and the whole file would cover Miyu's on-camera snore
+      { reaction: "annoyed", on: { clip: "foot_tap", expression: "squint" }, label: "Anna is tired of waiting", priority: 60, once: true, slice: [0.8, 1.6] },
       { reaction: "shocked", on: { expression: "shocked" }, label: "Anna: same frame?!", priority: 85, once: true, maxShift: 45 },
       { reaction: "cheer", label: "Anna cheers", ...cheer },
     ],
@@ -151,8 +152,8 @@ const VOICES: CastVoices = {
       return f >= MIYU.napShot[0] && f < MIYU.napShot[1] ? { ...st, symbols: [...st.symbols, "on_camera"] } : st;
     },
     rules: [
-      // "Suu... supii...": only while the camera is on her napping (off screen, nobody hears her)
-      { reaction: "snore", on: { expression: "squint", symbol: "on_camera" }, label: "Miyu snores (on camera)", priority: 10, volume: 0.3, slices: [[1.08, 2.08], [2.3, 3.27]], repeat: { every: 75, minLen: 24 } },
+      // "Hnnn... pshhh...": only while the camera is on her napping (off screen, nobody hears her)
+      { reaction: "snore", on: { expression: "squint", symbol: "on_camera" }, label: "Miyu snores (on camera)", priority: 10, volume: 0.3, slices: [[0.2, 1.95], [2.7, 4.45]], repeat: { every: 75, minLen: 24 } },
       { reaction: "shocked", on: { expression: "shocked" }, label: "Miyu wakes up", priority: 90, once: true },
       { reaction: "cheer", label: "Miyu cheers", ...cheer },
     ],

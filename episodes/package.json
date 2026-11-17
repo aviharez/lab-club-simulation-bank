@@ -59,7 +59,13 @@
     "render:feather-hammer:video": "remotion render FeatherHammer out/.feather-hammer-video.mp4 --gl=angle-egl --concurrency=2 --muted",
     "render:feather-hammer:full": "remotion render FeatherHammerAudio out/.feather-hammer-full.wav --codec=wav && scripts/master.sh out/.feather-hammer-video.mp4 out/.feather-hammer-full.wav out/feather-hammer.mp4",
     "render:feather-hammer:nomusic": "remotion render FeatherHammerAudio out/.feather-hammer-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.feather-hammer-video.mp4 out/.feather-hammer-nomusic.wav out/feather-hammer_nomusic.mp4",
-    "lookdev:vacuum-hall": "node scripts/stills.mjs VacuumHallLookdev out/lookdev/vacuum-hall 0,1,2"
+    "lookdev:vacuum-hall": "node scripts/stills.mjs VacuumHallLookdev out/lookdev/vacuum-hall 0,1,2",
+    "report:drop-throw": "node --no-warnings src/drop-throw/report.ts",
+    "render:drop-throw": "npm run render:drop-throw:video && npm run render:drop-throw:full && npm run render:drop-throw:nomusic",
+    "render:drop-throw:video": "remotion render DropThrow out/.drop-throw-video.mp4 --gl=angle-egl --concurrency=2 --muted",
+    "render:drop-throw:full": "remotion render DropThrowAudio out/.drop-throw-full.wav --codec=wav && scripts/master.sh out/.drop-throw-video.mp4 out/.drop-throw-full.wav out/drop-throw.mp4",
+    "render:drop-throw:nomusic": "remotion render DropThrowAudio out/.drop-throw-nomusic.wav --codec=wav --props=scripts/props-nomusic.json && scripts/master.sh out/.drop-throw-video.mp4 out/.drop-throw-nomusic.wav out/drop-throw_nomusic.mp4",
+    "lookdev:sunlit-atrium": "node scripts/stills.mjs SunlitAtriumLookdev out/lookdev/sunlit-atrium 0,1,2"
   },
   "allowScripts": {
     "esbuild": false

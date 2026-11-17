@@ -15,6 +15,8 @@ export type ChartSeries = {
   fn: (x: number) => number;
   /** the series' head dot is big while progress < liveUntil, small afterwards */
   liveUntil?: number;
+  /** dash pattern (px) for a curve drawn on top of an identical one, so both stay visible */
+  dash?: number[];
 };
 
 export type ChartAxis = {
@@ -312,6 +314,7 @@ export const ChartPanel: React.FC<ChartPanelProps> = ({
                     strokeWidth={9}
                     strokeLinejoin="round"
                     strokeLinecap="round"
+                    strokeDasharray={s.dash?.join(" ")}
                     opacity={0.18}
                   />
                   <polyline
@@ -320,7 +323,8 @@ export const ChartPanel: React.FC<ChartPanelProps> = ({
                     stroke={s.color}
                     strokeWidth={6}
                     strokeLinejoin="round"
-                    strokeLinecap="round"
+                    strokeLinecap={s.dash ? "butt" : "round"}
+                    strokeDasharray={s.dash?.join(" ")}
                   />
                   {(live || progress < x.max) && Number.isFinite(yt) ? (
                     <circle
