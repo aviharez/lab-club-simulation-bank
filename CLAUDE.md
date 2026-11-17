@@ -86,8 +86,8 @@ owned by others.
 7. **Tooling.** Remotion skills (`/remotion-best-practices`, `/remotion-render`), motion-design skill for timing,
    easing, choreography and acting, remocn only for 2D text/caption animations and transitions (never the
    `/remocn:video` workflow), blender-skills + Blender MCP only for new props, clips or expressions.
-8. **Outputs per episode.** Preview MP4, 8 stills at the main beats, the report (data table + checks), and the
-   cue sheet (audio).
+8. **Outputs per episode.** Preview MP4, 8 stills at the main beats, the report (data table + checks), the cue
+   sheet (audio), and after approval the delivery in `prod-ready/` (see "Production delivery").
 
 ## Audio rules
 
@@ -131,6 +131,63 @@ owned by others.
 6. Overlays: only src/kit components.
 7. sound.ts: music plan, SFX cues and voice rules (src/audio/voiceCues) using only library names. The report prints the cue sheet and fails on missing files, voice overlaps outside a group, or repeats inside the cooldown.
 8. Render both versions and 8 stills to out/<slug>/. Check: each mascot readable (>= ~1/5 frame height or close-up at key beats), text >= ~28 px inside safe areas, on-screen numbers equal the report, 35-50 s.
+9. Ask for approval of the rendered result (paths to both MP4s, the stills and the report summary). Only after an
+   explicit approval, deliver it to `prod-ready/` (see "Production delivery").
+
+## Production delivery
+
+Every finished render ends in `prod-ready/` at the repo root, but **only after the user approves the result**.
+After any render of an episode (new episode, fix or re-render): show the result, ask "Approve for production?",
+and wait. Never copy an unapproved render; a re-render after a fix needs a new approval.
+
+On approval:
+- Name: `EPxx-<slug>` (two-digit episode number + the episode slug, e.g. `EP06-dizzy-walk`).
+- Copy `episodes/out/<slug>.mp4` → `prod-ready/EPxx-<slug>.mp4` (full: music + SFX + voices; YouTube Shorts, Facebook)
+  and `episodes/out/<slug>_nomusic.mp4` → `prod-ready/EPxx-<slug>_nomusic.mp4` (SFX + voices; Instagram/TikTok,
+  where a platform sound is added in the app). Overwrite an older delivery of the same episode.
+- Write `prod-ready/EPxx-<slug>.md` (same name) with the social copy, using the template below. English, no
+  Japanese words, no clickbait the video does not deliver; every number in the copy equals the report.
+- MP4s in `prod-ready/` are ignored by git; the `.md` files are committed.
+
+Platform rules (checked Nov 2026; re-check if a platform changes them):
+- **YouTube Shorts:** title ≤ 100 characters with the hook in the first ~40; hashtags go at the end of the
+  description, 3-5 of them (the first 3 show above the title); `#Shorts` is optional.
+- **Instagram Reels:** at most **5 hashtags** per post (Instagram's limit since Dec 2025). Caption hook in the first
+  line (~125 characters show before "more").
+- **TikTok:** short caption (under ~150 characters before the hashtags), 3-5 specific hashtags, the question invites comments.
+- **Facebook Reels:** short caption, 0-2 hashtags.
+- Hashtags: the series tag `#LabClub`, 1-2 topic tags (e.g. `#Probability`, `#Physics`), and broad ones (`#Science`,
+  `#Math`, `#LearnOnTikTok`, `#STEM`). No unrelated trending tags, no banned or misleading tags.
+
+Template for `prod-ready/EPxx-<slug>.md`:
+
+```markdown
+# EPxx: <Episode title>
+
+- Files: EPxx-<slug>.mp4 (full) · EPxx-<slug>_nomusic.mp4 (no music) · <duration> s · 1080×1920
+- Topic: <one line: the science idea>
+- Key numbers (from the report): <...>
+
+## Short description
+<2-3 sentences: what happens and what you learn>
+
+## YouTube Shorts (upload: EPxx-<slug>.mp4)
+Title: <≤ 100 chars>
+Description:
+<2-3 lines + the CTA question>
+#LabClub #<Topic> #<Topic> #Science #Shorts
+
+## Instagram Reels (upload: EPxx-<slug>_nomusic.mp4 or the full one)
+<hook line>
+<1-2 lines + CTA question>
+#LabClub #<Topic> #<Topic> #Science #STEM        ← max 5
+
+## TikTok (upload: EPxx-<slug>_nomusic.mp4 or the full one)
+<short hook + CTA question> #LabClub #<Topic> #<Topic> #Science #LearnOnTikTok
+
+## Facebook Reels (upload: EPxx-<slug>.mp4)
+<hook + CTA question> #LabClub #<Topic>
+```
 
 ## Working agreements
 
@@ -138,4 +195,4 @@ owned by others.
 - Do not modify `mascots/<name>/model/<name>.blend`; rebuild actors with the scripts.
 - After changing mascots, run `npm run sync-mascots`. After changing audio, run `npm run sync-audio`. After
   changing a set GLB, run `npm run sync-sets`.
-- Show a plan before large renames or moves. Keep renders out of git (`episodes/out/` is ignored).
+- Show a plan before large renames or moves. Keep renders out of git (`episodes/out/` and `prod-ready/*.mp4` are ignored).

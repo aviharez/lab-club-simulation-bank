@@ -17,3 +17,6 @@ __pycache__/
 
 # Unprocessed audio originals (processed takes live in audio/_takes)
 audio/_raw/
+
+# Approved deliveries: videos stay local, the social-copy .md files are committed
+prod-ready/*.mp4
