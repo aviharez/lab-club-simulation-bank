@@ -17,6 +17,7 @@ Episode prompts that say "Follow SERIES_RULES.md" mean the **Series rules** sect
 | `assets/sets/_shared/set_lib.py` | Shared Blender helpers for set builds (three.js coordinates, boxes/cylinders/tubes/text, generated textures, AO bake + join + GLB export in `finish()`). New set scripts import it |
 | `audio/final/` | Approved audio library: `voices/<name>/<name>_<reaction>.mp3`, `sfx/{ui,body,lab,objects}/<name>.mp3`, `music/<name>.mp3` |
 | `audio/audio_manifest.json` | Every final audio file: type, character, reaction, text, duration, loop flag, LUFS |
+| `audio/voices.json`, `audio/voice_pack.json` | Character voice IDs + design prompts; index of the voice pack WAV (`npm run import-voices`) |
 | `audio/_takes/` | Unused takes (and `unused/placeholders_jump/`, the old EP01 placeholder audio). Never reference from episodes |
 | `episodes/` | Remotion project (React + TypeScript, `@remotion/three`) |
 | `episodes/src/jump/` | EP01 "Same Jump, Different Planets" (`SameJump` composition) |
@@ -36,6 +37,7 @@ Episode prompts that say "Follow SERIES_RULES.md" mean the **Series rules** sect
 npm run dev            # Remotion Studio
 npm run sync-mascots   # copy mascots/manifest.json + GLBs/textures into public/mascots
 npm run sync-audio     # copy audio/final + manifest into public/audio/lib, regenerate src/audio/library.generated.ts
+npm run import-voices  # cut audio/_raw/lab_club_voices_pack.wav into audio/final/voices + _takes, then sync-audio
 npm run sync-sets      # copy assets/sets/<name>/<name>.glb into public/sets
 npm run lookdev:home-lab-v2  # 3 lookdev stills → out/lookdev/home-lab-v2
 npm run lookdev:gravity-lab  # same for EP01's set
@@ -87,8 +89,14 @@ owned by others.
 
 - Use only files from `audio/final/` (ElevenLabs, commercial license). Do not use `audio/_takes/` or any placeholder
   audio in a final render.
-- Voices are short non-verbal/Japanese interjections (see `text`/`romaji` in the audio manifest). Each character
-  only uses her own voice folder. Voices play at normal speed even during slow-mo.
+- Voices are short, language-neutral cartoon interjections for an international audience ("Eh?!", "Yay!", "Hmph!",
+  laughs, gasps, yawns; English only for a single very common word like "Easy!"). No Japanese words. The `text` field
+  in the audio manifest is the TTS prompt with its audio tag, `romaji` is the plain line. Each character only uses her
+  own voice folder. Voices play at normal speed even during slow-mo.
+- Character voices are designed voices saved in the ElevenLabs account (IDs and design prompts in `audio/voices.json`).
+  New reactions use the same voice IDs with eleven_v4 and audio tags, then go through the voice pack:
+  `audio/voice_pack.json` + `npm run import-voices` (cuts `audio/_raw/lab_club_voices_pack.wav` into final/ and _takes/).
+  The old Japanese library is archived in `audio/_takes/unused/voices_ja/`.
 - One voice at a time by default; allow overlaps only for group moments (e.g. CTA cheer), staggered 3–6 frames.
 - Voice reactions follow the acting: when an actor's expression or clip changes to a reaction-worthy state, the
   matching reaction plays (with a cooldown so the same reaction does not repeat within ~1.5 s).

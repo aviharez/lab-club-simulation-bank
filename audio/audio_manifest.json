@@ -9,16 +9,16 @@
   "sample_rate": 44100,
   "format": "mp3 192k mono (voice/sfx), stereo (music)",
   "models": {
-    "voice_design": "eleven_ttv_v3",
-    "voice_tts": "eleven_v4 (stability 0.0 / creative, language ja)",
+    "voice_design": "eleven_ttv_v3 (neutral English, international audience)",
+    "voice_tts": "eleven_v4 (default voice settings, English/language-neutral interjections)",
     "sfx": "eleven_text_to_sound_v3",
     "music": "music_v2_5"
   },
   "voices": {
-    "lumi": "peYBOx7lwlis04T9q8dZ",
-    "zuzu": "KSRwNAkUQi2KxSmG7KXU",
-    "anna": "RakQkPsY2o06G3exLIzX",
-    "miyu": "vZKCpQDLh870EVnHQvl8"
+    "lumi": "uIDVf2dD4K6qufMENtmP",
+    "zuzu": "xZX4cJv8lB3j9WRZYwNP",
+    "anna": "D4y7Te5r6vIKqqITh7fe",
+    "miyu": "MUH02MK4yWFr6VOUihax"
   },
   "counts": {
     "voice": 55,
@@ -33,11 +33,11 @@
       "reaction": "happy",
       "loop": false,
       "source_take": 1,
-      "text": "[happy] わぁい！",
-      "romaji": "Waai!",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 0.716,
-      "lufs": -16.3
+      "text": "[happy] Yay!",
+      "romaji": "Yay!",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.019,
+      "lufs": -16
     },
     {
       "file": "final/voices/lumi/lumi_giggle.mp3",
@@ -46,11 +46,11 @@
       "reaction": "giggle",
       "loop": false,
       "source_take": 1,
-      "text": "[giggles] ふふっ",
-      "romaji": "Fufu",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 1.494,
-      "lufs": -16.6
+      "text": "[giggles softly] Hehe.",
+      "romaji": "Hehe.",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.489,
+      "lufs": -18.2
     },
     {
       "file": "final/voices/lumi/lumi_smug.mp3",
@@ -59,11 +59,11 @@
       "reaction": "smug",
       "loop": false,
       "source_take": 1,
-      "text": "[smug] ふふん",
-      "romaji": "Fufun",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 1.054,
-      "lufs": -16.7
+      "text": "[smug] Hm-hm.",
+      "romaji": "Hm-hm.",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.149,
+      "lufs": -16.3
     },
     {
       "file": "final/voices/lumi/lumi_smug_laugh.mp3",
@@ -71,12 +71,12 @@
       "character": "lumi",
       "reaction": "smug_laugh",
       "loop": false,
-      "source_take": 1,
-      "text": "[laughs softly] ふふふ〜",
-      "romaji": "Fufufu~",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 1.674,
-      "lufs": -17.3
+      "source_take": 3,
+      "text": "[chuckles softly] Heh-heh.",
+      "romaji": "Heh-heh.",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.567,
+      "lufs": -17.8
     },
     {
       "file": "final/voices/lumi/lumi_shocked.mp3",
@@ -84,12 +84,12 @@
       "character": "lumi",
       "reaction": "shocked",
       "loop": false,
-      "source_take": 1,
-      "text": "[gasps] えっ？！",
-      "romaji": "E?!",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 0.98,
-      "lufs": -16.3
+      "source_take": 2,
+      "text": "[gasps] Eh?!",
+      "romaji": "Eh?!",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.254,
+      "lufs": -16
     },
     {
       "file": "final/voices/lumi/lumi_small_gasp.mp3",
@@ -97,12 +97,12 @@
       "character": "lumi",
       "reaction": "small_gasp",
       "loop": false,
-      "source_take": 1,
-      "text": "[gasps] あっ！",
-      "romaji": "A!",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 1.092,
-      "lufs": -16.7
+      "source_take": 2,
+      "text": "[gasps softly] Oh!",
+      "romaji": "Oh!",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.567,
+      "lufs": -16.1
     },
     {
       "file": "final/voices/lumi/lumi_dizzy.mp3",
@@ -110,12 +110,12 @@
       "character": "lumi",
       "reaction": "dizzy",
       "loop": false,
-      "source_take": 1,
-      "text": "[dizzy] ふにゃ〜…",
-      "romaji": "Funya~...",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 1.162,
-      "lufs": -16.2
+      "source_take": 3,
+      "text": "[dizzy] Whoa-oa-oa...",
+      "romaji": "Whoa-oa-oa...",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 2.116,
+      "lufs": -16
     },
     {
       "file": "final/voices/lumi/lumi_crying.mp3",
@@ -123,12 +123,12 @@
       "character": "lumi",
       "reaction": "crying",
       "loop": false,
-      "source_take": 1,
-      "text": "[crying] うぅ…ぐすっ…",
-      "romaji": "Uu... gusu...",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 1.68,
-      "lufs": -16.4
+      "source_take": 2,
+      "text": "[crying softly] Uuu... [sniffles]",
+      "romaji": "Uuu...",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.646,
+      "lufs": -16.2
     },
     {
       "file": "final/voices/lumi/lumi_fall.mp3",
@@ -137,11 +137,11 @@
       "reaction": "fall",
       "loop": false,
       "source_take": 1,
-      "text": "[shouts] きゃあっ！",
-      "romaji": "Kyaa!",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 0.679,
-      "lufs": -16.3
+      "text": "[screams] Aaah!",
+      "romaji": "Aaah!",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.907,
+      "lufs": -16
     },
     {
       "file": "final/voices/lumi/lumi_effort.mp3",
@@ -149,12 +149,12 @@
       "character": "lumi",
       "reaction": "effort",
       "loop": false,
-      "source_take": 3,
-      "text": "[straining] んんっ…！",
-      "romaji": "Nnn...!",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 1.111,
-      "lufs": -16.3
+      "source_take": 1,
+      "text": "[straining] Nngh...!",
+      "romaji": "Nngh...!",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.097,
+      "lufs": -16
     },
     {
       "file": "final/voices/lumi/lumi_cheer.mp3",
@@ -162,12 +162,12 @@
       "character": "lumi",
       "reaction": "cheer",
       "loop": false,
-      "source_take": 1,
-      "text": "[cheerful] やった！",
-      "romaji": "Yatta!",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 0.834,
-      "lufs": -16.3
+      "source_take": 3,
+      "text": "[cheerful] Woohoo!",
+      "romaji": "Woohoo!",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.123,
+      "lufs": -16
     },
     {
       "file": "final/voices/lumi/lumi_annoyed.mp3",
@@ -175,12 +175,12 @@
       "character": "lumi",
       "reaction": "annoyed",
       "loop": false,
-      "source_take": 1,
-      "text": "[frustrated] もう…",
-      "romaji": "Mou...",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 0.974,
-      "lufs": -16.3
+      "source_take": 3,
+      "text": "[sighs] Ugh...",
+      "romaji": "Ugh...",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 2.142,
+      "lufs": -16.1
     },
     {
       "file": "final/voices/lumi/lumi_thinking.mp3",
@@ -189,11 +189,11 @@
       "reaction": "thinking",
       "loop": false,
       "source_take": 1,
-      "text": "[curious] うーん…",
-      "romaji": "Uun...",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 0.917,
-      "lufs": -16.3
+      "text": "[curious] Hmm...",
+      "romaji": "Hmm...",
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 0.81,
+      "lufs": -16
     },
     {
       "file": "final/voices/lumi/lumi_explain_start.mp3",
@@ -201,12 +201,12 @@
       "character": "lumi",
       "reaction": "explain_start",
       "loop": false,
-      "source_take": 3,
-      "text": "[confident] こほん！",
+      "source_take": 1,
+      "text": "[clears throat] Ahem!",
       "romaji": "Ahem!",
-      "voice_id": "peYBOx7lwlis04T9q8dZ",
-      "duration": 0.859,
-      "lufs": -16.4
+      "voice_id": "uIDVf2dD4K6qufMENtmP",
+      "duration": 1.672,
+      "lufs": -15.7
     },
     {
       "file": "final/voices/zuzu/zuzu_happy.mp3",
@@ -214,12 +214,12 @@
       "character": "zuzu",
       "reaction": "happy",
       "loop": false,
-      "source_take": 3,
-      "text": "[excited] やったーー！",
-      "romaji": "Yattaaa!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.117,
-      "lufs": -16.3
+      "source_take": 2,
+      "text": "[excited] Yaaay!",
+      "romaji": "Yaaay!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 1.228,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_giggle.mp3",
@@ -228,11 +228,11 @@
       "reaction": "giggle",
       "loop": false,
       "source_take": 1,
-      "text": "[giggles] にひひっ！",
-      "romaji": "Nihihi!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.808,
-      "lufs": -16.4
+      "text": "[giggles] Hehehe!",
+      "romaji": "Hehehe!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 2.011,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_smug.mp3",
@@ -241,11 +241,11 @@
       "reaction": "smug",
       "loop": false,
       "source_take": 3,
-      "text": "[smug] へっへーん！",
-      "romaji": "Hehheen!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.158,
-      "lufs": -16.5
+      "text": "[smug] Heh-heh!",
+      "romaji": "Heh-heh!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 1.149,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_smug_laugh.mp3",
@@ -254,11 +254,11 @@
       "reaction": "smug_laugh",
       "loop": false,
       "source_take": 1,
-      "text": "[laughs] にししし〜！",
-      "romaji": "Nishishi~!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 2.205,
-      "lufs": -16.2
+      "text": "[laughs] Ahahaha!",
+      "romaji": "Ahahaha!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 2.116,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_shocked.mp3",
@@ -266,12 +266,12 @@
       "character": "zuzu",
       "reaction": "shocked",
       "loop": false,
-      "source_take": 1,
-      "text": "[gasps] えええっ？！",
-      "romaji": "Eeee?!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.347,
-      "lufs": -16.3
+      "source_take": 3,
+      "text": "[gasps] Eeeh?!",
+      "romaji": "Eeeh?!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 1.567,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_small_gasp.mp3",
@@ -279,12 +279,12 @@
       "character": "zuzu",
       "reaction": "small_gasp",
       "loop": false,
-      "source_take": 3,
-      "text": "[gasps] わっ！",
-      "romaji": "Wa!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 0.99,
-      "lufs": -16.3
+      "source_take": 2,
+      "text": "[gasps] Whoa!",
+      "romaji": "Whoa!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 1.698,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_dizzy.mp3",
@@ -293,11 +293,11 @@
       "reaction": "dizzy",
       "loop": false,
       "source_take": 1,
-      "text": "[dizzy] ふにゃあ〜〜…",
-      "romaji": "Funyaa~~...",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.151,
-      "lufs": -16.3
+      "text": "[dizzy] Wooo-ah-ah...",
+      "romaji": "Wooo-ah-ah...",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 2.09,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_crying.mp3",
@@ -305,12 +305,12 @@
       "character": "zuzu",
       "reaction": "crying",
       "loop": false,
-      "source_take": 1,
-      "text": "[crying] うわぁぁぁん！",
-      "romaji": "Uwaaaan!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.871,
-      "lufs": -16.3
+      "source_take": 3,
+      "text": "[crying loudly] Waaaaah!",
+      "romaji": "Waaaaah!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 2.09,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_fall.mp3",
@@ -318,12 +318,12 @@
       "character": "zuzu",
       "reaction": "fall",
       "loop": false,
-      "source_take": 2,
-      "text": "[shouts] うわぁぁぁっ！",
-      "romaji": "Uwaaaa!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.196,
-      "lufs": -16.3
+      "source_take": 1,
+      "text": "[screams] Aaaaaah!",
+      "romaji": "Aaaaaah!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 2.247,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_effort.mp3",
@@ -331,12 +331,12 @@
       "character": "zuzu",
       "reaction": "effort",
       "loop": false,
-      "source_take": 3,
-      "text": "[straining] ふんぬぬぬっ！",
-      "romaji": "Funnunu!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.734,
-      "lufs": -16.2
+      "source_take": 1,
+      "text": "[straining] Hnnnggh!",
+      "romaji": "Hnnnggh!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 1.358,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_cheer.mp3",
@@ -344,12 +344,12 @@
       "character": "zuzu",
       "reaction": "cheer",
       "loop": false,
-      "source_take": 2,
-      "text": "[shouts] やったぁーっ！",
-      "romaji": "Yattaa!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.196,
-      "lufs": -16.3
+      "source_take": 3,
+      "text": "[shouts] Woohoo!",
+      "romaji": "Woohoo!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 1.306,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_annoyed.mp3",
@@ -357,12 +357,12 @@
       "character": "zuzu",
       "reaction": "annoyed",
       "loop": false,
-      "source_take": 3,
-      "text": "[frustrated] もーーっ！",
-      "romaji": "Moooo!",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.203,
-      "lufs": -16.3
+      "source_take": 2,
+      "text": "[frustrated] Grrr!",
+      "romaji": "Grrr!",
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 1.149,
+      "lufs": -16
     },
     {
       "file": "final/voices/zuzu/zuzu_oops.mp3",
@@ -370,11 +370,11 @@
       "character": "zuzu",
       "reaction": "oops",
       "loop": false,
-      "source_take": 3,
-      "text": "[nervous] えへへ…",
+      "source_take": 2,
+      "text": "[nervous laugh] Ehehe...",
       "romaji": "Ehehe...",
-      "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-      "duration": 1.031,
+      "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+      "duration": 2.22,
       "lufs": -16.3
     },
     {
@@ -384,11 +384,11 @@
       "reaction": "happy",
       "loop": false,
       "source_take": 3,
-      "text": "[excited] わぁっ！",
-      "romaji": "Waa!",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 0.799,
-      "lufs": -16.3
+      "text": "[excited] Yay!",
+      "romaji": "Yay!",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 1.019,
+      "lufs": -16
     },
     {
       "file": "final/voices/anna/anna_giggle.mp3",
@@ -397,11 +397,11 @@
       "reaction": "giggle",
       "loop": false,
       "source_take": 1,
-      "text": "[giggles] うふふっ",
-      "romaji": "Ufufu",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 1.547,
-      "lufs": -16.7
+      "text": "[giggles] Hehe!",
+      "romaji": "Hehe!",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 1.698,
+      "lufs": -16.2
     },
     {
       "file": "final/voices/anna/anna_smug.mp3",
@@ -409,12 +409,12 @@
       "character": "anna",
       "reaction": "smug",
       "loop": false,
-      "source_take": 1,
-      "text": "[smug] ふんっ！",
+      "source_take": 3,
+      "text": "[smug] Hmph!",
       "romaji": "Hmph!",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 0.375,
-      "lufs": -16.3
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 0.496,
+      "lufs": -16.2
     },
     {
       "file": "final/voices/anna/anna_smug_laugh.mp3",
@@ -422,12 +422,12 @@
       "character": "anna",
       "reaction": "smug_laugh",
       "loop": false,
-      "source_take": 3,
-      "text": "[proud laugh] おーっほっほっほ！",
-      "romaji": "Oh-hohoho!",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 2.484,
-      "lufs": -16.3
+      "source_take": 2,
+      "text": "[proud laugh] Ha-ha-ha!",
+      "romaji": "Ha-ha-ha!",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 1.28,
+      "lufs": -16
     },
     {
       "file": "final/voices/anna/anna_shocked.mp3",
@@ -435,12 +435,12 @@
       "character": "anna",
       "reaction": "shocked",
       "loop": false,
-      "source_take": 1,
-      "text": "[gasps] はぁっ？！",
-      "romaji": "Haa?!",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 1.193,
-      "lufs": -16.3
+      "source_take": 3,
+      "text": "[indignant] Huh?!",
+      "romaji": "Huh?!",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 0.758,
+      "lufs": -16
     },
     {
       "file": "final/voices/anna/anna_small_gasp.mp3",
@@ -448,12 +448,12 @@
       "character": "anna",
       "reaction": "small_gasp",
       "loop": false,
-      "source_take": 1,
-      "text": "[gasps] あらっ！",
-      "romaji": "Ara!",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 1.095,
-      "lufs": -16.3
+      "source_take": 2,
+      "text": "[gasps] Oh!",
+      "romaji": "Oh!",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 1.411,
+      "lufs": -16
     },
     {
       "file": "final/voices/anna/anna_dizzy.mp3",
@@ -461,12 +461,12 @@
       "character": "anna",
       "reaction": "dizzy",
       "loop": false,
-      "source_take": 2,
-      "text": "[dizzy] あうぅ〜…",
-      "romaji": "Auu~...",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 1.134,
-      "lufs": -16.3
+      "source_take": 1,
+      "text": "[dizzy] Ooh-ooh-ooh...",
+      "romaji": "Ooh-ooh-ooh...",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 2.351,
+      "lufs": -16
     },
     {
       "file": "final/voices/anna/anna_crying.mp3",
@@ -474,12 +474,12 @@
       "character": "anna",
       "reaction": "crying",
       "loop": false,
-      "source_take": 2,
-      "text": "[crying] うぅっ…ひっく…",
-      "romaji": "Uu... hikku...",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 1.446,
-      "lufs": -16.3
+      "source_take": 1,
+      "text": "[crying] Waaah... [sniffles]",
+      "romaji": "Waaah...",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 2.534,
+      "lufs": -16.1
     },
     {
       "file": "final/voices/anna/anna_fall.mp3",
@@ -488,11 +488,11 @@
       "reaction": "fall",
       "loop": false,
       "source_take": 2,
-      "text": "[shouts] きゃああっ！",
-      "romaji": "Kyaaa!",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 0.754,
-      "lufs": -16.3
+      "text": "[screams] Aaaah!",
+      "romaji": "Aaaah!",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 1.907,
+      "lufs": -16
     },
     {
       "file": "final/voices/anna/anna_effort.mp3",
@@ -500,12 +500,12 @@
       "character": "anna",
       "reaction": "effort",
       "loop": false,
-      "source_take": 3,
-      "text": "[straining] くっ…んんっ！",
-      "romaji": "Ku... nn!",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 1.445,
-      "lufs": -16.2
+      "source_take": 1,
+      "text": "[straining] Nngh!",
+      "romaji": "Nngh!",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 1.646,
+      "lufs": -16
     },
     {
       "file": "final/voices/anna/anna_cheer.mp3",
@@ -513,12 +513,12 @@
       "character": "anna",
       "reaction": "cheer",
       "loop": false,
-      "source_take": 2,
-      "text": "[shouts] やったわーっ！",
-      "romaji": "Yatta waa!",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 1.249,
-      "lufs": -16.3
+      "source_take": 3,
+      "text": "[cheering] Woohoo!",
+      "romaji": "Woohoo!",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 1.306,
+      "lufs": -16
     },
     {
       "file": "final/voices/anna/anna_annoyed.mp3",
@@ -526,12 +526,12 @@
       "character": "anna",
       "reaction": "annoyed",
       "loop": false,
-      "source_take": 2,
-      "text": "[frustrated] もうっ！",
-      "romaji": "Mou!",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 0.894,
-      "lufs": -16.3
+      "source_take": 1,
+      "text": "[frustrated] Hmph! Ugh!",
+      "romaji": "Hmph! Ugh!",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 1.672,
+      "lufs": -16
     },
     {
       "file": "final/voices/anna/anna_confident.mp3",
@@ -539,12 +539,12 @@
       "character": "anna",
       "reaction": "confident",
       "loop": false,
-      "source_take": 1,
-      "text": "[confident] 楽勝よ！",
-      "romaji": "Rakushou yo! (Easy!)",
-      "voice_id": "RakQkPsY2o06G3exLIzX",
-      "duration": 0.979,
-      "lufs": -16.3
+      "source_take": 2,
+      "text": "[confident] Easy!",
+      "romaji": "Easy!",
+      "voice_id": "D4y7Te5r6vIKqqITh7fe",
+      "duration": 0.836,
+      "lufs": -16
     },
     {
       "file": "final/voices/miyu/miyu_happy.mp3",
@@ -552,12 +552,12 @@
       "character": "miyu",
       "reaction": "happy",
       "loop": false,
-      "source_take": 2,
-      "text": "[softly excited] わぁい…",
-      "romaji": "Waai...",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 0.883,
-      "lufs": -16.3
+      "source_take": 3,
+      "text": "[sleepy, happy] Yay...",
+      "romaji": "Yay...",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 1.358,
+      "lufs": -16
     },
     {
       "file": "final/voices/miyu/miyu_giggle.mp3",
@@ -566,11 +566,11 @@
       "reaction": "giggle",
       "loop": false,
       "source_take": 1,
-      "text": "[giggles softly] えへへ…",
-      "romaji": "Ehehe...",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 1.599,
-      "lufs": -16.7
+      "text": "[giggles softly] Hehe...",
+      "romaji": "Hehe...",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 1.62,
+      "lufs": -17.5
     },
     {
       "file": "final/voices/miyu/miyu_smug.mp3",
@@ -578,12 +578,12 @@
       "character": "miyu",
       "reaction": "smug",
       "loop": false,
-      "source_take": 1,
-      "text": "[smug] ふふん…",
-      "romaji": "Fufun...",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 0.897,
-      "lufs": -17.2
+      "source_take": 2,
+      "text": "[smug, softly] Hm.",
+      "romaji": "Hm.",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 0.627,
+      "lufs": -16
     },
     {
       "file": "final/voices/miyu/miyu_smug_laugh.mp3",
@@ -591,12 +591,12 @@
       "character": "miyu",
       "reaction": "smug_laugh",
       "loop": false,
-      "source_take": 2,
-      "text": "[laughs softly] ふふ…",
-      "romaji": "Fufu...",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 1.628,
-      "lufs": -18.9
+      "source_take": 3,
+      "text": "[laughs softly] Heh...",
+      "romaji": "Heh...",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 1.959,
+      "lufs": -18.1
     },
     {
       "file": "final/voices/miyu/miyu_shocked.mp3",
@@ -604,12 +604,12 @@
       "character": "miyu",
       "reaction": "shocked",
       "loop": false,
-      "source_take": 2,
-      "text": "[gasps] にゃっ？！",
-      "romaji": "Nya?!",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 1.053,
-      "lufs": -16.3
+      "source_take": 3,
+      "text": "[gasps] Eep?!",
+      "romaji": "Eep?!",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 1.411,
+      "lufs": -16.2
     },
     {
       "file": "final/voices/miyu/miyu_small_gasp.mp3",
@@ -618,11 +618,11 @@
       "reaction": "small_gasp",
       "loop": false,
       "source_take": 2,
-      "text": "[gasps softly] あ…っ！",
-      "romaji": "A...!",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 1.364,
-      "lufs": -16.7
+      "text": "[gasps softly] Oh...",
+      "romaji": "Oh...",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 1.855,
+      "lufs": -16.2
     },
     {
       "file": "final/voices/miyu/miyu_dizzy.mp3",
@@ -630,12 +630,12 @@
       "character": "miyu",
       "reaction": "dizzy",
       "loop": false,
-      "source_take": 1,
-      "text": "[dizzy] ふにゃぁ〜…",
-      "romaji": "Funyaa~...",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 1.167,
-      "lufs": -16.3
+      "source_take": 3,
+      "text": "[dizzy] Wooo...",
+      "romaji": "Wooo...",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 1.593,
+      "lufs": -16
     },
     {
       "file": "final/voices/miyu/miyu_crying.mp3",
@@ -644,11 +644,11 @@
       "reaction": "crying",
       "loop": false,
       "source_take": 3,
-      "text": "[crying] ふぇぇ…",
-      "romaji": "Fuee...",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 0.981,
-      "lufs": -16.5
+      "text": "[crying softly] Uuu...",
+      "romaji": "Uuu...",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 0.967,
+      "lufs": -16.1
     },
     {
       "file": "final/voices/miyu/miyu_fall.mp3",
@@ -656,12 +656,12 @@
       "character": "miyu",
       "reaction": "fall",
       "loop": false,
-      "source_take": 3,
-      "text": "[shouts] ひゃあぁっ！",
-      "romaji": "Hyaaa!",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 0.809,
-      "lufs": -16.3
+      "source_take": 1,
+      "text": "[yelps] Wha-ah!",
+      "romaji": "Wha-ah!",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 1.593,
+      "lufs": -16
     },
     {
       "file": "final/voices/miyu/miyu_effort.mp3",
@@ -669,12 +669,12 @@
       "character": "miyu",
       "reaction": "effort",
       "loop": false,
-      "source_take": 3,
-      "text": "[straining] んにゅ…っ！",
-      "romaji": "Nnyu...!",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 0.991,
-      "lufs": -16.2
+      "source_take": 2,
+      "text": "[straining softly] Nnn...!",
+      "romaji": "Nnn...!",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 1.358,
+      "lufs": -16
     },
     {
       "file": "final/voices/miyu/miyu_cheer.mp3",
@@ -682,12 +682,12 @@
       "character": "miyu",
       "reaction": "cheer",
       "loop": false,
-      "source_take": 3,
-      "text": "[shouts] やったぁ…！",
-      "romaji": "Yattaa...!",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 1.225,
-      "lufs": -16.3
+      "source_take": 1,
+      "text": "[sleepy cheer] Yaay...!",
+      "romaji": "Yaay...!",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 1.202,
+      "lufs": -16
     },
     {
       "file": "final/voices/miyu/miyu_annoyed.mp3",
@@ -696,11 +696,11 @@
       "reaction": "annoyed",
       "loop": false,
       "source_take": 1,
-      "text": "[frustrated] むぅ〜…",
-      "romaji": "Muu~...",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 1.092,
-      "lufs": -16.2
+      "text": "[grumbles] Mmmh...",
+      "romaji": "Mmmh...",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 2.22,
+      "lufs": -16.1
     },
     {
       "file": "final/voices/miyu/miyu_yawn.mp3",
@@ -708,11 +708,11 @@
       "character": "miyu",
       "reaction": "yawn",
       "loop": false,
-      "source_take": 2,
-      "text": "[yawns] ふぁ〜あ…",
-      "romaji": "Fuaa~a...",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 1.026,
+      "source_take": 1,
+      "text": "[yawns] Haaah...",
+      "romaji": "Haaah...",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 2.377,
       "lufs": -16.1
     },
     {
@@ -722,11 +722,11 @@
       "reaction": "sleepy",
       "loop": false,
       "source_take": 3,
-      "text": "[sleepy] むにゃ…んん…",
-      "romaji": "Munya... nn...",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 1.955,
-      "lufs": -16.3
+      "text": "[sleepy] Mmm...",
+      "romaji": "Mmm...",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 1.28,
+      "lufs": -16
     },
     {
       "file": "final/voices/miyu/miyu_snore.mp3",
@@ -735,11 +735,11 @@
       "reaction": "snore",
       "loop": false,
       "source_take": 2,
-      "text": "[snores softly] すー…すぴー…",
-      "romaji": "Suu... supii...",
-      "voice_id": "vZKCpQDLh870EVnHQvl8",
-      "duration": 3.269,
-      "lufs": -16.6
+      "text": "[snoring softly] Hnnn... pshhh... hnnn... pshhh...",
+      "romaji": "Hnnn... pshhh... hnnn... pshhh...",
+      "voice_id": "MUH02MK4yWFr6VOUihax",
+      "duration": 4.598,
+      "lufs": -16.1
     },
     {
       "file": "final/sfx/ui/pop.mp3",
@@ -1322,7 +1322,7 @@
       "source_take": 2,
       "prompt": "Cartoon rubber bumper bonk, springy comedic bounce hit, cute cartoon style, clean, no music, no voices",
       "duration": 0.561,
-      "lufs": -19.0
+      "lufs": -19
     },
     {
       "file": "final/sfx/objects/ice_slide.mp3",
@@ -1343,7 +1343,7 @@
       "loop": false,
       "source_take": 2,
       "prompt": "Coin flicked into the air, metallic ringing spin, cute cartoon style, clean, no music, no voices",
-      "duration": 1.0,
+      "duration": 1,
       "lufs": -19.2
     },
     {
@@ -1508,5 +1508,6 @@
       "duration": 3.113,
       "lufs": -20.3
     }
-  ]
+  ],
+  "voices_generated": "2026-11-17"
 }

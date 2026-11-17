@@ -1,0 +1,34 @@
+{
+  "lumi": {
+    "voice_id": "peYBOx7lwlis04T9q8dZ",
+    "name": "Mascot Lumi",
+    "language": "ja",
+    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. Calm, soft, gentle and intelligent, mid pitch, warm and thoughtful delivery. Studio quality recording.",
+    "preview": "previews/lumi_preview_1.mp3",
+    "generated_voice_id": "peYBOx7lwlis04T9q8dZ"
+  },
+  "zuzu": {
+    "voice_id": "KSRwNAkUQi2KxSmG7KXU",
+    "name": "Mascot Zuzu",
+    "language": "ja",
+    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. High-pitched, very energetic, slightly squeaky and highly expressive, bouncy cheerful cartoon energy. Studio quality recording.",
+    "preview": "previews/zuzu_preview_1.mp3",
+    "generated_voice_id": "KSRwNAkUQi2KxSmG7KXU"
+  },
+  "anna": {
+    "voice_id": "RakQkPsY2o06G3exLIzX",
+    "name": "Mascot Anna",
+    "language": "ja",
+    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. Bright and confident, a bit bossy and smug, proud teasing ojou-sama delivery, clear and assertive. Studio quality recording.",
+    "preview": "previews/anna_preview_1.mp3",
+    "generated_voice_id": "RakQkPsY2o06G3exLIzX"
+  },
+  "miyu": {
+    "voice_id": "vZKCpQDLh870EVnHQvl8",
+    "name": "Mascot Miyu",
+    "language": "ja",
+    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. Quiet, sleepy, breathy, soft and slow, drowsy dreamy delivery, slightly mumbling. Studio quality recording.",
+    "preview": "previews/miyu_preview_1.mp3",
+    "generated_voice_id": "vZKCpQDLh870EVnHQvl8"
+  }
+}

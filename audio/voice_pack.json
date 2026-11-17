@@ -1,0 +1,1306 @@
+{
+ "about": "Index of lab_club_voices_pack.wav: every voice take (trimmed, -16 LUFS, -1 dBTP), 0.5 s of silence between takes. episodes/scripts/import-voice-pack.mjs cuts it into audio/final/voices (picked takes) and audio/_takes/voices (the rest).",
+ "file": "lab_club_voices_pack.wav",
+ "sample_rate": 44100,
+ "channels": 1,
+ "total_samples": 14790699,
+ "elevenlabs_flow": "https://elevenlabs.io/app/flows/cGSJIXx35vGB0mN3ApAK",
+ "takes": [
+  {
+   "character": "lumi",
+   "reaction": "happy",
+   "take": 1,
+   "start": 5340951,
+   "samples": 42777,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "happy",
+   "take": 2,
+   "start": 5405778,
+   "samples": 42777,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "happy",
+   "take": 3,
+   "start": 5470605,
+   "samples": 40572,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "giggle",
+   "take": 1,
+   "start": 5079879,
+   "samples": 63945,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "giggle",
+   "take": 2,
+   "start": 5165874,
+   "samples": 67032,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "giggle",
+   "take": 3,
+   "start": 5254956,
+   "samples": 63945,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "smug",
+   "take": 1,
+   "start": 6026706,
+   "samples": 48951,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "smug",
+   "take": 2,
+   "start": 6097707,
+   "samples": 47187,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "smug",
+   "take": 3,
+   "start": 6166944,
+   "samples": 51156,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "smug_laugh",
+   "take": 1,
+   "start": 6240150,
+   "samples": 67914,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "smug_laugh",
+   "take": 2,
+   "start": 6330114,
+   "samples": 66591,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "smug_laugh",
+   "take": 3,
+   "start": 6418755,
+   "samples": 67032,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "shocked",
+   "take": 1,
+   "start": 5533227,
+   "samples": 54243,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "shocked",
+   "take": 2,
+   "start": 5609520,
+   "samples": 53802,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "shocked",
+   "take": 3,
+   "start": 5685372,
+   "samples": 51597,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "small_gasp",
+   "take": 1,
+   "start": 5759019,
+   "samples": 65709,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "small_gasp",
+   "take": 2,
+   "start": 5846778,
+   "samples": 67473,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "small_gasp",
+   "take": 3,
+   "start": 5936301,
+   "samples": 68355,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "dizzy",
+   "take": 1,
+   "start": 4025007,
+   "samples": 91728,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "dizzy",
+   "take": 2,
+   "start": 4138785,
+   "samples": 86877,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "dizzy",
+   "take": 3,
+   "start": 4247712,
+   "samples": 91728,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "crying",
+   "take": 1,
+   "start": 3732183,
+   "samples": 89523,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "crying",
+   "take": 2,
+   "start": 3843756,
+   "samples": 71001,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "crying",
+   "take": 3,
+   "start": 3936807,
+   "samples": 66150,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "fall",
+   "take": 1,
+   "start": 4765446,
+   "samples": 82026,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "fall",
+   "take": 2,
+   "start": 4869522,
+   "samples": 85113,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "fall",
+   "take": 3,
+   "start": 4976685,
+   "samples": 81144,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "effort",
+   "take": 1,
+   "start": 4361490,
+   "samples": 46305,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "effort",
+   "take": 2,
+   "start": 4429845,
+   "samples": 44982,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "effort",
+   "take": 3,
+   "start": 4496877,
+   "samples": 52920,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "cheer",
+   "take": 1,
+   "start": 3523149,
+   "samples": 48510,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "cheer",
+   "take": 2,
+   "start": 3593709,
+   "samples": 46746,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "cheer",
+   "take": 3,
+   "start": 3662505,
+   "samples": 47628,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "annoyed",
+   "take": 1,
+   "start": 3179610,
+   "samples": 96138,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "annoyed",
+   "take": 2,
+   "start": 3297798,
+   "samples": 88200,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "annoyed",
+   "take": 3,
+   "start": 3408048,
+   "samples": 93051,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "thinking",
+   "take": 1,
+   "start": 6507837,
+   "samples": 34398,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "thinking",
+   "take": 2,
+   "start": 6564285,
+   "samples": 34398,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "thinking",
+   "take": 3,
+   "start": 6620733,
+   "samples": 33516,
+   "picked": false
+  },
+  {
+   "character": "lumi",
+   "reaction": "explain_start",
+   "take": 1,
+   "start": 4571847,
+   "samples": 71883,
+   "picked": true
+  },
+  {
+   "character": "lumi",
+   "reaction": "explain_start",
+   "take": 2,
+   "start": 4665780,
+   "samples": 77616,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "happy",
+   "take": 1,
+   "start": 13101669,
+   "samples": 58212,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "happy",
+   "take": 2,
+   "start": 13181931,
+   "samples": 52479,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "happy",
+   "take": 3,
+   "start": 13256460,
+   "samples": 52038,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "giggle",
+   "take": 1,
+   "start": 12776211,
+   "samples": 87318,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "giggle",
+   "take": 2,
+   "start": 12885579,
+   "samples": 83790,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "giggle",
+   "take": 3,
+   "start": 12991419,
+   "samples": 88200,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "smug",
+   "take": 1,
+   "start": 14227101,
+   "samples": 47187,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "smug",
+   "take": 2,
+   "start": 14296338,
+   "samples": 53361,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "smug",
+   "take": 3,
+   "start": 14371749,
+   "samples": 48510,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "smug_laugh",
+   "take": 1,
+   "start": 14442309,
+   "samples": 91728,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "smug_laugh",
+   "take": 2,
+   "start": 14556087,
+   "samples": 92610,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "smug_laugh",
+   "take": 3,
+   "start": 14670747,
+   "samples": 97902,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "shocked",
+   "take": 1,
+   "start": 13673205,
+   "samples": 69237,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "shocked",
+   "take": 2,
+   "start": 13764492,
+   "samples": 67914,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "shocked",
+   "take": 3,
+   "start": 13854456,
+   "samples": 67032,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "small_gasp",
+   "take": 1,
+   "start": 13943538,
+   "samples": 71442,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "small_gasp",
+   "take": 2,
+   "start": 14037030,
+   "samples": 72765,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "small_gasp",
+   "take": 3,
+   "start": 14131845,
+   "samples": 73206,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "dizzy",
+   "take": 1,
+   "start": 11837763,
+   "samples": 89964,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "dizzy",
+   "take": 2,
+   "start": 11949777,
+   "samples": 87759,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "dizzy",
+   "take": 3,
+   "start": 12059586,
+   "samples": 90405,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "crying",
+   "take": 1,
+   "start": 11502603,
+   "samples": 83349,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "crying",
+   "take": 2,
+   "start": 11608002,
+   "samples": 95697,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "crying",
+   "take": 3,
+   "start": 11725749,
+   "samples": 89964,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "fall",
+   "take": 1,
+   "start": 12418119,
+   "samples": 97020,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "fall",
+   "take": 2,
+   "start": 12537189,
+   "samples": 96579,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "fall",
+   "take": 3,
+   "start": 12655818,
+   "samples": 98343,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "effort",
+   "take": 1,
+   "start": 12172041,
+   "samples": 58212,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "effort",
+   "take": 2,
+   "start": 12252303,
+   "samples": 58212,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "effort",
+   "take": 3,
+   "start": 12332565,
+   "samples": 63504,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "cheer",
+   "take": 1,
+   "start": 11268432,
+   "samples": 56889,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "cheer",
+   "take": 2,
+   "start": 11347371,
+   "samples": 55566,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "cheer",
+   "take": 3,
+   "start": 11424987,
+   "samples": 55566,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "annoyed",
+   "take": 1,
+   "start": 11054988,
+   "samples": 51156,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "annoyed",
+   "take": 2,
+   "start": 11128194,
+   "samples": 48951,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "annoyed",
+   "take": 3,
+   "start": 11199195,
+   "samples": 47187,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "oops",
+   "take": 1,
+   "start": 13330548,
+   "samples": 97902,
+   "picked": false
+  },
+  {
+   "character": "zuzu",
+   "reaction": "oops",
+   "take": 2,
+   "start": 13450500,
+   "samples": 96579,
+   "picked": true
+  },
+  {
+   "character": "zuzu",
+   "reaction": "oops",
+   "take": 3,
+   "start": 13569129,
+   "samples": 82026,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "happy",
+   "take": 1,
+   "start": 2212938,
+   "samples": 41895,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "happy",
+   "take": 2,
+   "start": 2276883,
+   "samples": 43659,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "happy",
+   "take": 3,
+   "start": 2342592,
+   "samples": 42777,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "giggle",
+   "take": 1,
+   "start": 1934667,
+   "samples": 72765,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "giggle",
+   "take": 2,
+   "start": 2029482,
+   "samples": 73647,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "giggle",
+   "take": 3,
+   "start": 2125179,
+   "samples": 65709,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "smug",
+   "take": 1,
+   "start": 2815344,
+   "samples": 22491,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "smug",
+   "take": 2,
+   "start": 2859885,
+   "samples": 18963,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "smug",
+   "take": 3,
+   "start": 2900898,
+   "samples": 20286,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "smug_laugh",
+   "take": 1,
+   "start": 2943234,
+   "samples": 53802,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "smug_laugh",
+   "take": 2,
+   "start": 3019086,
+   "samples": 55125,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "smug_laugh",
+   "take": 3,
+   "start": 3096261,
+   "samples": 61299,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "shocked",
+   "take": 1,
+   "start": 2407419,
+   "samples": 30429,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "shocked",
+   "take": 2,
+   "start": 2459898,
+   "samples": 32193,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "shocked",
+   "take": 3,
+   "start": 2514141,
+   "samples": 31311,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "small_gasp",
+   "take": 1,
+   "start": 2567502,
+   "samples": 61299,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "small_gasp",
+   "take": 2,
+   "start": 2650851,
+   "samples": 60858,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "small_gasp",
+   "take": 3,
+   "start": 2733759,
+   "samples": 59535,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "dizzy",
+   "take": 1,
+   "start": 1012977,
+   "samples": 101430,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "dizzy",
+   "take": 2,
+   "start": 1136457,
+   "samples": 103635,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "dizzy",
+   "take": 3,
+   "start": 1262142,
+   "samples": 93492,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "crying",
+   "take": 1,
+   "start": 594027,
+   "samples": 109809,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "crying",
+   "take": 2,
+   "start": 725886,
+   "samples": 134505,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "crying",
+   "take": 3,
+   "start": 882441,
+   "samples": 108486,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "fall",
+   "take": 1,
+   "start": 1654191,
+   "samples": 83349,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "fall",
+   "take": 2,
+   "start": 1759590,
+   "samples": 82908,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "fall",
+   "take": 3,
+   "start": 1864548,
+   "samples": 48069,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "effort",
+   "take": 1,
+   "start": 1377684,
+   "samples": 70560,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "effort",
+   "take": 2,
+   "start": 1470294,
+   "samples": 84231,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "effort",
+   "take": 3,
+   "start": 1576575,
+   "samples": 55566,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "cheer",
+   "take": 1,
+   "start": 186543,
+   "samples": 57771,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "cheer",
+   "take": 2,
+   "start": 266364,
+   "samples": 54684,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "cheer",
+   "take": 3,
+   "start": 343098,
+   "samples": 55566,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "annoyed",
+   "take": 1,
+   "start": 0,
+   "samples": 72324,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "annoyed",
+   "take": 2,
+   "start": 94374,
+   "samples": 70119,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "confident",
+   "take": 1,
+   "start": 420714,
+   "samples": 34839,
+   "picked": false
+  },
+  {
+   "character": "anna",
+   "reaction": "confident",
+   "take": 2,
+   "start": 477603,
+   "samples": 35280,
+   "picked": true
+  },
+  {
+   "character": "anna",
+   "reaction": "confident",
+   "take": 3,
+   "start": 534933,
+   "samples": 37044,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "happy",
+   "take": 1,
+   "start": 8522766,
+   "samples": 58653,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "happy",
+   "take": 2,
+   "start": 8603469,
+   "samples": 63063,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "happy",
+   "take": 3,
+   "start": 8688582,
+   "samples": 58212,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "giggle",
+   "take": 1,
+   "start": 8233470,
+   "samples": 69237,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "giggle",
+   "take": 2,
+   "start": 8324757,
+   "samples": 69237,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "giggle",
+   "take": 3,
+   "start": 8416044,
+   "samples": 84672,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "smug",
+   "take": 1,
+   "start": 9546768,
+   "samples": 26019,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "smug",
+   "take": 2,
+   "start": 9594837,
+   "samples": 25578,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "smug",
+   "take": 3,
+   "start": 9642465,
+   "samples": 23373,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "smug_laugh",
+   "take": 1,
+   "start": 9687888,
+   "samples": 88200,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "smug_laugh",
+   "take": 2,
+   "start": 9798138,
+   "samples": 69237,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "smug_laugh",
+   "take": 3,
+   "start": 9889425,
+   "samples": 84672,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "shocked",
+   "take": 1,
+   "start": 8768844,
+   "samples": 59094,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "shocked",
+   "take": 2,
+   "start": 8849988,
+   "samples": 60858,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "shocked",
+   "take": 3,
+   "start": 8932896,
+   "samples": 59976,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "small_gasp",
+   "take": 1,
+   "start": 9241596,
+   "samples": 73206,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "small_gasp",
+   "take": 2,
+   "start": 9336852,
+   "samples": 79821,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "small_gasp",
+   "take": 3,
+   "start": 9438723,
+   "samples": 85995,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "dizzy",
+   "take": 1,
+   "start": 7413651,
+   "samples": 70119,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "dizzy",
+   "take": 2,
+   "start": 7505820,
+   "samples": 64827,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "dizzy",
+   "take": 3,
+   "start": 7592697,
+   "samples": 68796,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "crying",
+   "take": 1,
+   "start": 7188741,
+   "samples": 80262,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "crying",
+   "take": 2,
+   "start": 7291053,
+   "samples": 37485,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "crying",
+   "take": 3,
+   "start": 7350588,
+   "samples": 41013,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "fall",
+   "take": 1,
+   "start": 7956081,
+   "samples": 68796,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "fall",
+   "take": 2,
+   "start": 8046927,
+   "samples": 66591,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "fall",
+   "take": 3,
+   "start": 8135568,
+   "samples": 75852,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "effort",
+   "take": 1,
+   "start": 7683543,
+   "samples": 57771,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "effort",
+   "take": 2,
+   "start": 7763364,
+   "samples": 57771,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "effort",
+   "take": 3,
+   "start": 7843185,
+   "samples": 90846,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "cheer",
+   "take": 1,
+   "start": 7041006,
+   "samples": 51156,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "cheer",
+   "take": 2,
+   "start": 7114212,
+   "samples": 52479,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "annoyed",
+   "take": 1,
+   "start": 6676299,
+   "samples": 96138,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "annoyed",
+   "take": 2,
+   "start": 6794487,
+   "samples": 106722,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "annoyed",
+   "take": 3,
+   "start": 6923259,
+   "samples": 95697,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "yawn",
+   "take": 1,
+   "start": 10682784,
+   "samples": 102753,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "yawn",
+   "take": 2,
+   "start": 10807587,
+   "samples": 103194,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "yawn",
+   "take": 3,
+   "start": 10932831,
+   "samples": 100107,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "sleepy",
+   "take": 1,
+   "start": 9014922,
+   "samples": 58212,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "sleepy",
+   "take": 2,
+   "start": 9095184,
+   "samples": 48069,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "sleepy",
+   "take": 3,
+   "start": 9165303,
+   "samples": 54243,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "snore",
+   "take": 1,
+   "start": 9996147,
+   "samples": 186543,
+   "picked": false
+  },
+  {
+   "character": "miyu",
+   "reaction": "snore",
+   "take": 2,
+   "start": 10204740,
+   "samples": 200655,
+   "picked": true
+  },
+  {
+   "character": "miyu",
+   "reaction": "snore",
+   "take": 3,
+   "start": 10427445,
+   "samples": 233289,
+   "picked": false
+  }
+ ]
+}

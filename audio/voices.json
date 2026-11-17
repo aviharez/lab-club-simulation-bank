@@ -1,34 +1,42 @@
 {
   "lumi": {
-    "voice_id": "peYBOx7lwlis04T9q8dZ",
-    "name": "Mascot Lumi",
-    "language": "ja",
-    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. Calm, soft, gentle and intelligent, mid pitch, warm and thoughtful delivery. Studio quality recording.",
-    "preview": "previews/lumi_preview_1.mp3",
-    "generated_voice_id": "peYBOx7lwlis04T9q8dZ"
+    "voice_id": "uIDVf2dD4K6qufMENtmP",
+    "name": "Lab Club Lumi (intl)",
+    "language": "en",
+    "source": "voice_design",
+    "model": "eleven_ttv_v3",
+    "loudness": 0.3,
+    "description": "Young female cartoon character voice for an international kids' science show, neutral English accent. Gentle, youthful and soft like a children's storyteller, warm and clear, but calm, composed and clever: mid pitch, unhurried, controlled, never shrill. A friendly young genius girl who explains things. Studio quality, close mic.",
+    "previous_voice_id": "peYBOx7lwlis04T9q8dZ"
   },
   "zuzu": {
-    "voice_id": "KSRwNAkUQi2KxSmG7KXU",
-    "name": "Mascot Zuzu",
-    "language": "ja",
-    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. High-pitched, very energetic, slightly squeaky and highly expressive, bouncy cheerful cartoon energy. Studio quality recording.",
-    "preview": "previews/zuzu_preview_1.mp3",
-    "generated_voice_id": "KSRwNAkUQi2KxSmG7KXU"
+    "voice_id": "xZX4cJv8lB3j9WRZYwNP",
+    "name": "Lab Club Zuzu (intl)",
+    "language": "en",
+    "source": "voice_design",
+    "model": "eleven_ttv_v3",
+    "loudness": 0.7,
+    "description": "Young female cartoon character voice for an international kids' science show, neutral American English. High-pitched, bubbly and giggly, very energetic and loud, slightly squeaky, big exaggerated cartoon reactions, clumsy and lovable underdog. Like a cheerful animated sidekick who always gets launched across the room. Studio quality.",
+    "previous_voice_id": "KSRwNAkUQi2KxSmG7KXU"
   },
   "anna": {
-    "voice_id": "RakQkPsY2o06G3exLIzX",
-    "name": "Mascot Anna",
-    "language": "ja",
-    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. Bright and confident, a bit bossy and smug, proud teasing ojou-sama delivery, clear and assertive. Studio quality recording.",
-    "preview": "previews/anna_preview_1.mp3",
-    "generated_voice_id": "RakQkPsY2o06G3exLIzX"
+    "voice_id": "D4y7Te5r6vIKqqITh7fe",
+    "name": "Lab Club Anna (intl)",
+    "language": "en",
+    "source": "voice_design",
+    "model": "eleven_ttv_v3",
+    "loudness": 0.6,
+    "description": "Young female cartoon character voice for an international kids' science show, neutral American English. Bright, sassy and confident, a bit bossy and smug, theatrical and proud, clear and assertive, medium-high pitch. A self-appointed club leader who is sure she is always right. Studio quality.",
+    "previous_voice_id": "RakQkPsY2o06G3exLIzX"
   },
   "miyu": {
-    "voice_id": "vZKCpQDLh870EVnHQvl8",
-    "name": "Mascot Miyu",
-    "language": "ja",
-    "description": "Native Japanese female voice actress in her early twenties, speaking Japanese, classic anime seiyuu style. Quiet, sleepy, breathy, soft and slow, drowsy dreamy delivery, slightly mumbling. Studio quality recording.",
-    "preview": "previews/miyu_preview_1.mp3",
-    "generated_voice_id": "vZKCpQDLh870EVnHQvl8"
+    "voice_id": "MUH02MK4yWFr6VOUihax",
+    "name": "Lab Club Miyu (intl)",
+    "language": "en",
+    "source": "voice_design",
+    "model": "eleven_ttv_v3",
+    "loudness": -0.2,
+    "description": "Young female cartoon character voice for an international kids' science show, neutral English. Very quiet, soft and breathy, sleepy and slow, drowsy half-whisper, low energy but cute and gentle. A sleepy cat-like girl who has just woken up. Studio quality, close mic.",
+    "previous_voice_id": "vZKCpQDLh870EVnHQvl8"
   }
 }

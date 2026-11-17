@@ -20,7 +20,7 @@ export type AudioRef = {
   loop: boolean;
   /** voices: who is speaking */
   character?: Character;
-  /** voices: what she says (romaji) */
+  /** voices: what she says (the plain line, without the audio tag) */
   text?: string;
   /** music loops */
   bpm?: number;

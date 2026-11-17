@@ -1,0 +1,230 @@
+{
+ "lumi": {
+  "happy": [
+   "[happy] わぁい！",
+   "Waai!"
+  ],
+  "giggle": [
+   "[giggles] ふふっ",
+   "Fufu"
+  ],
+  "smug": [
+   "[smug] ふふん",
+   "Fufun"
+  ],
+  "smug_laugh": [
+   "[laughs softly] ふふふ〜",
+   "Fufufu~"
+  ],
+  "shocked": [
+   "[gasps] えっ？！",
+   "E?!"
+  ],
+  "small_gasp": [
+   "[gasps] あっ！",
+   "A!"
+  ],
+  "dizzy": [
+   "[dizzy] ふにゃ〜…",
+   "Funya~..."
+  ],
+  "crying": [
+   "[crying] うぅ…ぐすっ…",
+   "Uu... gusu..."
+  ],
+  "fall": [
+   "[shouts] きゃあっ！",
+   "Kyaa!"
+  ],
+  "effort": [
+   "[straining] んんっ…！",
+   "Nnn...!"
+  ],
+  "cheer": [
+   "[cheerful] やった！",
+   "Yatta!"
+  ],
+  "annoyed": [
+   "[frustrated] もう…",
+   "Mou..."
+  ],
+  "thinking": [
+   "[curious] うーん…",
+   "Uun..."
+  ],
+  "explain_start": [
+   "[confident] こほん！",
+   "Ahem!"
+  ]
+ },
+ "zuzu": {
+  "happy": [
+   "[excited] やったーー！",
+   "Yattaaa!"
+  ],
+  "giggle": [
+   "[giggles] にひひっ！",
+   "Nihihi!"
+  ],
+  "smug": [
+   "[smug] へっへーん！",
+   "Hehheen!"
+  ],
+  "smug_laugh": [
+   "[laughs] にししし〜！",
+   "Nishishi~!"
+  ],
+  "shocked": [
+   "[gasps] えええっ？！",
+   "Eeee?!"
+  ],
+  "small_gasp": [
+   "[gasps] わっ！",
+   "Wa!"
+  ],
+  "dizzy": [
+   "[dizzy] ふにゃあ〜〜…",
+   "Funyaa~~..."
+  ],
+  "crying": [
+   "[crying] うわぁぁぁん！",
+   "Uwaaaan!"
+  ],
+  "fall": [
+   "[shouts] うわぁぁぁっ！",
+   "Uwaaaa!"
+  ],
+  "effort": [
+   "[straining] ふんぬぬぬっ！",
+   "Funnunu!"
+  ],
+  "cheer": [
+   "[shouts] やったぁーっ！",
+   "Yattaa!"
+  ],
+  "annoyed": [
+   "[frustrated] もーーっ！",
+   "Moooo!"
+  ],
+  "oops": [
+   "[nervous] えへへ…",
+   "Ehehe..."
+  ]
+ },
+ "anna": {
+  "happy": [
+   "[excited] わぁっ！",
+   "Waa!"
+  ],
+  "giggle": [
+   "[giggles] うふふっ",
+   "Ufufu"
+  ],
+  "smug": [
+   "[smug] ふんっ！",
+   "Hmph!"
+  ],
+  "smug_laugh": [
+   "[proud laugh] おーっほっほっほ！",
+   "Oh-hohoho!"
+  ],
+  "shocked": [
+   "[gasps] はぁっ？！",
+   "Haa?!"
+  ],
+  "small_gasp": [
+   "[gasps] あらっ！",
+   "Ara!"
+  ],
+  "dizzy": [
+   "[dizzy] あうぅ〜…",
+   "Auu~..."
+  ],
+  "crying": [
+   "[crying] うぅっ…ひっく…",
+   "Uu... hikku..."
+  ],
+  "fall": [
+   "[shouts] きゃああっ！",
+   "Kyaaa!"
+  ],
+  "effort": [
+   "[straining] くっ…んんっ！",
+   "Ku... nn!"
+  ],
+  "cheer": [
+   "[shouts] やったわーっ！",
+   "Yatta waa!"
+  ],
+  "annoyed": [
+   "[frustrated] もうっ！",
+   "Mou!"
+  ],
+  "confident": [
+   "[confident] 楽勝よ！",
+   "Rakushou yo! (Easy!)"
+  ]
+ },
+ "miyu": {
+  "happy": [
+   "[softly excited] わぁい…",
+   "Waai..."
+  ],
+  "giggle": [
+   "[giggles softly] えへへ…",
+   "Ehehe..."
+  ],
+  "smug": [
+   "[smug] ふふん…",
+   "Fufun..."
+  ],
+  "smug_laugh": [
+   "[laughs softly] ふふ…",
+   "Fufu..."
+  ],
+  "shocked": [
+   "[gasps] にゃっ？！",
+   "Nya?!"
+  ],
+  "small_gasp": [
+   "[gasps softly] あ…っ！",
+   "A...!"
+  ],
+  "dizzy": [
+   "[dizzy] ふにゃぁ〜…",
+   "Funyaa~..."
+  ],
+  "crying": [
+   "[crying] ふぇぇ…",
+   "Fuee..."
+  ],
+  "fall": [
+   "[shouts] ひゃあぁっ！",
+   "Hyaaa!"
+  ],
+  "effort": [
+   "[straining] んにゅ…っ！",
+   "Nnyu...!"
+  ],
+  "cheer": [
+   "[shouts] やったぁ…！",
+   "Yattaa...!"
+  ],
+  "annoyed": [
+   "[frustrated] むぅ〜…",
+   "Muu~..."
+  ],
+  "yawn": [
+   "[yawns] ふぁ〜あ…",
+   "Fuaa~a..."
+  ],
+  "sleepy": [
+   "[sleepy] むにゃ…んん…",
+   "Munya... nn..."
+  ],
+  "snore": [
+   "[snores softly] すー…すぴー…",
+   "Suu... supii..."
+  ]
+ }
+}

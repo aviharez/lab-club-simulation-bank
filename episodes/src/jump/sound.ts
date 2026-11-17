@@ -154,9 +154,11 @@ const VOICES: CastVoices = {
     sample: sampleOf("jupiter"),
     rules: [
       { reaction: "effort", on: { expression: "squint" }, label: "Zuzu braces for the jump", priority: 50, once: true },
-      { reaction: "fall", on: { clip: "jump_air" }, label: "Zuzu is yanked back down", priority: 90 },
-      { reaction: "fall", on: { clip: "land_squash" }, label: "Zuzu lands", priority: 85 },
-      { reaction: "dizzy", on: { clip: "dizzy" }, label: "Zuzu sees stars", priority: 65, once: true },
+      // "Aaaaaah!": a short "A-" then the long scream at ~0.9 s; only the scream is used so Anna's gloat still fits
+      { reaction: "fall", on: { clip: "jump_air" }, label: "Zuzu is yanked back down", priority: 90, slice: [0.9, 2.15] },
+      { reaction: "fall", on: { clip: "land_squash" }, label: "Zuzu lands", priority: 85, slice: [0.9, 2.15] },
+      // "Wooo-ah-ah...": the first 1.25 s, so it ends before Miyu's yawn
+      { reaction: "dizzy", on: { clip: "dizzy" }, label: "Zuzu sees stars", priority: 65, once: true, slice: [0, 1.25] },
       { reaction: "cheer", label: "Zuzu cheers", ...cheer },
     ],
   },
@@ -164,8 +166,8 @@ const VOICES: CastVoices = {
     sample: sampleOf("mars"),
     rules: [
       { reaction: "smug", on: { expression: "smug" }, label: "Anna is sure she wins", priority: 55, once: true },
-      // "Oh... hohoho!": the file has a 0.6 s breath after "Oh", so only the laugh itself is used
-      { reaction: "smug_laugh", on: { clip: "jump_air", expression: "smug" }, label: "Anna gloats at her peak", priority: 70, slice: [0.85, 2.2] },
+      // "Ha-ha-ha!" is a short laugh with no lead-in, so the whole file is used
+      { reaction: "smug_laugh", on: { clip: "jump_air", expression: "smug" }, label: "Anna gloats at her peak", priority: 70 },
       { reaction: "annoyed", on: { clip: "foot_tap", expression: "squint" }, label: "Anna is tired of waiting", priority: 60, once: true },
       { reaction: "shocked", on: { expression: "shocked" }, label: "Anna: she slept through it?!", priority: 80 },
       { reaction: "cheer", label: "Anna cheers", ...cheer },
@@ -184,10 +186,10 @@ const VOICES: CastVoices = {
     sample: sampleOf("moon"),
     rules: [
       { reaction: "happy", on: { clip: "jump_air" }, label: "Miyu enjoys the lift-off", priority: 40 },
-      // the yawn's last 0.2 s is only breath
-      { reaction: "yawn", on: { clip: "float_sleep" }, label: "Miyu dozes off at the top", priority: 75, slice: [0, 0.85] },
-      // "Suu... supii...": one breath per ~2 s, in then out (the file opens with 1 s of quiet breath, skipped)
-      { reaction: "snore", on: { expression: "squint", symbol: "zzz" }, label: "Miyu snores", priority: 10, volume: 0.5, slices: [[1.08, 2.08], [2.3, 3.27]], repeat: { every: 60, minLen: 24 } },
+      // "Haaah...": the first sigh of the yawn (0.1-0.7 s); the long second half would leave no room for the snores
+      { reaction: "yawn", on: { clip: "float_sleep" }, label: "Miyu dozes off at the top", priority: 75, slice: [0, 0.8] },
+      // "Hnnn... pshhh... hnnn... pshhh...": two snores (in + out) per slice, one slice per ~2 s
+      { reaction: "snore", on: { expression: "squint", symbol: "zzz" }, label: "Miyu snores", priority: 10, volume: 0.5, slices: [[0.2, 1.95], [2.7, 4.45]], repeat: { every: 60, minLen: 24 } },
       { reaction: "shocked", on: { expression: "shocked" }, label: "Miyu wakes up", priority: 90 },
       { reaction: "giggle", label: "Miyu giggles", ...cheer },
     ],
